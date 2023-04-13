@@ -31,10 +31,11 @@ public class BabiCeleng {
     public void init() {
         window.init();
         GL.createCapabilities();
+        glEnable(GL_DEPTH_TEST);
         // code dst jangan ditaruh diatas code diatas
         camera.setPosition(-0.5f, 0.0f, 0.5f);
         camera.setRotation((float) Math.toRadians(0.0f), (float) Math.toRadians(30.0f));
-        //Matahari
+        //Kepala Babi
         TTSRY.add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
@@ -45,7 +46,7 @@ public class BabiCeleng {
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(1.0f, 0.5f, 0.0f, 1.0f),
+                new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
                 0.00,
                 new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
                 0.2f,
@@ -53,39 +54,89 @@ public class BabiCeleng {
                 0.2f,
                 15, // Stack -->
                 30, // Sector --> Titik
-                2));
+                3));
         TTSRY.get(0).scaleObject(1.0f, 1.0f, 1.0f);
 
+        // Hidung babi
         TTSRY.get(0).getChildObject().add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(0.0f, 0.5f, 0.5f, 1.0f),
+                new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
                 0.00,
                 new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
                 0.2f,
                 0.2f,
-                0.2f,
+                0.5f,
                 15, // Stack -->
                 30, // Sector --> Titik
                 2));
+        TTSRY.get(0).getChildObject().get(0).scaleObject(0.5f, 0.5f, 0.5f);
+        TTSRY.get(0).getChildObject().get(0).translateObject(0.0f, 0.0f, 0.28f);
+        TTSRY.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(8.0f), 1.0f, 0.0f, 0.0f);
+
+        TTSRY.get(0).getChildObject().get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(1.0f, 0.4f, 0.69f, 1.0f),
+                0.00,
+                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
+                0.2f,
+                0.2f,
+                0.5f,
+                15, // Stack -->
+                30, // Sector --> Titik
+                2));
+        TTSRY.get(0).getChildObject().get(0).getChildObject().get(0).scaleObject(0.075f, 0.1f, 0.03f);
+        TTSRY.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(0.05f, 0.0f, 0.29f);
+        TTSRY.get(0).getChildObject().get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(8.0f), 1.0f, 0.0f, 0.0f);
+        TTSRY.get(0).getChildObject().get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(10.0f), 0.0f, 0.0f, 0.0f);
+
+        TTSRY.get(0).getChildObject().get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(1.0f, 0.4f, 0.69f, 1.0f),
+                0.00,
+                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
+                0.2f,
+                0.2f,
+                0.5f,
+                15, // Stack -->
+                30, // Sector --> Titik
+                2));
+        TTSRY.get(0).getChildObject().get(0).getChildObject().get(1).scaleObject(0.075f, 0.1f, 0.03f);
+        TTSRY.get(0).getChildObject().get(0).getChildObject().get(1).translateObject(-0.05f, 0.0f, 0.29f);
+        TTSRY.get(0).getChildObject().get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(8.0f), 1.0f, 0.0f, 0.0f);
+        TTSRY.get(0).getChildObject().get(0).getChildObject().get(1).rotateObject((float) Math.toRadians(10.0f), 0.0f, 0.0f, 0.0f);
+
+        //Mata
         TTSRY.get(0).getChildObject().add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(0.0f, 0.5f, 0.5f, 1.0f),
+                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
                 0.00,
                 new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
                 0.2f,
@@ -93,20 +144,20 @@ public class BabiCeleng {
                 0.2f,
                 15, // Stack -->
                 30, // Sector --> Titik
-                2));
-        TTSRY.get(0).getChildObject().get(0).translateObject(0.5f, 0.5f, 0.5f);
-        TTSRY.get(0).getChildObject().get(1).translateObject(-0.5f, -0.5f, -0.5f);
-        TTSRY.get(0).getChildObject().get(1).getChildObject().add(new Sphere(
+                3));
+        TTSRY.get(0).getChildObject().get(1).scaleObject(0.1f, 0.1f, 0.1f);
+        TTSRY.get(0).getChildObject().get(1).translateObject(0.09f, 0.1f, 0.14f);
+
+        TTSRY.get(0).getChildObject().add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(0.5f, 0.5f, 0.5f, 1.0f),
+                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
                 0.00,
                 new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
                 0.2f,
@@ -114,28 +165,13 @@ public class BabiCeleng {
                 0.2f,
                 15, // Stack -->
                 30, // Sector --> Titik
-                2));
-        TTSRY.get(0).getChildObject().get(1).getChildObject().get(0).scaleObject(0.5f, 0.5f, 0.5f);
-
-        TTSRY.get(0).getChildObject().get(1).getChildObject().get(0).translateObject(-0.5f, 0.5f, 0.5f);
-
+                3));
+        TTSRY.get(0).getChildObject().get(2).scaleObject(0.1f, 0.1f, 0.1f);
+        TTSRY.get(0).getChildObject().get(2).translateObject(-0.09f, 0.1f, 0.14f);
 
     }
     public void input() {
 
-        if (window.isKeyPressed(GLFW_KEY_W)) {
-            TTSRY.get(0).rotateObject(0.01f, 0f, 0f, 1f);
-            for (Object child : TTSRY.get(0).getChildObject()) {
-                Vector3f tempCenterPoint = child.updateCenterPoint();
-                child.translateObject(tempCenterPoint.x * -1,
-                        tempCenterPoint.y * -1,
-                        tempCenterPoint.z * -1);
-                child.rotateObject((float) Math.toRadians(0.1f), 0f, 0f, 1f);
-                child.translateObject(tempCenterPoint.x * 1,
-                        tempCenterPoint.y * 1,
-                        tempCenterPoint.z * 1);
-            }
-        }
 
         if (window.isKeyPressed(GLFW_KEY_Q)) {
             for (Sphere i : TTSRY) {
@@ -236,7 +272,7 @@ public class BabiCeleng {
 
         while (window.isOpen()) {
             window.update();
-            glClearColor(0.00f, 0.0f, 0.0f, 0.0f); // RapidTables.com (RGB color code chart)
+            glClearColor(1.00f, 1.0f, 1.0f, 0.0f); // RapidTables.com (RGB color code chart)
             GL.createCapabilities();
             input();
             for (Sphere obj3D : TTSRY) {

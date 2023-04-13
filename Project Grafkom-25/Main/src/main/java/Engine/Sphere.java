@@ -19,8 +19,11 @@ public class Sphere extends Circle3D{
         this.stackCount = stackCount;
         this.sectorCount = sectorCount;
 
-        if(option == 1){
+        if(option == 0){
             createBox();
+
+        }else if(option == 1){
+            createSphereElipsoid();
 
         }
         else if(option == 2){
@@ -149,10 +152,24 @@ public class Sphere extends Circle3D{
         vertices.add(tempVertices.get(6));
     }
 
+    public void createSphereElipsoid(){
+        vertices.clear();
+        ArrayList<Vector3f> temp = new ArrayList<>();
+
+        for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/9){
+            for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/9){
+                float x = rX* (float)(Math.cos(v) * Math.cos(u));
+                float y = rY * (float)(Math.cos(v) * Math.sin(u));
+                float z = rZ * (float)(Math.sin(v));
+                temp.add(new Vector3f(x,y,z));
+            }
+        }
+        vertices = temp;
+    }
     public void createTabung(){
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
-        for(double i = 0 ; i <= 360 ; i += 0.01f){
+        for(double i = 0 ; i <= 360 ; i += 0.05f){
             float x = centerPoint.get(0) + rX * (float)Math.cos(Math.toRadians(i));
             float y = centerPoint.get(1) + rY * (float)Math.sin(Math.toRadians(i));
 
@@ -164,8 +181,8 @@ public class Sphere extends Circle3D{
     public void createSphere(){
         ArrayList<Vector3f> temp = new ArrayList<>();
 
-        for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/10){
-            for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/10){
+        for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/180){
+            for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/180){
                 float x = this.rX * (float)(Math.cos(v) * Math.cos(u));
                 float y = this.rY * (float)(Math.cos(v) * Math.sin(u));
                 float z = this.rZ * (float)(Math.sin(v));
