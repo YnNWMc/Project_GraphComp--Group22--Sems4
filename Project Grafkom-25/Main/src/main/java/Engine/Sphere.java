@@ -152,7 +152,7 @@ public class Sphere extends Circle3D{
     public void createTabung(){
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
-        for(double i = -360 ; i <= 540 ; i += 0.1f){
+        for(double i = 0 ; i <= 360 ; i += 0.01f){
             float x = centerPoint.get(0) + rX * (float)Math.cos(Math.toRadians(i));
             float y = centerPoint.get(1) + rY * (float)Math.sin(Math.toRadians(i));
 
