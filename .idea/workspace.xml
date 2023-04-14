@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="">
+    <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="potato bg versi gagal">
       <change afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/MrPotato.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle.class" beforeDir="false" />
@@ -93,5 +93,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="potato bg versi gagal" />
+    <option name="LAST_COMMIT_MESSAGE" value="potato bg versi gagal" />
   </component>
 </project>

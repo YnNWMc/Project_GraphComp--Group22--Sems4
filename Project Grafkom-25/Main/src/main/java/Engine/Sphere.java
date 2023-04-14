@@ -53,6 +53,9 @@ public class Sphere extends Circle3D{
         else if(option == 8){
             createHyperboloidParaboloid();
         }
+        else if(option == 9){
+            createPotato();
+        }
 
         setupVAOVBO();
     }
@@ -178,6 +181,22 @@ public class Sphere extends Circle3D{
         }
         vertices = temp;
     }
+
+    public void createPotato() {
+        vertices.clear();
+        ArrayList<Vector3f> temp = new ArrayList<>();
+        for (int i = 0; i < 360; i++) {
+            float rad = (float) (i * Math.PI / 180);
+            float x = (float) (50 * Math.cos(rad) * (1.0 + 0.2 * Math.sin(3 * rad)));
+            float y = (float) (60 * Math.sin(rad) * (1.0 + 0.1 * Math.sin(3 * rad)));
+            float z = (float) (50 * Math.sin(3 * rad) * 0.2);
+
+            temp.add(new Vector3f(x,y,rZ));
+            temp.add(new Vector3f(x,y,z));
+        }
+        vertices = temp;
+    }
+
     public void createSphere(){
         ArrayList<Vector3f> temp = new ArrayList<>();
 
@@ -333,6 +352,7 @@ public class Sphere extends Circle3D{
         }
         vertices = temp;
     }
+
     /*
     public void createHyperboloidParaboloid() {
         vertices.clear();
