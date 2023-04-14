@@ -156,8 +156,8 @@ public class Sphere extends Circle3D{
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
 
-        for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/9){
-            for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/9){
+        for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/180){
+            for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/180){
                 float x = rX* (float)(Math.cos(v) * Math.cos(u));
                 float y = rY * (float)(Math.cos(v) * Math.sin(u));
                 float z = rZ * (float)(Math.sin(v));
@@ -181,8 +181,8 @@ public class Sphere extends Circle3D{
     public void createSphere(){
         ArrayList<Vector3f> temp = new ArrayList<>();
 
-        for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/180){
-            for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/180){
+        for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/240){
+            for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/240){
                 float x = this.rX * (float)(Math.cos(v) * Math.cos(u));
                 float y = this.rY * (float)(Math.cos(v) * Math.sin(u));
                 float z = this.rZ * (float)(Math.sin(v));
