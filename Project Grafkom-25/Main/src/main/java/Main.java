@@ -53,7 +53,7 @@ public class Main {
                 0.2f,
                 15, // Stack -->
                 30, // Sector --> Titik
-                2));
+                0));
         TTSRY.get(0).scaleObject(1.0f, 1.0f, 1.0f);
 
 
