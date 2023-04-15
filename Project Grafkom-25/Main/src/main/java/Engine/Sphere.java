@@ -187,9 +187,9 @@ public class Sphere extends Circle3D{
         ArrayList<Vector3f> temp = new ArrayList<>();
         for (int i = 0; i < 360; i++) {
             float rad = (float) (i * Math.PI / 180);
-            float x = (float) (50 * Math.cos(rad) * (1.0 + 0.2 * Math.sin(3 * rad)));
-            float y = (float) (60 * Math.sin(rad) * (1.0 + 0.1 * Math.sin(3 * rad)));
-            float z = (float) (50 * Math.sin(3 * rad) * 0.2);
+            float x = (float) (rX*10 * Math.cos(rad) * (1.0 + 0.2 * Math.sin(3 * rad)));
+            float y = (float) (rY*10 * Math.sin(rad) * (1.0 + 0.1 * Math.sin(3 * rad)));
+            float z = (float) (rZ*10 * Math.sin(3 * rad) * 0.2);
 
             temp.add(new Vector3f(x,y,rZ));
             temp.add(new Vector3f(x,y,z));
@@ -243,9 +243,9 @@ public class Sphere extends Circle3D{
 
         for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/60){
             for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/60){
-                float x = 0.5f * (float)((1/Math.cos(v)) * Math.cos(u));
-                float y = 0.5f * (float)((1/Math.cos(v)) * Math.sin(u));
-                float z = 0.5f * (float)(Math.tan(v));
+                float x = rX * (float)((1/Math.cos(v)) * Math.cos(u));
+                float y = rY * (float)((1/Math.cos(v)) * Math.sin(u));
+                float z = rZ * (float)(Math.tan(v));
                 temp.add(new Vector3f(x,z,y));
             }
         }
@@ -255,22 +255,13 @@ public class Sphere extends Circle3D{
     public void createHyperboloid2() {
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
-        for (double v = -Math.PI / 2; v <= Math.PI / 2; v += Math.PI / 60) {
-            for (double u = -Math.PI / 2; u <= Math.PI / 2; u += Math.PI / 60) {
-                float x = 0.5f * (float) ((Math.tan(v)) * Math.cos(u));
-                float y = 0.5f * (float) ((Math.tan(v)) * Math.sin(u));
-                float z = 0.5f * (float) (1 / Math.cos(v));
-                temp.add(new Vector3f(x, z, y));
 
-            }
-        }
-        for (double v = -Math.PI / 2; v <= Math.PI / 2; v += Math.PI / 60) {
-            for (double u = -Math.PI / 2; u <= 3 * (Math.PI / 2); u += Math.PI / 60) {
-                float x = -0.5f * (float) ((Math.tan(v)) * Math.cos(u));
-                float y = -0.5f * (float) ((Math.tan(v)) * Math.sin(u));
-                float z = -0.5f * (float) (1 / Math.cos(v));
-                temp.add(new Vector3f(x, z, y));
-
+        for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/60){
+            for(double u = -Math.PI/2; u<= Math.PI/2; u+=Math.PI/60){
+                float x = 0.5f * (float)((1/Math.cos(v)) * Math.cos(u));
+                float y = 0.5f * (float)((1/Math.cos(v)) * Math.sin(u));
+                float z = 0.5f * (float)(Math.tan(v));
+                temp.add(new Vector3f(x,z,y));
             }
         }
         vertices = temp;

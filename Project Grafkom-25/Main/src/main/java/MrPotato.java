@@ -42,12 +42,9 @@ public class MrPotato {
         bodyPart.add(new Sphere(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
+                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
+                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
 
                 ),
                 new ArrayList<>(
@@ -60,7 +57,7 @@ public class MrPotato {
                 0.2f,// titik z
                 15, // Stack -->
                 30, // Sector --> Titik
-                8));// option
+                9));// option
         bodyPart.get(0).scaleObject(0.8f, 0.8f, 0.8f);
 
 

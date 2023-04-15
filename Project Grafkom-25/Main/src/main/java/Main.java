@@ -53,75 +53,8 @@ public class Main {
                 0.2f,
                 15, // Stack -->
                 30, // Sector --> Titik
-                0));
+                6));
         TTSRY.get(0).scaleObject(1.0f, 1.0f, 1.0f);
-
-
-
-
-
-        TTSRY.get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0.0f, 0.5f, 0.5f, 1.0f),
-                0.00,
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.2f,
-                0.2f,
-                0.2f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                2));
-        TTSRY.get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0.0f, 0.5f, 0.5f, 1.0f),
-                0.00,
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.2f,
-                0.2f,
-                0.2f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                2));
-        TTSRY.get(0).getChildObject().get(0).translateObject(0.5f, 0.5f, 0.5f);
-        TTSRY.get(0).getChildObject().get(1).translateObject(-0.5f, -0.5f, -0.5f);
-        TTSRY.get(0).getChildObject().get(1).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0.5f, 0.5f, 0.5f, 1.0f),
-                0.00,
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.2f,
-                0.2f,
-                0.2f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                2));
-        TTSRY.get(0).getChildObject().get(1).getChildObject().get(0).scaleObject(0.5f, 0.5f, 0.5f);
-
-        TTSRY.get(0).getChildObject().get(1).getChildObject().get(0).translateObject(-0.5f, 0.5f, 0.5f);
 
 
     }

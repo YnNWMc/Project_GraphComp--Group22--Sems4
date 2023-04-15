@@ -5,17 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="potato bg versi gagal">
-      <change afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/MrPotato.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project Grafkom-25/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project Grafkom-25/.idea/Project Grafkom-25.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/BabiCeleng.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/BabiCeleng.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Curve.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Curve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Object2D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/MrPotato.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/MrPotato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/BabiCeleng.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/BabiCeleng.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Sphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Sphere.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Star.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MainKurvaRumah.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MainSphere.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MainTTSRY.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MrPotato.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MrPotato.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +38,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2ONMdbaZY1FjNYn99JuKErYhasx" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,18 +49,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RunManager" selected="Application.MrPotato">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.LGM">
     <configuration name="BabiCeleng" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BabiCeleng" />
+      <module name="Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LGM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LGM" />
+      <module name="Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -66,8 +88,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MrPotato" />
+        <item itemvalue="Application.LGM" />
         <item itemvalue="Application.BabiCeleng" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MrPotato" />
       </list>
     </recent_temporary>
   </component>
@@ -92,7 +116,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="potato bg versi gagal" />
