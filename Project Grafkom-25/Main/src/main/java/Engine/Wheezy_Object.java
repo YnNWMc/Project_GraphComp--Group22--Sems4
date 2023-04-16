@@ -21,20 +21,29 @@ public class Wheezy_Object extends Circle3D{
         this.sectorCount = sectorCount;
 
        if(option == 1){
-           createBody();
+           createBody();//ovaloid
        }
        else if (option == 2){
-           createBelly();
+           createBelly();//ovaloid modif
        }
        else if (option == 3){
-           createHand();
+           createHand();//eleptic paraboloid
        }
        else if (option == 4){
-           createEye();
+           createMata();//sphere
        }
        else if (option == 5){
-            createParuh();
+            createParuh();//half eliptic cone
+       }else if (option == 6){
+           createDasi();//trapesium
        }
+       else if (option == 7){
+           createDasi();//trapesium
+       }
+       else if (option == 8){
+           createBuletanDasi();//tabung
+       }
+
 
         setupVAOVBO();
     }
@@ -55,7 +64,7 @@ public class Wheezy_Object extends Circle3D{
 //        vertices = temp;
 //    }
 
-    public void createParuh(){
+    public void createParuh(){//
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
 
@@ -70,13 +79,13 @@ public class Wheezy_Object extends Circle3D{
         vertices = temp;
     }
 
-    public void createHand() {
+    public void createHand() {//
         vertices.clear();
         float pi = (float)Math.PI;
 
         float sectorStep = 2 * (float)Math.PI / sectorCount;
         float stackStep = (float)Math.PI / stackCount;
-        float sectorAngle, StackAngle, x, y, z;
+        float StackAngle, x, y, z;
 
         // u stackup angle
         for (int i = 0; i <= stackCount; ++i)
@@ -88,7 +97,6 @@ public class Wheezy_Object extends Circle3D{
 
             for (int j = 0; j <= sectorCount; ++j)
             {
-                sectorAngle = j * sectorStep;
                 Vector3f temp_vector = new Vector3f();
                 temp_vector.x = centerPoint.get(0) + x;
                 temp_vector.y = centerPoint.get(1) + y ;
@@ -98,7 +106,105 @@ public class Wheezy_Object extends Circle3D{
         }
     }
 
-    public void createEye(){
+    public void createDasi() {// trapesium
+            Vector3f temp = new Vector3f();
+            float cpx = centerPoint.get(0);
+            float cpy = centerPoint.get(1);
+            float cpz = centerPoint.get(2);
+
+            ArrayList<Vector3f> tempVertices = new ArrayList<>();
+
+            //titik 0 kiri atas belakang
+            temp.x = cpx - rZ / 4f;
+            temp.y = cpy + rY / 4f;
+            temp.z = cpz - rZ / 4f;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 1 kiri bawah belakang
+            temp.x = cpx - rZ / 2f;
+            temp.y = cpy - rY / 2f;
+            temp.z = cpz - rZ / 2f;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 2 kanan bawah belakang
+            temp.x =  cpx + rZ / 2f;
+            temp.y =  cpy - rY / 2f;
+            temp.z =  cpz - rZ / 2f;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 3 kanan atas belakang
+            temp.x =  cpx + rZ / 4f;
+            temp.y =  cpy + rY / 4f;
+            temp.z =  cpz - rZ / 4f;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 4 kiri atas depan
+            temp.x =  cpx - rZ / 4f;
+            temp.y =  cpy + rY / 4f;
+            temp.z =  cpz + rZ / 4f;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 5 kiri bawah depan
+            temp.x =  cpx - rZ / 2f;
+            temp.y =  cpy - rY / 2f;
+            temp.z =  cpz + rZ / 2f;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 6 kanan bawah depan
+            temp.x =  cpx + rZ / 2f;
+            temp.y =  cpy - rY / 2f;
+            temp.z =  cpz + rZ / 2f;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 7 kanan atas depan
+            temp.x =  cpx + rZ / 4f;
+            temp.y =  cpy + rY / 4f;
+            temp.z =  cpz + rZ / 4f;
+            tempVertices.add(temp);
+
+            vertices.clear();
+            {
+                vertices.add(tempVertices.get(0));
+                vertices.add(tempVertices.get(3));
+                vertices.add(tempVertices.get(7));
+                vertices.add(tempVertices.get(4));
+                vertices.add(tempVertices.get(0));
+
+                //TITIK MIRING KANAN DEPAN DAN TITIK MIRING KIRI DEPAN SERTA SAMBUNGKAN DEPAN
+                vertices.add(tempVertices.get(1));
+                vertices.add(tempVertices.get(0));
+                vertices.add(tempVertices.get(4));
+                vertices.add(tempVertices.get(5));
+                vertices.add(tempVertices.get(1));
+
+                //TITIK MIRING KANAN BELAKANG DAN SAMBUNGKAN KANAN
+                vertices.add(tempVertices.get(0));
+                vertices.add(tempVertices.get(3));
+                vertices.add(tempVertices.get(2));
+                vertices.add(tempVertices.get(1));
+
+                //TITIK MIRING KIRI BELAKANG DAN SAMBUNGKAN BELAKANG
+                vertices.add(tempVertices.get(0));
+                vertices.add(tempVertices.get(3));
+                vertices.add(tempVertices.get(7));
+                vertices.add(tempVertices.get(6));
+                vertices.add(tempVertices.get(2));
+
+                //SAMBUNGKAN KIRI
+                vertices.add(tempVertices.get(6));
+                vertices.add(tempVertices.get(5));
+            }
+        }
+
+    public void createMata(){
+
         vertices.clear();
         float radiusX = rX;
         float radiusY = rY;
@@ -129,6 +235,19 @@ public class Wheezy_Object extends Circle3D{
         }
     }
 
+    public void createBuletanDasi(){
+        vertices.clear();
+        ArrayList<Vector3f> temp = new ArrayList<>();
+        for(double i = 0 ; i <= 360 ; i += 0.05f){
+            float x = centerPoint.get(0) + rX * (float)Math.cos(Math.toRadians(i));
+            float y = centerPoint.get(1) + rY * (float)Math.sin(Math.toRadians(i));
+
+            temp.add(new Vector3f(x,y,0f));
+            temp.add(new Vector3f(x,y,-rZ));
+        }
+        vertices = temp;
+    }
+
     public void createBelly(){
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
@@ -156,24 +275,6 @@ public class Wheezy_Object extends Circle3D{
             temp.add(new Vector3f(x,y,rZ));
         }
         vertices = temp;
-    }
-
-    public void createDasi() {
-        vertices.clear();
-        int degree = 90;
-        for(float i = 0;i<3;i++){
-            double rad = degToRad(degree);
-            Float x = (float) (centerPoint.get(0)+Math.cos(rad)*rX);
-            Float y = (float) (centerPoint.get(1)+Math.sin(rad)*rY);
-            vertices.add(new Vector3f(x,y,0f));
-            vertices.add(new Vector3f(x,y,0f));
-            if(degree == 90){
-                degree += 135;
-            }
-            else{
-                degree += 90;
-            }
-        }
     }
 
     public void createTabung(){
