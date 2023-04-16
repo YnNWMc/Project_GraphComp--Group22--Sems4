@@ -33,6 +33,8 @@ public class BabiCeleng {
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
 
+
+
         camera.setPosition(0.0f, 0.0f, 0.5f);
         camera.setRotation((float) Math.toRadians(0.0f), (float) Math.toRadians(30.0f));
         // code dst jangan ditaruh diatas code diatas
@@ -57,6 +59,7 @@ public class BabiCeleng {
                 3));
         Babi.get(0).scaleObject(1.3f, 1.3f, 1.3f);
         Babi.get(0).rotateObject((float)Math.toRadians(90.0f), 1.0f, 0.0f, 0.0f);
+
         //Kepala Babi
         Babi.get(0).getChildObject().add(new SphereBabi(
                 Arrays.asList(
@@ -935,7 +938,7 @@ public class BabiCeleng {
         // rotate ke atas dan kebawah bikin erorr
         if (window.isKeyPressed(GLFW_KEY_W)) {
             Babi.get(0).rotateObject(0.05f, 1f, 0f, 0f);
-            Babi.get(1).rotateObject(0.05f, 1f, 0f, 0f);
+//            Babi.get(1).rotateObject(0.05f, 1f, 0f, 0f);
 
         }
 
