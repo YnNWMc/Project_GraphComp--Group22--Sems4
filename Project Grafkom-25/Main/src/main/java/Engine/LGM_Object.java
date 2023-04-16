@@ -42,6 +42,9 @@ public class LGM_Object extends Circle3D {
         else if (option == 6){
             LGM_Ear();
         }
+        else if (option == 7){
+            LGM_ELParbol();
+        }
         setupVAOVBO();
     }
 
@@ -228,7 +231,113 @@ public class LGM_Object extends Circle3D {
 
 
     public void LGM_Ear(){
+        {
+            Vector3f temp = new Vector3f();
+            ArrayList<Vector3f> tempVertices = new ArrayList<>();
+            // x jika plus di kanan, x jika minus di kiri
+            // y di minus di bawah, y jika plus di atas
+            // z di minus belakang, z di plus atas
 
+            //titik 1 kiri atas belakang
+            temp.x = (float)centerPoint.get(0) - rX/2;
+            temp.y = (float)centerPoint.get(1) + rY/2;
+            temp.z = (float)centerPoint.get(2) - rZ/2;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 2 kiri bawah belakang
+            temp.x = (float)centerPoint.get(0) - rX/2;
+            temp.y = (float)centerPoint.get(1) - rY/2;
+            temp.z = (float)centerPoint.get(2) - rZ/2;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 3 kanan bawah belakang
+            temp.x = (float)centerPoint.get(0) + rX/2;
+            temp.y = (float)centerPoint.get(1) - rY/2;
+            temp.z = (float)centerPoint.get(2) - rZ/2;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 4 kanan atas belakang
+            temp.x = (float)centerPoint.get(0) + rX/2;
+            temp.y = (float)centerPoint.get(1) + rY/2;
+            temp.z = (float)centerPoint.get(2) - rZ/2;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 5 kiri atas depan
+            temp.x = (float)centerPoint.get(0) - rX/2;
+            temp.y = (float)centerPoint.get(1) + rY/2;
+            temp.z = (float)centerPoint.get(2) + rZ/2;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 6 kiri bawah depan
+            temp.x = (float)centerPoint.get(0) - rX/2;
+            temp.y = (float)centerPoint.get(1) - rY/2;
+            temp.z = (float)centerPoint.get(2) + rZ/2;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 7 kanan bawah depan
+            temp.x = (float)centerPoint.get(0) + rX/2;
+            temp.y = (float)centerPoint.get(1) - rY/2;
+            temp.z = (float)centerPoint.get(2) + rZ/2;
+            tempVertices.add(temp);
+            temp = new Vector3f();
+
+            //titik 8 kanan atas depan
+            temp.x = (float)centerPoint.get(0) + rX/2;
+            temp.y = (float)centerPoint.get(1) + rY/2;
+            temp.z = (float)centerPoint.get(2) + rZ/2;
+            tempVertices.add(temp);
+
+            vertices.clear();
+            vertices.add(tempVertices.get(0));
+            vertices.add(tempVertices.get(1));
+//        vertices.add(tempVertices.get(2));
+            vertices.add(tempVertices.get(3));
+
+            vertices.add(tempVertices.get(4));
+            vertices.add(tempVertices.get(5));
+//        vertices.add(tempVertices.get(6));
+            vertices.add(tempVertices.get(7));
+
+            vertices.add(tempVertices.get(0));
+            vertices.add(tempVertices.get(4));
+            vertices.add(tempVertices.get(7));
+            vertices.add(tempVertices.get(3));
+
+//        vertices.add(tempVertices.get(1));
+//        vertices.add(tempVertices.get(5));
+//        vertices.add(tempVertices.get(6));
+//        vertices.add(tempVertices.get(2));
+
+            vertices.add(tempVertices.get(0));
+            vertices.add(tempVertices.get(1));
+            vertices.add(tempVertices.get(5));
+            vertices.add(tempVertices.get(4));
+
+//        vertices.add(tempVertices.get(3));
+//        vertices.add(tempVertices.get(2));
+//        vertices.add(tempVertices.get(7));
+//        vertices.add(tempVertices.get(6));
+        }
+    }
+    public void LGM_ELParbol(){
+        // Elliptic Paraboloid
+        vertices.clear();
+        ArrayList<Vector3f> temp = new ArrayList<>();
+        for(double v = 0; v<= 10; v+=0.1){
+            for(double u = -Math.PI; u<= Math.PI; u+=0.1){
+                float x = rX * (float)v * (float)(Math.cos(u));
+                float y = rY * (float)v * (float)((Math.sin(u)));
+                float z = rZ * (float)Math.pow(v,2);
+                temp.add(new Vector3f(x,z,y));
+            }
+        }
+        vertices = temp;
     }
 
 
@@ -250,37 +359,52 @@ public class LGM_Object extends Circle3D {
     public void setrZ(float rZ) {
         this.rZ = rZ;
     }
+    public List<Float> getCenterPoint() {
+        return centerPoint;
+    }
+
+
+    public void getRotation(){
+
+    }
+    public void setCenterPoint(List<Float> centerPoint) {
+        this.centerPoint = centerPoint;
+    }
+
 
 }
 
+
 /*
 public void createWing(){
-//        Vector3f temp = new Vector3f();
-//        ArrayList<Vector3f> tempVertices = new ArrayList<>();          //titik 1 depan sayap (0, 1)
-//        temp.x = 0;
-//        temp.y = 0;
-//        temp.z = (float)cpz - radiusZ/2;
-//        tempVertices.add(temp);
-//        temp = new Vector3f();
-//        temp.x = 0;
-//        temp.y = -radiusY;
-//        temp.z = (float)cpz - radiusZ/2;
-//        tempVertices.add(temp);
-//        temp = new Vector3f();          //titik 2 belakang sayap (2, 3)
-//        temp.x = 0;
-//        temp.y = 0;
-//        temp.z = (float)cpz + radiusZ/2;
-//        tempVertices.add(temp);
-//        temp = new Vector3f();
-//        temp.x = 0;
-//        temp.y = -radiusY;
-//        temp.z = (float)cpz + radiusZ/2;
-//        tempVertices.add(temp);
-//        temp = new Vector3f();          //titik 3 ujung paling jauh sayap (4, 5)
-//        temp.x = (float)cpx + radiusX * 1.15f;
-//        temp.y = 0;
-//        temp.z = (float)cpz + radiusZ/4;
-//        tempVertices.add(temp);
+        vertices.clear();
+        Vector3f temp = new Vector3f();
+        ArrayList<Vector3f> tempVertices = new ArrayList<>();          //titik 1 depan sayap (0, 1)
+        temp.x = 0;
+        temp.y = 0;
+        temp.z = (float)centerPoint.get(2) - rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();
+        temp.x = 0;
+        temp.y = -rY;
+        temp.z = (float)centerPoint.get(2) - rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();          //titik 2 belakang sayap (2, 3)
+        temp.x = 0;
+        temp.y = 0;
+        temp.z = (float)centerPoint.get(2) + rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();
+        temp.x = 0;
+        temp.y = -rY;
+        temp.z = (float)centerPoint.get(2)  + rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();          //titik 3 ujung paling jauh sayap (4, 5)
+        temp.x = (float)centerPoint.get(0) + rX * 1.15f;
+        temp.y = 0;
+        temp.z = (float)centerPoint.get(2)  + rZ/4;
+        tempVertices.add(temp);
 
     }
  */
+

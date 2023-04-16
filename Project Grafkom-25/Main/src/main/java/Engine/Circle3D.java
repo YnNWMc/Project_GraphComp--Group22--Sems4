@@ -66,6 +66,7 @@ public class Circle3D extends Object {
 //        glDrawArrays(GL_TRIANGLE_FAN, 0, vertices.size());
 //    }
 
+
     public List<Float> getCenterPoint() {
         return centerPoint;
     }

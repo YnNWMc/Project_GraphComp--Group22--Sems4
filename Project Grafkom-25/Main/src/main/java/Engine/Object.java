@@ -159,12 +159,13 @@ public class Object extends ShaderProgram {
     public void rotateObjectOnPoint(Float degree, Float x,Float y,Float z, Float tempx, Float tempy, Float tempz){
         translateObject(-tempx,-tempy,-tempz);
         model = new Matrix4f().rotate(degree,x,y,z).mul(new Matrix4f(model));
-        updateCenterPoint();
+        //updateCenterPoint();
         for(Object child:childObject){
             child.rotateObjectOnPoint(degree,x,y,z, tempx,tempy,tempz);
         }
         translateObject(tempx,tempy,tempz);
     }
+
     public void scaleObject(Float scaleX, Float scaleY, Float scaleZ){
         model = new Matrix4f().scale(scaleX,scaleY,scaleZ).mul(new Matrix4f(model));
         for(Object child : getChildObject()){
@@ -175,6 +176,17 @@ public class Object extends ShaderProgram {
     public Vector3f updateCenterPoint(){
         Vector3f centerTemp = new Vector3f();
         model.transformPosition(0f,0f,0f, centerTemp);
+        return centerTemp;
+    }
+    public Vector3f updateCenterPoint(boolean child){
+        Vector3f centerTemp = new Vector3f();
+        model.transformPosition(0f,0f,0f, centerTemp);
+        if(child){
+            for(Object childs : getChildObject()){
+                centerTemp = new Vector3f();
+                childs.model.transformPosition(0f,0f,0f, centerTemp);
+            }
+        }
         return centerTemp;
     }
     public int getVerticesSize(){
@@ -189,6 +201,7 @@ public class Object extends ShaderProgram {
     public List<Object> getChildObject() {
         return childObject;
     }
+
 
     public void setChildObject(List<Object> childObject) {
         this.childObject = childObject;
@@ -212,5 +225,7 @@ public class Object extends ShaderProgram {
     public Matrix4f getModel(){
         return model;
     }
+
+
 }
 

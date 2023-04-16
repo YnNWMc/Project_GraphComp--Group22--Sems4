@@ -9,19 +9,14 @@
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Circle3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Circle3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Object.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Projection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/ShaderProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/BabiCeleng.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/BabiCeleng.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle3D.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Object.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Object.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Projection.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Projection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/ShaderProgram$ShaderModuleData.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/ShaderProgram$ShaderModuleData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/ShaderProgram.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Sphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Sphere.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MrPotato.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MrPotato.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4"
+    "last_opened_file_path": "C:/File Coding InteliJ JAVA/Grafika Komputer/GrafKom-Yan"
   }
 }]]></component>
   <component name="RunManager" selected="Application.LGM">
@@ -111,7 +106,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681551876406</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update LGM">
+      <created>1681628042783</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681628042783</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update LGM">
+      <created>1681628225110</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681628225110</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
