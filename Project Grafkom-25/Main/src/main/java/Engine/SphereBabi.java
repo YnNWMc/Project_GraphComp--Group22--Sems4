@@ -21,7 +21,7 @@ public class SphereBabi extends Circle3D{
         this.sectorCount = sectorCount;
 
         if(option == 0){
-            createBox();
+            createPrismaSegitiga();
 
         }else if(option == 1){
             createSphereElipsoid();
@@ -63,7 +63,7 @@ public class SphereBabi extends Circle3D{
         setupVAOVBO();
     }
 
-    public void createBox()
+    public void createPrismaSegitiga()
     {
         Vector3f temp = new Vector3f();
         ArrayList<Vector3f> tempVertices = new ArrayList<>();
@@ -129,12 +129,12 @@ public class SphereBabi extends Circle3D{
         vertices.clear();
         vertices.add(tempVertices.get(0));
         vertices.add(tempVertices.get(1));
-        vertices.add(tempVertices.get(2));
+//        vertices.add(tempVertices.get(2));
         vertices.add(tempVertices.get(3));
 
         vertices.add(tempVertices.get(4));
         vertices.add(tempVertices.get(5));
-        vertices.add(tempVertices.get(6));
+//        vertices.add(tempVertices.get(6));
         vertices.add(tempVertices.get(7));
 
         vertices.add(tempVertices.get(0));
@@ -142,20 +142,20 @@ public class SphereBabi extends Circle3D{
         vertices.add(tempVertices.get(7));
         vertices.add(tempVertices.get(3));
 
-        vertices.add(tempVertices.get(1));
-        vertices.add(tempVertices.get(5));
-        vertices.add(tempVertices.get(6));
-        vertices.add(tempVertices.get(2));
+//        vertices.add(tempVertices.get(1));
+//        vertices.add(tempVertices.get(5));
+//        vertices.add(tempVertices.get(6));
+//        vertices.add(tempVertices.get(2));
 
         vertices.add(tempVertices.get(0));
         vertices.add(tempVertices.get(1));
         vertices.add(tempVertices.get(5));
         vertices.add(tempVertices.get(4));
 
-        vertices.add(tempVertices.get(3));
-        vertices.add(tempVertices.get(2));
-        vertices.add(tempVertices.get(7));
-        vertices.add(tempVertices.get(6));
+//        vertices.add(tempVertices.get(3));
+//        vertices.add(tempVertices.get(2));
+//        vertices.add(tempVertices.get(7));
+//        vertices.add(tempVertices.get(6));
     }
 
     public void createSphereElipsoid(){
@@ -351,15 +351,15 @@ public class SphereBabi extends Circle3D{
         vertices = temp;
     }
     public void createEllipticParaboloid() {
+
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
-
-        for(double v = 0; v<=100; v+=0.2) {
-            for (double u = -Math.PI; u <= Math.PI; u += Math.PI / 120) {
-                float x = 0.2f * (float) ((v * Math.cos(u)));
-                float y = 0.2f * (float) ((v * Math.sin(u)));
-                float z = 0.2f * (float) (Math.pow(v, 2));
-                temp.add(new Vector3f(x, z, y));
+        for(double v = 0; v<= 10; v+=0.1){
+            for(double u = -Math.PI; u<= Math.PI; u+=0.1){
+                float x = rX * (float)v * (float)(Math.cos(u));
+                float y = rY * (float)v * (float)((Math.sin(u)));
+                float z = rZ * (float)Math.pow(v,2);
+                temp.add(new Vector3f(x,z,y));
             }
         }
         vertices = temp;
