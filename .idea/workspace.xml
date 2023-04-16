@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="potato bg versi gagal">
-      <change afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/MrPotato.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Wheezy_Object.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Projection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Curve.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Curve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Object2D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/MrPotato.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Wheezy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/BabiCeleng.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/BabiCeleng.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Sphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Sphere.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Star.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MainKurvaRumah.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MainSphere.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MainTTSRY.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MrPotato.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +28,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="2ONMdbaZY1FjNYn99JuKErYhasx" />
   <component name="ProjectLevelVcsManager">
@@ -49,7 +54,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.MrPotato">
+  <component name="RunManager" selected="Application.Wheezy">
     <configuration name="BabiCeleng" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BabiCeleng" />
       <module name="Main" />
@@ -57,8 +62,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MrPotato" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="MrPotato" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MrPotato" />
+      <module name="Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Wheezy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Wheezy" />
       <module name="Main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -66,7 +78,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MrPotato" />
+        <item itemvalue="Application.Wheezy" />
         <item itemvalue="Application.BabiCeleng" />
       </list>
     </recent_temporary>
@@ -80,6 +92,14 @@
       <option name="presentableId" value="Default" />
       <updated>1681396675194</updated>
     </task>
+    <task id="LOCAL-00001" summary="potato bg versi gagal">
+      <created>1681486106680</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681486106680</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,5 +117,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="potato bg versi gagal" />
     <option name="LAST_COMMIT_MESSAGE" value="potato bg versi gagal" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project_GraphComp__Group25__Sems4$MrPotato.ic" NAME="MrPotato Coverage Results" MODIFIED="1681538613260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
