@@ -94,7 +94,7 @@ public class BabiCeleng {
                 new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
                 0.2f,
                 0.2f,
-                0.5f,
+                0.2f,
                 15, // Stack -->
                 30, // Sector --> Titik
                 2));
