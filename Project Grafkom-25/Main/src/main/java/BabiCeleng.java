@@ -150,12 +150,7 @@ public class BabiCeleng {
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
                 ),
-                new ArrayList<>(List.of(
-                        new Vector3f(-0.5f, 0.5f, 0.0f),
-                        new Vector3f(-0.5f, -0.5f, 0.0f),
-                        new Vector3f(0.5f, -0.5f, 0.0f),
-                        new Vector3f(0.5f, 0.5f, 0.0f)
-                )
+                new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
                 List.of(0.0f, 0.0f, 0.0f),
@@ -706,6 +701,68 @@ public class BabiCeleng {
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(1).scaleObject(0.5f, 0.5f, 0.05f);
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(1).rotateObject((float)Math.toRadians(-90.0f),0.0f, 0.0f, 1.0f);
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(1).translateObject(0.105f, 0.19f, 0.395f);
+        //kurva alis
+
+//        Babi.get(0).getChildObject().get(0).getChildObject().get(4).add(new Object())
+
+        //Rak background
+        Babi.add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.8f, 0.4f, 0.0f, 1.0f),0.0,
+                new ArrayList<>(List.of(0f, 0f, 0f)),
+                0.1f,
+                0.1f,
+                1.0f,
+                15, // Stack -->
+                30, // Sector --> Titik
+                0));
+        Babi.get(1).scaleObject(8.0f, 1.0f, 8.0f);
+        Babi.get(1).translateObject(0.0f, -0.33f, 0.0f);
+        //vas bunga
+        Babi.get(1).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.4f, 0.2f, 0.0f, 1.0f),0.0,
+                new ArrayList<>(List.of(0f, 0f, 0f)),
+                0.5f,
+                0.5f,
+                0.5f,
+                15, // Stack -->
+                30, // Sector --> Titik
+                0));
+        Babi.get(1).getChildObject().get(0).translateObject(0.0f, -0.03f, -3.0f);
+        //Daun
+        Babi.get(1).getChildObject().get(0).getChildObject().add(new Sphere(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.0f, 0.8f, 0.0f, 1.0f),0.0,
+                new ArrayList<>(List.of(0f, 0f, 0f)),
+                0.3f,
+                0.3f,
+                0.3f,
+                15, // Stack -->
+                30, // Sector --> Titik
+                3));
+        Babi.get(1).getChildObject().get(0).getChildObject().get(0).translateObject(0.0f, 0.45f, -3.0f);
     }
     //parameter gerak
     private int count=0;
@@ -719,7 +776,7 @@ public class BabiCeleng {
     //animasi jalan
         // maju
         if(window.isKeyPressed(GLFW_KEY_1)){
-            Babi.get(0).translateObject(0.002f,0.0f,0.0f);
+            Babi.get(0).translateObject(0.0f,0.0f,0.005f);
             if(kaki) {
                 countjalan++;
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(7).updateCenterPoint();
@@ -775,7 +832,7 @@ public class BabiCeleng {
         }
         // mundur
         if(window.isKeyPressed(GLFW_KEY_2)){
-            Babi.get(0).translateObject(-0.002f,0.0f,0.0f);
+            Babi.get(0).translateObject(0.0f,0.0f,-0.005f);
             if(kaki) {
                 countjalan++;
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(7).updateCenterPoint();
@@ -831,7 +888,7 @@ public class BabiCeleng {
         }
 
         // menoleh kanan
-        if (window.isKeyPressed(GLFW_KEY_5)) {
+        if (window.isKeyPressed(GLFW_KEY_3)) {
 
             if (countnoleh < 30.0f) {
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(0).updateCenterPoint();
@@ -842,7 +899,7 @@ public class BabiCeleng {
             }
         }
         // menoleh kiri
-        if (window.isKeyPressed(GLFW_KEY_6)) {
+        if (window.isKeyPressed(GLFW_KEY_4)) {
             if (countnoleh > -30.0f) {
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(0).updateCenterPoint();
                 Babi.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
@@ -852,7 +909,7 @@ public class BabiCeleng {
             }
         }
         // hadap atas
-        if (window.isKeyPressed(GLFW_KEY_7)) {
+        if (window.isKeyPressed(GLFW_KEY_5)) {
 
             if (countngangguk < 20.0f) {
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(0).updateCenterPoint();
@@ -863,7 +920,7 @@ public class BabiCeleng {
             }
         }
         // hadap bawah
-        if (window.isKeyPressed(GLFW_KEY_8)) {
+        if (window.isKeyPressed(GLFW_KEY_6)) {
             if (countngangguk > -20.0f) {
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(0).updateCenterPoint();
                 Babi.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
@@ -873,71 +930,30 @@ public class BabiCeleng {
             }
         }
 
-        if(window.isKeyPressed(GLFW_KEY_9)){
-            Babi.get(0).getChildObject().get(5).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
-        }
-        if(window.isKeyPressed(GLFW_KEY_0)){
-            Babi.get(0).getChildObject().get(5).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
-        }
 
-
-
-        //kamera wasd
+        //wasd
         // rotate ke atas dan kebawah bikin erorr
         if (window.isKeyPressed(GLFW_KEY_W)) {
-            Babi.get(0).rotateObject(0.1f, 1f, 0f, 0f);
+            Babi.get(0).rotateObject(0.05f, 1f, 0f, 0f);
+            Babi.get(1).rotateObject(0.05f, 1f, 0f, 0f);
 
         }
 
         if (window.isKeyPressed(GLFW_KEY_S)) {
-            Babi.get(0).rotateObject(-0.1f, 1f, 0f, 0f);
-
+            Babi.get(0).rotateObject(-0.05f, 1f, 0f, 0f);
+//            Babi.get(1).rotateObject(-0.05f, 1f, 0f, 0f);
         }
 
         if (window.isKeyPressed(GLFW_KEY_A)) {
-            Babi.get(0).rotateObject(-0.1f, 0f, 1f, 0f);
-
+            Babi.get(0).rotateObject(-0.05f, 0f, 1f, 0f);
+//            Babi.get(1).rotateObject(-0.05f, 0f, 1f, 0f);
         }
 
         if (window.isKeyPressed(GLFW_KEY_D)) {
-            Babi.get(0).rotateObject(-0.1f, 0f, -1f, 0f);
+            Babi.get(0).rotateObject(0.05f, 0f, 1f, 0f);
+//            Babi.get(1).rotateObject(0.05f, 0f, 1f, 0f);
         }
 
-        if (window.isKeyPressed(GLFW_KEY_U)) {
-            for (Object i : Babi) {
-                i.translateObject(0f, 0f, 0.001f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_O)) {
-            for (Object i : Babi) {
-                i.translateObject(0f, 0f, -0.001f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_I)) {
-            for (Object i : Babi) {
-                i.translateObject(0f, 0.001f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_K)) {
-            for (Object i : Babi) {
-                i.translateObject(0f, -0.001f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_J)) {
-            for (Object i : Babi) {
-                i.translateObject(-0.001f, 0f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_L)) {
-            for (Object i : Babi) {
-                i.translateObject(0.001f, 0f, 0f);
-            }
-        }
 
         if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
             camera.moveForward(0.02f);
@@ -966,7 +982,7 @@ public class BabiCeleng {
 
         while (window.isOpen()) {
             window.update();
-            glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // RapidTables.com (RGB color code chart)
+            glClearColor(0.5f, 0.3f, 1.0f, 0.0f); // RapidTables.com (RGB color code chart)
             GL.createCapabilities();
             input();
             for (Object obj3D : Babi) {
