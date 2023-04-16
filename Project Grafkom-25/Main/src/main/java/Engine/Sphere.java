@@ -172,7 +172,7 @@ public class Sphere extends Circle3D{
     public void createTabung(){
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
-        for(double i = 0 ; i <= 360 ; i += 0.05f){
+        for(double i = 0 ; i <= 360 ; i += 0.03f){
             float x = centerPoint.get(0) + rX * (float)Math.cos(Math.toRadians(i));
             float y = centerPoint.get(1) + rY * (float)Math.sin(Math.toRadians(i));
 
@@ -198,8 +198,8 @@ public class Sphere extends Circle3D{
     }
 
     public void createSphere(){
+        vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
-
         for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/240){
             for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/240){
                 float x = this.rX * (float)(Math.cos(v) * Math.cos(u));
@@ -358,16 +358,16 @@ public class Sphere extends Circle3D{
         }
         vertices = temp;
     }*/
-        public void draw(Camera camera, Projection projection){
-            drawSetup(camera,projection);
-            // Draw vertices
-            glLineWidth(1);
-            glPointSize(1);
-            glDrawArrays(GL_POLYGON, 0, vertices.size());
-            for(Object child : getChildObject()){
-                child.draw(camera,projection);
-            }
-        }
+//        public void draw(Camera camera, Projection projection){
+//            drawSetup(camera,projection);
+//            // Draw vertices
+//            glLineWidth(1);
+//            glPointSize(0);
+//            glDrawArrays(GL_POLYGON, 0, vertices.size());
+//            for(Object child : getChildObject()){
+//                child.draw(camera,projection);
+//            }
+//        }
 
     public float getrZ() {
         return rZ;
