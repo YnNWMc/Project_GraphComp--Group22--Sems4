@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="potato bg versi gagal">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project Grafkom-25/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project Grafkom-25/.idea/Project Grafkom-25.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="Update LGM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/BabiCeleng.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/BabiCeleng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Circle3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Circle3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Object.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Projection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/ShaderProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/ShaderProgram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Sphere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/MrPotato.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/MrPotato.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/BabiCeleng.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/BabiCeleng.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle3D.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Object.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Object.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Projection.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Projection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/ShaderProgram$ShaderModuleData.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/ShaderProgram$ShaderModuleData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/ShaderProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/ShaderProgram.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Sphere.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Sphere.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MrPotato.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/MrPotato.class" afterDir="false" />
@@ -89,9 +89,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.LGM" />
-        <item itemvalue="Application.BabiCeleng" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.MrPotato" />
+        <item itemvalue="Application.BabiCeleng" />
       </list>
     </recent_temporary>
   </component>
@@ -104,6 +104,14 @@
       <option name="presentableId" value="Default" />
       <updated>1681396675194</updated>
     </task>
+    <task id="LOCAL-00001" summary="Update LGM">
+      <created>1681551876406</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681551876406</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +127,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="potato bg versi gagal" />
-    <option name="LAST_COMMIT_MESSAGE" value="potato bg versi gagal" />
+    <MESSAGE value="Update LGM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update LGM" />
   </component>
 </project>

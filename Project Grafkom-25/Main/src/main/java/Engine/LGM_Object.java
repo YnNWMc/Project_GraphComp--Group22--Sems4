@@ -4,6 +4,7 @@ import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.lwjgl.opengl.GL11.*;
@@ -20,56 +21,156 @@ public class LGM_Object extends Circle3D {
         this.sectorCount = sectorCount;
 
         if (option == 0) {
-            LGM_Head();
-        } else if (option == 1) {
-            LGM_AntennaeBody();
-        } else if (option == 2) {
-            LGM_AntennaeFoundation();
-
-        } else if (option == 3) {
-            LGM_AntennaeTop();
-        } else if (option == 4){
-            LGM_Neck();
-        }else if (option == 5){
-            LGM_Eye();
+            // Kalo Overlap Bisa Bikin half object/sphere
+            LGM_Ellipsoid();
+        }
+        else if (option == 1) {
+            LGM_Tabung();
+        }
+        else if (option == 2) {
+            LGM_HalfEllipticCone();
+        }
+        else if (option == 3) {
+            LGM_Cube();
+        }
+        else if (option == 4){
+            LGM_PurpleNeck();
+        }
+        else if (option == 5){
+            LGM_TorusRing();
+        }
+        else if (option == 6){
+            LGM_Ear();
         }
         setupVAOVBO();
     }
 
-    public void LGM_Head() {
+    public void LGM_Cube(){
+
+        Vector3f temp = new Vector3f();
+        ArrayList<Vector3f> tempVertices = new ArrayList<>();
+        // x jika plus di kanan, x jika minus di kiri
+        // y di minus di bawah, y jika plus di atas
+        // z di minus belakang, z di plus atas
+
+        //titik 1 kiri atas belakang
+        temp.x = (float)centerPoint.get(0) - rX/2;
+        temp.y = (float)centerPoint.get(1) + rY/2;
+        temp.z = (float)centerPoint.get(2) - rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();
+
+        //titik 2 kiri bawah belakang
+        temp.x = (float)centerPoint.get(0) - rX/2;
+        temp.y = (float)centerPoint.get(1) - rY/2;
+        temp.z = (float)centerPoint.get(2) - rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();
+
+        //titik 3 kanan bawah belakang
+        temp.x = (float)centerPoint.get(0) + rX/2;
+        temp.y = (float)centerPoint.get(1) - rY/2;
+        temp.z = (float)centerPoint.get(2) - rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();
+
+        //titik 4 kanan atas belakang
+        temp.x = (float)centerPoint.get(0) + rX/2;
+        temp.y = (float)centerPoint.get(1) + rY/2;
+        temp.z = (float)centerPoint.get(2) - rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();
+
+        //titik 5 kiri atas depan
+        temp.x = (float)centerPoint.get(0) - rX/2;
+        temp.y = (float)centerPoint.get(1) + rY/2;
+        temp.z = (float)centerPoint.get(2) + rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();
+
+        //titik 6 kiri bawah depan
+        temp.x = (float)centerPoint.get(0) - rX/2;
+        temp.y = (float)centerPoint.get(1) - rY/2;
+        temp.z = (float)centerPoint.get(2) + rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();
+
+        //titik 7 kanan bawah depan
+        temp.x = (float)centerPoint.get(0) + rX/2;
+        temp.y = (float)centerPoint.get(1) - rY/2;
+        temp.z = (float)centerPoint.get(2) + rZ/2;
+        tempVertices.add(temp);
+        temp = new Vector3f();
+
+        //titik 8 kanan atas depan
+        temp.x = (float)centerPoint.get(0) + rX/2;
+        temp.y = (float)centerPoint.get(1) + rY/2;
+        temp.z = (float)centerPoint.get(2) + rZ/2;
+        tempVertices.add(temp);
+
+        vertices.clear();
+        vertices.add(tempVertices.get(0));
+        vertices.add(tempVertices.get(1));
+        vertices.add(tempVertices.get(2));
+        vertices.add(tempVertices.get(3));
+
+        vertices.add(tempVertices.get(4));
+        vertices.add(tempVertices.get(5));
+        vertices.add(tempVertices.get(6));
+        vertices.add(tempVertices.get(7));
+
+        vertices.add(tempVertices.get(0));
+        vertices.add(tempVertices.get(4));
+        vertices.add(tempVertices.get(7));
+        vertices.add(tempVertices.get(3));
+
+        vertices.add(tempVertices.get(1));
+        vertices.add(tempVertices.get(5));
+        vertices.add(tempVertices.get(6));
+        vertices.add(tempVertices.get(2));
+
+        vertices.add(tempVertices.get(0));
+        vertices.add(tempVertices.get(1));
+        vertices.add(tempVertices.get(5));
+        vertices.add(tempVertices.get(4));
+
+        vertices.add(tempVertices.get(3));
+        vertices.add(tempVertices.get(2));
+        vertices.add(tempVertices.get(7));
+        vertices.add(tempVertices.get(6));
+    }
+    public void LGM_Ellipsoid(){
         //Dari Ellipsoid
         vertices.clear();
-        ArrayList<Vector3f> temp = new ArrayList<>();
+        float radiusX = rX;
+        float radiusY = rY;
+        float radiusZ = rZ;
+        List<Float> centerPoint = Arrays.asList(0.0f,0.0f,0.0f);
 
-        for (double v = -Math.PI / 2; v <= Math.PI / 2; v += Math.PI / 180) {
-            for (double u = -Math.PI; u <= Math.PI; u += Math.PI / 180) {
-                float x = rX * (float) (Math.cos(v) * Math.cos(u));
-                float y = rY * (float) (Math.cos(v) * Math.sin(u));
-                float z = rZ * (float) (Math.sin(v));
-                temp.add(new Vector3f(x, y, z));
+        float pi = (float)Math.PI;
+        float sectorStep = 2*(float)Math.PI / sectorCount;
+        float stackStep = (float)Math.PI / stackCount;
+        // Sector/Stackstep bisa bagi 2 buat half object/sphere
+        float sectorAngle, StackAngle, stackAngle,xy ,x, y, z;
+        for (int i = 0; i <= stackCount; ++i)
+        {
+            StackAngle = pi / 2 - i * stackStep;
+            x = radiusX * (float)Math.cos(StackAngle);
+            y = radiusY * (float)Math.cos(StackAngle);
+            z = radiusZ * (float)Math.sin(StackAngle);
+
+            for (int j = 0; j <= sectorCount; ++j)
+            {
+                sectorAngle = j * sectorStep;
+                Vector3f temp_vector = new Vector3f();
+                temp_vector.x = centerPoint.get(0) + x * (float)Math.cos(sectorAngle);
+                temp_vector.y = centerPoint.get(1) + y * (float)Math.sin(sectorAngle);
+                temp_vector.z = centerPoint.get(2) + z + 0.2f;
+                vertices.add(temp_vector);
             }
         }
-        vertices = temp;
     }
-
-    public void LGM_AntennaeTop() {
-        // Ellipsoid
-        vertices.clear();
-        ArrayList<Vector3f> temp = new ArrayList<>();
-
-        for (double v = -Math.PI / 2; v <= Math.PI / 2; v += Math.PI / 180) {
-            for (double u = -Math.PI; u <= Math.PI; u += Math.PI / 180) {
-                float x = rX * (float) (Math.cos(v) * Math.cos(u));
-                float y = rY * (float) (Math.cos(v) * Math.sin(u));
-                float z = rZ * (float) (Math.sin(v));
-                temp.add(new Vector3f(x, y, z));
-            }
-        }
-        vertices = temp;
-    }
-
-    public void LGM_AntennaeBody() {
-        // Tabung
+    public void LGM_Tabung() {
         vertices.clear();
         float rxTemp = rX, ryTemp = rY;
         ArrayList<Vector3f> temp = new ArrayList<>();
@@ -82,9 +183,7 @@ public class LGM_Object extends Circle3D {
         }
         vertices = temp;
     }
-
-    public void LGM_AntennaeFoundation() {
-        // Elliptic Cone
+    public void LGM_HalfEllipticCone() {
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
 
@@ -97,37 +196,65 @@ public class LGM_Object extends Circle3D {
             }
         }
         vertices = temp;
+    }
 
-    }
-    public void LGM_Neck(){
-        // Torus Ring
-            vertices.clear();
-            ArrayList<Vector3f> temp = new ArrayList<>();
-            for(double v = 0; v<= Math.PI*2; v+=Math.PI/60){
-                for(double u = 0; u<= Math.PI*2; u+=Math.PI/60){
-                    float x = (rZ + rX * (float)(Math.cos(v))) * (float)Math.cos(u);
-                    float y = (rZ + rY * (float)(Math.cos(v))) * (float)Math.sin(u);
-                    float z = rZ * (float)(Math.sin(v));
-                    temp.add(new Vector3f(x,y,z));
-                }
-            }
-            vertices = temp;
-    }
-    public void LGM_Eye(){
-        // Ellipsoid
+    public void LGM_PurpleNeck() {
+        //Dari Torus Ring
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
         for(double v = 0; v<= Math.PI*2; v+=Math.PI/60){
             for(double u = 0; u<= Math.PI*2; u+=Math.PI/60){
-                float x = (rZ + rX * (float)(Math.cos(v))) * (float)Math.cos(u);
-                float y = (rZ + rY * (float)(Math.cos(v))) * (float)Math.sin(u);
+                float x = (rX*2f + rZ * (float)(Math.cos(v))) * (float)Math.cos(u);
+                float y = (rY*2f + rZ * (float)(Math.cos(v))) * (float)Math.sin(u);
                 float z = rZ * (float)(Math.sin(v));
                 temp.add(new Vector3f(x,y,z));
             }
         }
         vertices = temp;
     }
-    public void createWing(){
+    public void LGM_TorusRing() {
+        vertices.clear();
+        ArrayList<Vector3f> temp = new ArrayList<>();
+            for(double v = 0; v<= Math.PI*2; v+=Math.PI/60){
+                for(double u = 0; u<= Math.PI*2; u+=Math.PI/60){
+                    float x = (rX*3f + rZ * (float)(Math.cos(v))) * (float)Math.cos(u);
+                    float y = (rY*3f + rZ * (float)(Math.cos(v))) * (float)Math.sin(u);
+                    float z = rZ * (float)(Math.sin(v));
+                    temp.add(new Vector3f(x,y,z));
+                }
+            }
+            vertices = temp;
+    }
+
+
+    public void LGM_Ear(){
+
+    }
+
+
+    public void draw(Camera camera, Projection projection){
+        drawSetup(camera,projection);
+        // Draw vertices
+        glLineWidth(1);
+        glPointSize(1);
+        glDrawArrays(GL_POLYGON, 0, vertices.size());
+        for(Object child : getChildObject()){
+            child.draw(camera,projection);
+        }
+    }
+
+    public float getrZ() {
+        return rZ;
+    }
+
+    public void setrZ(float rZ) {
+        this.rZ = rZ;
+    }
+
+}
+
+/*
+public void createWing(){
 //        Vector3f temp = new Vector3f();
 //        ArrayList<Vector3f> tempVertices = new ArrayList<>();          //titik 1 depan sayap (0, 1)
 //        temp.x = 0;
@@ -156,24 +283,4 @@ public class LGM_Object extends Circle3D {
 //        tempVertices.add(temp);
 
     }
-
-    public void draw(Camera camera, Projection projection){
-        drawSetup(camera,projection);
-        // Draw vertices
-        glLineWidth(1);
-        glPointSize(1);
-        glDrawArrays(GL_POLYGON, 0, vertices.size());
-        for(Object child : getChildObject()){
-            child.draw(camera,projection);
-        }
-    }
-
-    public float getrZ() {
-        return rZ;
-    }
-
-    public void setrZ(float rZ) {
-        this.rZ = rZ;
-    }
-
-}
+ */
