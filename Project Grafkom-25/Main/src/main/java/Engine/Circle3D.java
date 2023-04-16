@@ -19,14 +19,6 @@ public class Circle3D extends Object {
         setupVAOVBO();
     }
 
-    public Circle3D(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color) {
-        super(shaderModuleDataList, vertices, color);
-    }
-
-    public Circle3D(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, List<Vector3f> verticesColor) {
-        super(shaderModuleDataList, vertices, verticesColor);
-    }
-
     public double degToRad(float degree){
         return (degree * Math.PI / (float) 180);
     }
@@ -69,10 +61,11 @@ public class Circle3D extends Object {
             }
         }
     }
-    public void draw(Camera camera, Projection projection){
-        drawSetup(camera,projection);
-        glDrawArrays(GL_TRIANGLE_FAN, 0, vertices.size());
-    }
+//    public void draw(Camera camera, Projection projection){
+//        drawSetup(camera,projection);
+//        glDrawArrays(GL_TRIANGLE_FAN, 0, vertices.size());
+//    }
+
 
     public List<Float> getCenterPoint() {
         return centerPoint;

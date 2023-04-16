@@ -18,7 +18,8 @@ public class Window {
     private boolean open=  true;
     private int width, height;
     private String title;
-    private  MouseInput mouseInput;
+
+    private MouseInput mouseInput;
 
     public Window(int width, int height, String title){
         this.width = width;
@@ -98,7 +99,9 @@ public class Window {
         // Make the window visible
         glfwShowWindow(window);
 
+        //deklarasi mouse input
         mouseInput = new MouseInput(window);
+
     }
 
     public void update(){
@@ -119,6 +122,8 @@ public class Window {
         // Free the window callbacks and destroy the window
         glfwFreeCallbacks(window);
         glfwDestroyWindow(window);
+
+
     }
 
     public boolean isKeyPressed(int keyCode) {
@@ -128,5 +133,4 @@ public class Window {
     public MouseInput getMouseInput(){
         return mouseInput;
     }
-
 }

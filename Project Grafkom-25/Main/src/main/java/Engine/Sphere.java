@@ -64,60 +64,60 @@ public class Sphere extends Circle3D{
     {
         Vector3f temp = new Vector3f();
         ArrayList<Vector3f> tempVertices = new ArrayList<>();
-        // x jika plus di kanan, x jika minus di kiri
+        //  x jika minus di kiri, x jika plus di kanan
         // y di minus di bawah, y jika plus di atas
-        // z di minus belakang, z di plus atas
+        // z di minus belakang, z di plus depan
 
-        //titik 1 kiri atas belakang
+        //titik 0 kiri atas belakang
         temp.x = (float)centerPoint.get(0) - rX/2;
         temp.y = (float)centerPoint.get(1) + rY/2;
         temp.z = (float)centerPoint.get(2) - rZ/2;
         tempVertices.add(temp);
         temp = new Vector3f();
 
-        //titik 2 kiri bawah belakang
+        //titik 1 kiri bawah belakang
         temp.x = (float)centerPoint.get(0) - rX/2;
         temp.y = (float)centerPoint.get(1) - rY/2;
         temp.z = (float)centerPoint.get(2) - rZ/2;
         tempVertices.add(temp);
         temp = new Vector3f();
 
-        //titik 3 kanan bawah belakang
+        //titik 2 kanan bawah belakang
         temp.x = (float)centerPoint.get(0) + rX/2;
         temp.y = (float)centerPoint.get(1) - rY/2;
         temp.z = (float)centerPoint.get(2) - rZ/2;
         tempVertices.add(temp);
         temp = new Vector3f();
 
-        //titik 4 kanan atas belakang
+        //titik 3 kanan atas belakang
         temp.x = (float)centerPoint.get(0) + rX/2;
         temp.y = (float)centerPoint.get(1) + rY/2;
         temp.z = (float)centerPoint.get(2) - rZ/2;
         tempVertices.add(temp);
         temp = new Vector3f();
 
-        //titik 5 kiri atas depan
+        //titik 4 kiri atas depan
         temp.x = (float)centerPoint.get(0) - rX/2;
         temp.y = (float)centerPoint.get(1) + rY/2;
         temp.z = (float)centerPoint.get(2) + rZ/2;
         tempVertices.add(temp);
         temp = new Vector3f();
 
-        //titik 6 kiri bawah depan
+        //titik 5 kiri bawah depan
         temp.x = (float)centerPoint.get(0) - rX/2;
         temp.y = (float)centerPoint.get(1) - rY/2;
         temp.z = (float)centerPoint.get(2) + rZ/2;
         tempVertices.add(temp);
         temp = new Vector3f();
 
-        //titik 7 kanan bawah depan
+        //titik 6 kanan bawah depan
         temp.x = (float)centerPoint.get(0) + rX/2;
         temp.y = (float)centerPoint.get(1) - rY/2;
         temp.z = (float)centerPoint.get(2) + rZ/2;
         tempVertices.add(temp);
         temp = new Vector3f();
 
-        //titik 8 kanan atas depan
+        //titik 7 kanan atas depan
         temp.x = (float)centerPoint.get(0) + rX/2;
         temp.y = (float)centerPoint.get(1) + rY/2;
         temp.z = (float)centerPoint.get(2) + rZ/2;
