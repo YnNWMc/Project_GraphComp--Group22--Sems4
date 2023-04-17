@@ -52,6 +52,12 @@ public class SphereBabi extends Circle3D {
 
         setupVAOVBO();
     }
+    //contructor baru untuk kurva
+    public SphereBabi(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float rX, Float rY, List<Vector3f>Point) {
+        super(shaderModuleDataList, vertices, color, centerPoint, rX, rY);
+        createCurve(Point);
+        setupVAOVBO();
+    }
 
     public void createPrismaSegitiga() {
         Vector3f temp = new Vector3f();
@@ -272,35 +278,7 @@ public class SphereBabi extends Circle3D {
         }
         vertices = temp;
     }
-    public void createEllipticConev2() {
-        vertices.clear();
-        ArrayList<Vector3f> temp = new ArrayList<>();
-        for (float u = -180; u <= 180; u += 180 / 36) {
-            for (float v = (-90); v <= 90; v += 180 / 36) {
-                Vector3f temp_vector = new Vector3f();
-                float uRad = (float) Math.toRadians(u);
-                float vRad = (float) Math.toRadians(v);
-                temp_vector.x = (float) (1 * vRad * Math.cos(uRad));
-                temp_vector.z = (float) (1 * vRad * Math.sin(uRad));
-                temp_vector.y = (float) (1 * vRad);
-                vertices.add(temp_vector);
-            }
-        }
-    }
 
-    public void createEllipticConev3() {
-        vertices.clear();
-        ArrayList<Vector3f> temp = new ArrayList<>();
-        for(double v = 0; v<= 100; v+=0.05){
-            for(double u = -Math.PI; u<= Math.PI; u+=0.01){
-                float x = 0.5f * (float)v * (float)(Math.tan(u));
-                float y = 0.5f * (float)v * (float)((1/Math.cos(u)));
-                float z = 0.5f * (float)Math.pow(v,2);
-                temp.add(new Vector3f(x,y,z));
-            }
-        }
-        vertices = temp;
-    }
     public void createEllipticParaboloid() {
 
         vertices.clear();
@@ -329,20 +307,86 @@ public class SphereBabi extends Circle3D {
         vertices = temp;
     }
 
-    /*
-    public void createHyperboloidParaboloid() {
+    //untuk buat kurva 3d
+    //createcurve3D
+//    public void createCurve(List<Vector3f>bawahDepan, List<Vector3f>atasDepan, List<Vector3f>bawahBelakang, List<Vector3f>atasBelakang){
+//
+//
+//        vertices.clear();
+//        //Sisi depan
+//        for(int i = 0; i < atasDepan.size()-1; i++){
+//            addVertices(atasDepan.get(i));
+//            addVertices(bawahDepan.get(i));
+//            addVertices(atasDepan.get(i+1));
+//            addVertices(bawahDepan.get(i+1));
+//        }
+//        //Sisi belakang
+//        for(int i = 0; i < bawahBelakang.size()-1; i++){
+//            addVertices(atasBelakang.get(i));
+//            addVertices(bawahBelakang.get(i));
+//            addVertices(atasBelakang.get(i+1));
+//            addVertices(bawahBelakang.get(i+1));
+//        }
+//        //Sisi atas
+//        for(int i = 0; i < atasDepan.size()-1; i++){
+//            addVertices(atasDepan.get(i));
+//            addVertices(atasBelakang.get(i));
+//            addVertices(atasDepan.get(i+1));
+//            addVertices(atasBelakang.get(i+1));
+//        }
+//        //Sisi Bawah
+//        for(int i = 0; i < bawahDepan.size()-1; i++){
+//            addVertices(bawahDepan.get(i));
+//            addVertices(bawahBelakang.get(i));
+//            addVertices(bawahDepan.get(i+1));
+//            addVertices(bawahBelakang.get(i+1));
+//        }
+//
+//    }
+    //rumus kurva
+    public void createCurve (List<Vector3f> point){
         vertices.clear();
-        ArrayList<Vector3f> temp = new ArrayList<>();
-        for(double v = 0; v<= 100; v+=0.01){
-            for(double u = -Math.PI; u<= Math.PI; u+=0.666){
-                float x = 0.125f * (float)v * (float)(Math.tan(u));
-                float y = 0.25f * (float)v * (float)((1/Math.cos(u)));
-                float z = 0.5f * (float)Math.pow(v,2);
-                temp.add(new Vector3f(x,y,z));
+        List<Vector3f> titik = new ArrayList<>();
+
+        // looping t nya
+        for (float t = 0; t <= 1; t = t + 0.01f){
+            float x = 0.0f;
+            float y = 0.0f;
+            float z = 0.0f;
+
+            int n = point.size()-1;
+
+            for (int i = 0; i <= n; i++) {
+                // rumus kurva
+                float rumus = comb(n, i) * (float) (Math.pow(1-t, n-i) * Math.pow(t, i) );
+                x += rumus * point.get(i).x;
+                y += rumus * point.get(i).y;
+                z += rumus * point.get(i).z;
             }
+            // masukin dalam list
+            titik.add(new Vector3f(x, y, z));
         }
-        vertices = temp;
-    }*/
+        vertices = titik;
+    }
+
+    //faktorial
+    public int factorial(int a){
+        if (a == 0) {
+            return 1;
+        }
+        int hasil = 1;
+        for (int i = 2; i <= a; i++){
+            hasil = hasil * i;
+        }
+        return hasil;
+    }
+
+    //polinomial
+    public int comb(int n, int r){
+        int hasil;
+        hasil = factorial(n)/(factorial(n - r)* factorial(r));
+        return hasil;
+    }
 //    public void draw(Camera camera, Projection projection){
 //        drawSetup(camera,projection);
 //        // Draw vertices
@@ -353,6 +397,8 @@ public class SphereBabi extends Circle3D {
 //            child.draw(camera,projection);
 //        }
 //    }
+
+
 
     public float getrZ() {
         return rZ;

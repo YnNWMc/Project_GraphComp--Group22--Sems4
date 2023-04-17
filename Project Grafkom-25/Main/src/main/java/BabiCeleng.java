@@ -684,7 +684,7 @@ public class BabiCeleng {
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(0).scaleObject(0.5f, 0.5f, 0.05f);
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(0).translateObject(-0.105f, 0.19f, 0.395f);
 
-        Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().add(new SphereBabi(
+        Babi.get(0).getChildObject().get(0).getChildObject().get(4).getChildObject().add(new SphereBabi(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
@@ -701,12 +701,31 @@ public class BabiCeleng {
                 15, // Stack -->
                 30, // Sector --> Titik
                 0));
-        Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(1).scaleObject(0.5f, 0.5f, 0.05f);
-        Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(1).rotateObject((float)Math.toRadians(-90.0f),0.0f, 0.0f, 1.0f);
-        Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(1).translateObject(0.105f, 0.19f, 0.395f);
-        //kurva alis
+        Babi.get(0).getChildObject().get(0).getChildObject().get(4).getChildObject().get(0).scaleObject(0.5f, 0.5f, 0.05f);
+        Babi.get(0).getChildObject().get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float)Math.toRadians(-90.0f),0.0f, 0.0f, 1.0f);
+        Babi.get(0).getChildObject().get(0).getChildObject().get(4).getChildObject().get(0).translateObject(0.105f, 0.19f, 0.395f);
 
-//        Babi.get(0).getChildObject().get(0).getChildObject().get(4).add(new Object())
+        //kurva alis
+        Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 0.0f),
+                0.24f,
+                0.24f,
+                Arrays.asList(
+                        new Vector3f(-0.335f,0.3f,0.3f),//Kiri
+                        new Vector3f(-0.235f,0.65f,0.0f), //tengah
+                        new Vector3f(0.235f,0.65f,0.0f),
+                        new Vector3f(0.335f,0.3f,0.3f))//kanan
+
+        ));
 
         //Rak background
         Babi.add(new Sphere(
@@ -1124,6 +1143,7 @@ public class BabiCeleng {
                 obj3D.draw(camera, projection);
 
             }
+
             //Restore State
             glDisableVertexAttribArray(0);
             // Pull for window events
