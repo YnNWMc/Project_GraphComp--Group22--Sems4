@@ -42,9 +42,9 @@ public class LGM {
         LGMO.add(new LGM_Object(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                                "C:\\File Coding InteliJ JAVA\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                                "C:\\File Coding InteliJ JAVA\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
 
                 ),
                 new ArrayList<>(
@@ -952,19 +952,17 @@ public class LGM {
                 7));
         LGMO.get(0).getChildObject().get(13).getChildObject().get(3).rotateObject(3.4f, 0f, 0f, 1f);
         LGMO.get(0).getChildObject().get(13).getChildObject().get(3).translateObject(1.55f, 0.75f, 0f);
-
-
-
-
     }
-    boolean limit = true;
-    int counter = 0;
+    boolean limitKaki = true, limitTanganKanan = true, limitTanganKiri = true, limitAntena = true;
+    int counterKaki = 0, counterTgnKanan = 0, counterTgnKiri = 0, counterAntenna = 0;
+
+    //5678rtyfghvbn
     public void input() {
-        if (window.isKeyPressed(GLFW_KEY_2)) {
+        if (window.isKeyPressed(GLFW_KEY_5)) {
             LGMO.get(0).translateObject(0.002f, 0.0f, 0.0f);
 
-            if (limit) {
-                counter++;
+            if (limitKaki) {
+                counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(1.0f), 0.0f, 0.0f, 1.0f);
@@ -976,11 +974,11 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
 
 
-                if (counter == 15.0f) {
-                    limit = false;
+                if (counterKaki == 15.0f) {
+                    limitKaki = false;
                 }
             } else {
-                counter--;
+                counterKaki--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(-1.0f), 0.0f, 0.0f, 1.0f);
@@ -991,15 +989,15 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(1.0f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
 
-                if (counter == -15.0f) {
-                    limit = true;
+                if (counterKaki == -15.0f) {
+                    limitKaki = true;
                 }
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_1)) {
+        if (window.isKeyPressed(GLFW_KEY_6)) {
             LGMO.get(0).translateObject(-0.002f, 0.0f, 0.0f);
-            if (limit) {
-                counter++;
+            if (limitKaki) {
+                counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(1.0f), 0.0f, 0.0f, 1.0f);
@@ -1009,11 +1007,11 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
                 LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(-1.0f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-                if (counter == 15.0f) {
-                    limit = false;
+                if (counterKaki == 15.0f) {
+                    limitKaki = false;
                 }
             } else {
-                counter--;
+                counterKaki--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(-1.0f), 0.0f, 0.0f, 1.0f);
@@ -1024,15 +1022,15 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(1.0f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
 
-                if (counter == -15.0f) {
-                    limit = true;
+                if (counterKaki == -15.0f) {
+                    limitKaki = true;
                 }
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_3)) {
+        if (window.isKeyPressed(GLFW_KEY_7)) {
             LGMO.get(0).translateObject(0.0f, 0.0f, 0.02f);
-            if (limit) {
-                counter++;
+            if (limitKaki) {
+                counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 0.0f);
@@ -1042,11 +1040,11 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
                 LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 0.0f);
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-                if (counter == 15.0f) {
-                    limit = false;
+                if (counterKaki == 15.0f) {
+                    limitKaki = false;
                 }
             } else {
-                counter--;
+                counterKaki--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 0.0f);
@@ -1057,15 +1055,15 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 0.0f);
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
 
-                if (counter == -15.0f) {
-                    limit = true;
+                if (counterKaki == -15.0f) {
+                    limitKaki = true;
                 }
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_4)) {
+        if (window.isKeyPressed(GLFW_KEY_8)) {
             LGMO.get(0).translateObject(0.0f, 0.0f, -0.02f);
-            if (limit) {
-                counter++;
+            if (limitKaki) {
+                counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 0.0f);
@@ -1075,11 +1073,11 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
                 LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 0.0f);
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-                if (counter == 15.0f) {
-                    limit = false;
+                if (counterKaki == 15.0f) {
+                    limitKaki = false;
                 }
             } else {
-                counter--;
+                counterKaki--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 0.0f);
@@ -1090,15 +1088,14 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 0.0f);
                 LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
 
-                if (counter == -15.0f) {
-                    limit = true;
+                if (counterKaki == -15.0f) {
+                    limitKaki = true;
                 }
             }
         }
-
-        if (window.isKeyPressed(GLFW_KEY_5)) {
-            if (limit) {
-                counter++;
+        if (window.isKeyPressed(GLFW_KEY_V)) {
+            if (limitTanganKiri) {
+                counterTgnKanan++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(12).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(1f), 1.0f, 0.0f, 0.0f);
@@ -1106,11 +1103,11 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(1f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counter == 10f) {
-                    limit = false;
+                if (counterTgnKanan == 10f) {
+                    limitTanganKiri = false;
                 }
             } else {
-                counter--;
+                counterTgnKanan--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(12).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(-1f), 1.0f, 0.0f, 0.0f);
@@ -1118,14 +1115,14 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(-1f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counter == -10f) {
-                    limit = true;
+                if (counterTgnKanan == -10f) {
+                    limitTanganKiri = true;
                 }
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_6)) {
-            if (limit) {
-                counter++;
+        if (window.isKeyPressed(GLFW_KEY_N)) {
+            if (limitTanganKanan) {
+                counterTgnKiri++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(13).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(1f), 1.0f, 0.0f, 0.0f);
@@ -1133,11 +1130,11 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(1f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counter == 10f) {
-                    limit = false;
+                if (counterTgnKiri == 10f) {
+                    limitTanganKanan = false;
                 }
             } else {
-                counter--;
+                counterTgnKiri--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(13).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(-1f), 1.0f, 0.0f, 0.0f);
@@ -1145,88 +1142,68 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(-1f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counter == -10f) {
-                    limit = true;
+                if (counterTgnKiri == -10f) {
+                    limitTanganKanan = true;
                 }
             }
         }
-
-        if (window.isKeyPressed(GLFW_KEY_7)) {
-            if (limit) {
-                counter++;
+        if (window.isKeyPressed(GLFW_KEY_B)) {
+            if (limitAntena) {
+                counterAntenna++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(0).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                    if (counter == 8f) {
-                        limit = false;
+                    if (counterAntenna == 8f) {
+                        limitAntena = false;
                     }
 
             }
             else {
-                counter--;
+                counterAntenna--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(0).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counter == -8f) {
-                    limit = true;
+                if (counterAntenna == -8f) {
+                    limitAntena = true;
                 }
             }
         }
-
-            if (window.isKeyPressed(GLFW_KEY_Q)) {
+            // RTYFGH ==> Rotate
+            if (window.isKeyPressed(GLFW_KEY_R)) {
                 for (LGM_Object i : LGMO) {
                     i.rotateObject(0.01f, 0f, 0f, 1f);
                 }
             }
-
-            if (window.isKeyPressed(GLFW_KEY_E)) {
+            if (window.isKeyPressed(GLFW_KEY_Y)) {
                 for (LGM_Object i : LGMO) {
                     i.rotateObject(-0.01f, 0f, 0f, 1f);
                 }
             }
-
-
-            //wasd
-            // rotate ke atas dan kebawah bikin erorr
-            if (window.isKeyPressed(GLFW_KEY_W)) {
+            if (window.isKeyPressed(GLFW_KEY_T)) {
                 Vector3f tempCenterPointw = LGMO.get(0).updateCenterPoint();
                 LGMO.get(0).translateObject(tempCenterPointw.x * -1, tempCenterPointw.y * -1, tempCenterPointw.z * -1);
                 LGMO.get(0).rotateObject(0.05f, 1f, 0f, 0f);
                 LGMO.get(0).translateObject(tempCenterPointw.x * 1, tempCenterPointw.y * 1, tempCenterPointw.z * 1);
-
-//            Babi.get(1).rotateObject(0.05f, 1f, 0f, 0f);
-
             }
-
-            if (window.isKeyPressed(GLFW_KEY_S)) {
+            if (window.isKeyPressed(GLFW_KEY_G)) {
                 Vector3f tempCenterPoints = LGMO.get(0).updateCenterPoint();
                 LGMO.get(0).translateObject(tempCenterPoints.x * -1, tempCenterPoints.y * -1, tempCenterPoints.z * -1);
                 LGMO.get(0).rotateObject(-0.05f, 1f, 0f, 0f);
                 LGMO.get(0).translateObject(tempCenterPoints.x * 1, tempCenterPoints.y * 1, tempCenterPoints.z * 1);
-
-//            Babi.get(1).rotateObject(-0.05f, 1f, 0f, 0f);
             }
-
-            if (window.isKeyPressed(GLFW_KEY_A)) {
+            if (window.isKeyPressed(GLFW_KEY_F)) {
                 Vector3f tempCenterPointsa = LGMO.get(0).updateCenterPoint();
                 LGMO.get(0).translateObject(tempCenterPointsa.x * -1, tempCenterPointsa.y * -1, tempCenterPointsa.z * -1);
                 LGMO.get(0).rotateObject(-0.05f, 0f, 1f, 0f);
                 LGMO.get(0).translateObject(tempCenterPointsa.x * 1, tempCenterPointsa.y * 1, tempCenterPointsa.z * 1);
-
-
-//            Babi.get(1).rotateObject(-0.05f, 0f, 1f, 0f);
             }
-
-            if (window.isKeyPressed(GLFW_KEY_D)) {
+            if (window.isKeyPressed(GLFW_KEY_H)) {
                 Vector3f tempCenterPointsd = LGMO.get(0).updateCenterPoint();
                 LGMO.get(0).translateObject(tempCenterPointsd.x * -1, tempCenterPointsd.y * -1, tempCenterPointsd.z * -1);
                 LGMO.get(0).rotateObject(0.05f, 0f, 1f, 0f);
                 LGMO.get(0).translateObject(tempCenterPointsd.x * 1, tempCenterPointsd.y * 1, tempCenterPointsd.z * 1);
-
-
-//            Babi.get(1).rotateObject(0.05f, 0f, 1f, 0f);
             }
 
             if (window.isKeyPressed(GLFW_KEY_U)) {
