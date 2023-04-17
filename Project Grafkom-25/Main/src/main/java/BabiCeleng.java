@@ -808,7 +808,6 @@ public class BabiCeleng {
         Babi.get(1).getChildObject().get(0).getChildObject().get(0).translateObject(0.0f, 0.45f, -3.0f);
     }
     //parameter gerak
-    private int count=0;
     private float countjalan=0;
     private float countnoleh=0;
     private float countngangguk =0;

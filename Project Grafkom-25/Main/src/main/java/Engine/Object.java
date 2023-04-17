@@ -197,18 +197,6 @@ public class Object extends ShaderProgram {
         vertices.set(index,newVector);
         setupVAOVBO();
     }
-    public void createCurve(double x1, double y1, double x2, double y2, double x3, double y3)
-    {
-        float x, y;
-        for(float i = 0; i <=1; i+= 0.01f)
-        {
-            x = (float) ((float) (Math.pow((1-i), 2) * x1) + (2 * (1-i) * i * x2) + (Math.pow(i, 2) * x3));
-            y =  (float) ((float) (Math.pow((1-i), 2) * y1) + (2 * (1-i) * i * y2) + (Math.pow(i, 2) * y3));
-
-            vertices.add(new Vector3f(x, y, 0));
-        }
-        setupVAOVBO();
-    }
     public List<Object> getChildObject() {
         return childObject;
     }
