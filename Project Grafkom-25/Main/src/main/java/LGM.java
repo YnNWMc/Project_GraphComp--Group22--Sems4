@@ -117,9 +117,9 @@ public class LGM {
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
                 new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.15f,
-                0.15f,
-                0.15f,
+                0.2f,
+                0.2f,
+                0.2f,
                 90, // Stack -->
                 45, // Sector --> Titik
                 0));
@@ -167,6 +167,28 @@ public class LGM {
                 0));
         LGMO.get(0).getChildObject().get(1).getChildObject().get(0).translateObject(0.00f, 0.2f, 0.50f);
 
+        //Kelopak Eye Middle Bawah
+        LGMO.get(0).getChildObject().get(1).getChildObject().add(new LGM_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 2.0f),
+                0.24f,
+                0.24f,
+                Arrays.asList(
+                        new Vector3f(-0.225f, 0.225f, .7f),//TITIK1
+                        new Vector3f(0.00f, 0.1f, .7f), //TITIK2
+                        new Vector3f(0.225f, 0.225f, .7f) //TITIK3
+                )
+        ));
+        LGMO.get(0).getChildObject().get(1).getChildObject().get(1).translateObject(0.00f, -0.14f, -0.1f);
+
         //White Eye Left
         LGMO.get(0).getChildObject().add(new LGM_Object(
                 Arrays.asList(
@@ -209,6 +231,30 @@ public class LGM {
                 45, // Sector --> Titik
                 0));
         LGMO.get(0).getChildObject().get(2).getChildObject().get(0).translateObject(-0.465f, 0.15f, 0.50f);
+
+        //Kelopak Eye Left Bawah
+        LGMO.get(0).getChildObject().get(2).getChildObject().add(new LGM_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 2.0f),
+                0.24f,
+                0.24f,
+                Arrays.asList(
+                        new Vector3f(-0.225f, 0.225f, .7f),//TITIK1
+                        new Vector3f(0.00f, 0.1f, .7f), //TITIK2
+                        new Vector3f(0.225f, 0.225f, .7f) //TITIK3
+                )
+        ));
+        LGMO.get(0).getChildObject().get(2).getChildObject().get(1).rotateObject(0.35f, 0f, 0f, 1f);
+
+        LGMO.get(0).getChildObject().get(2).getChildObject().get(1).translateObject(-0.35f, -0.15f, -0.1f);
 
         //White Eye Right
         LGMO.get(0).getChildObject().add(new LGM_Object(
@@ -254,6 +300,29 @@ public class LGM {
         //.rotateObject(-0.4f, 0f, 0f, 1f);
         LGMO.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(0.465f, 0.15f, 0.50f);
 
+        //Kelopak Eye Right Bawah
+        LGMO.get(0).getChildObject().get(3).getChildObject().add(new LGM_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 2.0f),
+                0.24f,
+                0.24f,
+                Arrays.asList(
+                        new Vector3f(-0.225f, 0.225f, .7f),//TITIK1
+                        new Vector3f(0.00f, 0.1f, .7f), //TITIK2
+                        new Vector3f(0.225f, 0.225f, .7f) //TITIK3
+                )
+        ));
+        LGMO.get(0).getChildObject().get(3).getChildObject().get(1).rotateObject(-0.35f, 0f, 0f, 1f);
+
+        LGMO.get(0).getChildObject().get(3).getChildObject().get(1).translateObject(0.35f, -0.15f, -0.1f);
         //Ear Right
         LGMO.get(0).getChildObject().add(new LGM_Object(
                 Arrays.asList(
@@ -886,53 +955,12 @@ public class LGM {
 
 
 
-        /*
-        TTSRY.get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0.0f, 0.5f, 0.5f, 1.0f),
-                0.00,
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.2f,
-                0.2f,
-                0.2f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                2));
-        TTSRY.get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0.0f, 0.5f, 0.5f, 1.0f),
-                0.00,
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.2f,
-                0.2f,
-                0.2f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                2));
-
-         */
 
     }
     boolean limit = true;
     int counter = 0;
     public void input() {
-        if (window.isKeyPressed(GLFW_KEY_1)) {
+        if (window.isKeyPressed(GLFW_KEY_2)) {
             LGMO.get(0).translateObject(0.002f, 0.0f, 0.0f);
 
             if (limit) {
@@ -968,7 +996,7 @@ public class LGM {
                 }
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_2)) {
+        if (window.isKeyPressed(GLFW_KEY_1)) {
             LGMO.get(0).translateObject(-0.002f, 0.0f, 0.0f);
             if (limit) {
                 counter++;
@@ -1073,10 +1101,10 @@ public class LGM {
                 counter++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(12).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(0.5f), 1.0f, 0.0f, 0.0f);
+                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(1f), 1.0f, 0.0f, 0.0f);
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(0.5f), 0.0f, 0.0f, 1.0f);
+                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(1f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
                 if (counter == 10f) {
                     limit = false;
@@ -1085,10 +1113,10 @@ public class LGM {
                 counter--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(12).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(-0.5f), 1.0f, 0.0f, 0.0f);
+                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(-1f), 1.0f, 0.0f, 0.0f);
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(-0.5f), 0.0f, 0.0f, 1.0f);
+                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(-1f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
                 if (counter == -10f) {
                     limit = true;
@@ -1100,10 +1128,10 @@ public class LGM {
                 counter++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(13).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(0.5f), 1.0f, 0.0f, 0.0f);
+                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(1f), 1.0f, 0.0f, 0.0f);
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(0.5f), 0.0f, 0.0f, 1.0f);
+                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(1f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
                 if (counter == 10f) {
                     limit = false;
@@ -1112,10 +1140,10 @@ public class LGM {
                 counter--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(13).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(-0.5f), 1.0f, 0.0f, 0.0f);
+                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(-1f), 1.0f, 0.0f, 0.0f);
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(-0.5f), 0.0f, 0.0f, 1.0f);
+                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(-1f), 0.0f, 0.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
                 if (counter == -10f) {
                     limit = true;
@@ -1128,15 +1156,18 @@ public class LGM {
                 counter++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(0).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);if (counter == 8f) {
-                    limit = false;
-                }
-            } else {
+                LGMO.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 1.0f);
+                LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
+                    if (counter == 8f) {
+                        limit = false;
+                    }
+
+            }
+            else {
                 counter--;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(0).updateCenterPoint();
                 LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 1.0f);
+                LGMO.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
                 if (counter == -8f) {
                     limit = true;

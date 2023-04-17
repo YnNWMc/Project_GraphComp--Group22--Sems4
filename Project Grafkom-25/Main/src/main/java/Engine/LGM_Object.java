@@ -13,7 +13,11 @@ public class LGM_Object extends Circle3D {
     float rZ;
     int stackCount;
     int sectorCount;
-
+    public LGM_Object(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, List<Float> centerPoint, Float rX, Float rY, List<Vector3f>Point) {
+        super(shaderModuleDataList, vertices, color, centerPoint, rX, rY);
+        LGM_Bezier(Point);
+        setupVAOVBO();
+    }
     public LGM_Object(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, ArrayList<Float> centerPoint, float rX, float rY, float rZ, int stackCount, int sectorCount, int option) {
         super(shaderModuleDataList, vertices, color, centerPoint, rX, rY);
         this.rZ = rZ;
@@ -329,16 +333,61 @@ public class LGM_Object extends Circle3D {
         vertices = temp;
     }
 
+    public void LGM_Bezier(List<Vector3f> point){
+            vertices.clear();
+            List<Vector3f> titik = new ArrayList<>();
+
+            // looping t nya
+            for (float t = 0; t <= 1; t = t + 0.01f){
+                float x = 0.0f;
+                float y = 0.0f;
+                float z = 0.0f;
+
+                int n = point.size()-1;
+
+                for (int i = 0; i <= n; i++) {
+                    // rumus kurva
+                    float rumus = comb(n, i) * (float) (Math.pow(1-t, n-i) * Math.pow(t, i) );
+                    x += rumus * point.get(i).x;
+                    y += rumus * point.get(i).y;
+                    z += rumus * point.get(i).z;
+                }
+                // masukin dalam list
+                titik.add(new Vector3f(x, y, z));
+            }
+            vertices = titik;
+
+    }
+
 
     public void draw(Camera camera, Projection projection){
         drawSetup(camera,projection);
         // Draw vertices
         glLineWidth(1);
         glPointSize(1);
-        glDrawArrays(GL_POLYGON, 0, vertices.size());
+        glDrawArrays(GL_LINE_STRIP, 0, vertices.size());
         for(Object child : getChildObject()){
             child.draw(camera,projection);
         }
+    }
+
+    //faktorial
+    public int factorial(int a){
+        if (a == 0) {
+            return 1;
+        }
+        int hasil = 1;
+        for (int i = 2; i <= a; i++){
+            hasil = hasil * i;
+        }
+        return hasil;
+    }
+
+    //Combinatorial
+    public int comb(int n, int r){
+        int hasil;
+        hasil = factorial(n)/(factorial(n - r)* factorial(r));
+        return hasil;
     }
 
     public float getrZ() {
