@@ -51,7 +51,9 @@ public class Wheezy {
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(0.27f, 0.25f, 0.21f, 1.0f),// color
+                new ArrayList<>(
+                ),
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
                 0.00,// radius
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
                 0.32f,// titik x
@@ -73,6 +75,8 @@ public class Wheezy {
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
                                 , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
                 ),
                 new ArrayList<>(
                 ),
@@ -101,7 +105,9 @@ public class Wheezy {
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(0.27f, 0.25f, 0.21f, 1.0f),// color
+                new ArrayList<>(
+                ),
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
                 0.00,// radius
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
                 0.16f,// titik x
@@ -127,7 +133,9 @@ public class Wheezy {
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(0.27f, 0.25f, 0.21f, 1.0f),// color
+                new ArrayList<>(
+                ),
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
                 0.00,// radius
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
                 0.16f,// titik x
@@ -152,6 +160,8 @@ public class Wheezy {
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
                                 , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
                 ),
                 new ArrayList<>(
                 ),
@@ -181,6 +191,8 @@ public class Wheezy {
                 ),
                 new ArrayList<>(
                 ),
+                new ArrayList<>(
+                ),
                 new Vector4f(0.95f, 1f, 1f, 1.0f),// color
                 0.00,// radius
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
@@ -204,6 +216,8 @@ public class Wheezy {
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
                                 , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
                 ),
                 new ArrayList<>(
                 ),
@@ -233,6 +247,8 @@ public class Wheezy {
                 ),
                 new ArrayList<>(
                 ),
+                new ArrayList<>(
+                ),
                 new Vector4f(0f, 0f, 0f, 1.0f),// color
                 0.00,// radius
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
@@ -256,6 +272,8 @@ public class Wheezy {
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
                                 , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
                 ),
                 new ArrayList<>(
                 ),
@@ -285,6 +303,8 @@ public class Wheezy {
                 ),
                 new ArrayList<>(
                 ),
+                new ArrayList<>(
+                ),
                 new Vector4f(0.95f, 0.75f, 0.09f, 1.0f),// color
                 0.00,// radius
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
@@ -311,6 +331,8 @@ public class Wheezy {
                 ),
                 new ArrayList<>(
                 ),
+                new ArrayList<>(
+                ),
                 new Vector4f(1f, 0f, 0f, 1.0f),// color
                 0.00,// radius
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
@@ -319,7 +341,7 @@ public class Wheezy {
                 0.02f,// titik z
                 15, // Stack -->
                 30, // Sector --> Titik
-                8));// option
+                7));// option
 
         bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
         bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-0.44f, -0.009f, 0.4f);// POSISI
@@ -335,6 +357,8 @@ public class Wheezy {
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
                                 , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
                 ),
                 new ArrayList<>(
                 ),
@@ -365,6 +389,8 @@ public class Wheezy {
                 ),
                 new ArrayList<>(
                 ),
+                new ArrayList<>(
+                ),
                 new Vector4f(1f, 0f, 0f, 1.0f),// color
                 0.00,// radius
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
@@ -389,6 +415,8 @@ public class Wheezy {
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
                                 , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
                 ),
                 new ArrayList<>(
                 ),
@@ -419,6 +447,8 @@ public class Wheezy {
                 ),
                 new ArrayList<>(
                 ),
+                new ArrayList<>(
+                ),
                 new Vector4f(0.89f, 0.87f, 0.74f, 1.0f),// color
                 0.00,// radius
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
@@ -434,16 +464,27 @@ public class Wheezy {
         bodyPart.get(0).getChildObject().get(7).translateObject(-0.2f, -0.41f, 0.3f);
 
 
+        //alis kanan
+
+
+
     }
 
     float counterParuh = 0f;
     boolean cekParuh = true;
+
+    float counterMata = 0f;
+    boolean cekMata = true;
 
     float counterJalan = 0f;
     boolean cekJalan = true;
 
     float counterJalanDepan = 0f;
     boolean cekJalanDepan = true;
+
+    float counterJalanBelakang = 0f;
+    boolean cekJalanBelakang = true;
+
 
     public void input() {
         // gerakkin Paruh
@@ -471,57 +512,101 @@ public class Wheezy {
         }
 
         //gerakkin mata
-//        if (window.isKeyPressed(GLFW_KEY_2)) {
-//            if (cekParuh == true) {
-//                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(5).updateCenterPoint();
-//
-//                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint.x * -1,tempCenterPoint.y * -1,tempCenterPoint.z *-1);
-//                counterParuh ++;
-//                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).rotateObjectOnPoint((float) Math.toRadians(-0.06f), 1.0f, 0.0f, 0.0f,-0.44f, 0.3f, 0.51f);
-//                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint.x * 1,tempCenterPoint.y * 1,tempCenterPoint.z * 1);
-//            }
-//            else {
-//                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(5).updateCenterPoint();
-//                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint2.x * -1,tempCenterPoint2.y * -1,tempCenterPoint2.z * -1);
-//                counterParuh --;
-//                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).rotateObjectOnPoint((float) Math.toRadians(0.06f), 1.0f, 0.0f, 0.0f,-0.44f, 0.3f, 0.51f);
-//                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y* 1,tempCenterPoint2.z* 1);
-//            }
-//            if (counterParuh == 15.0f){
-//                cekParuh = false;
-//            }
-//            if(counterParuh == 0){
-//                cekParuh = true;
-//            }
-//        }
+        if (window.isKeyPressed(GLFW_KEY_2)) {
+            if (cekMata == true) {
+                counterMata++;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
-        // jalan samping
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f),1.0f, -.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+            else {
+                counterMata--;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f),1.0f, -.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+            if (counterMata== 10.0f){
+                cekMata = false;
+            }
+            if(counterMata == 0){
+                cekMata = true;
+            }
+        }
+
+        // jalan samping kiri
         if (window.isKeyPressed(GLFW_KEY_3)) {
+            bodyPart.get(0).translateObject(-0.002f,0.0f,0.0f);
             if(cekJalan == true) {
-                bodyPart.get(0).translateObject(0.002f,0.0f,0.0f);
                 counterJalan++;
-                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
-                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
                 bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
-                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
-                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
-                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
                 bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
-                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
 
             } else{
-                bodyPart.get(0).translateObject(-0.002f,0.0f,0.0f);
-                counterJalan--;
-                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
-                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
                 bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
-                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
-                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
-                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
                 bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
-                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+
+            if (counterJalan == 800.0f){
+                cekJalan = false;
+            }
+            if(counterJalan == 0.0f){
+                cekJalan = true;
+            }
+
+        }
+
+        // jalan samping kanan
+        if (window.isKeyPressed(GLFW_KEY_4)) {
+            bodyPart.get(0).translateObject(0.002f,0.0f,0.0f);
+            if(cekJalan == true) {
+                counterJalan++;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+            } else{
+                counterJalan--;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
             }
 
             if (counterJalan == 800.0f){
@@ -534,47 +619,103 @@ public class Wheezy {
         }
 
         // jalan depan
-        if (window.isKeyPressed(GLFW_KEY_4)) {
+        if (window.isKeyPressed(GLFW_KEY_5)) {
+            bodyPart.get(0).translateObject(0.0f,0.0f,0.002f);
             if(cekJalanDepan == true) {
                 counterJalanDepan++;
-                //bodyPart.get(0).translateObject(0.002f,0.0f,0.0f);
-                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
-                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
-                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(0.1f),-1.0f, 0.0f, 0.0f);
-                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
-                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
-                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(0.1f),1.0f, 0.0f, 0.0f);
-                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
 
             } else{
-                //bodyPart.get(0).translateObject(-0.002f,0.0f,0.0f);
-                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
-                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
-                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-0.1f),1.0f, 0.0f, 0.0f);
-                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
-
-                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
-                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-0.1f),-1.0f, 0.0f, 0.0f);
-                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
-
                 counterJalanDepan--;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
             }
 
-
-            if (counterJalanDepan == 10.0f){
+            if (counterJalanDepan == 130.0f){
                 cekJalanDepan = false;
             }
-            if(counterJalanDepan == 0.0f){
+            if(counterJalanDepan == -100.0f){
                 cekJalanDepan = true;
             }
 
         }
 
+        if (window.isKeyPressed(GLFW_KEY_6)) {
+            bodyPart.get(0).translateObject(0.0f,0.0f,-0.002f);
+            if(cekJalanBelakang == true) {
+                counterJalanBelakang++;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+            } else{
+                counterJalanBelakang--;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+
+            if (counterJalanBelakang == 130.0f){
+                cekJalanBelakang = false;
+            }
+            if(counterJalanBelakang == -100.0f){
+                cekJalanBelakang = true;
+            }
+        }
+
         if (window.isKeyPressed(GLFW_KEY_W)) {
+            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
+            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
             bodyPart.get(0).rotateObject(0.01f, 0f, 0f, 1f);
+            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
+        }
+
+        if (window.isKeyPressed(GLFW_KEY_S)) {
+            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
+            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+            bodyPart.get(0).rotateObject(-0.01f, 1f, 0f, 0f);
+            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
+        }
+
+        if (window.isKeyPressed(GLFW_KEY_A)) {
+            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
+            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+            bodyPart.get(0).rotateObject(0.01f, 0f, 1f, 0f);
+            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
+        }
+
+        if (window.isKeyPressed(GLFW_KEY_D)) {
+            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
+            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+            bodyPart.get(0).rotateObject(-0.01f, 0f, 1f, 0f);
+            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
         }
 
         if (window.isKeyPressed(GLFW_KEY_Q)) {
@@ -589,66 +730,6 @@ public class Wheezy {
             }
         }
 
-        if (window.isKeyPressed(GLFW_KEY_W)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.rotateObject(0.01f, 1f, 0f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_S)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.rotateObject(-0.01f, 1f, 0f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_A)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.rotateObject(0.01f, 0f, 1f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_D)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.rotateObject(-0.01f, 0f, 1f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_U)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.translateObject(0f, 0f, 0.001f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_O)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.translateObject(0f, 0f, -0.001f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_I)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.translateObject(0f, 0.001f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_K)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.translateObject(0f, -0.001f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_J)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.translateObject(-0.001f, 0f, 0f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_L)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.translateObject(0.001f, 0f, 0f);
-            }
-        }
-
         if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
             camera.moveForward(0.02f);
         }
@@ -656,27 +737,13 @@ public class Wheezy {
         if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
             camera.moveBackwards(0.01f);
         }
-        if (window.isKeyPressed(GLFW_KEY_DOWN)) {
-            camera.moveDown(0.02f);
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_UP)) {
-            camera.moveUp(0.02f);
-        }
-        if (window.isKeyPressed(GLFW_KEY_LEFT)) {
-            camera.moveLeft(0.02f);
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_RIGHT)) {
-            camera.moveRight(0.02f);
-        }
     }
 
     public void loop() {
 
         while (window.isOpen()) {
             window.update();
-            glClearColor(0.00f, 0.0f, 0.0f, 0.0f); // RapidTables.com (RGB color code chart)
+            glClearColor(1f, 1f, 1f, 0.0f); // RapidTables.com (RGB color code chart)
             GL.createCapabilities();
             input();
             for (Wheezy_Object obj3D : bodyPart) {

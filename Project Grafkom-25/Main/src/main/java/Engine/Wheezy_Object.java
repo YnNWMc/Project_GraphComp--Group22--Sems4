@@ -14,40 +14,66 @@ public class Wheezy_Object extends Circle3D{
     int stackCount;
     int sectorCount;
 
-    public Wheezy_Object(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, Vector4f color, double r, ArrayList<Float> centerPoint, float rX, float rY, float rZ, int stackCount, int sectorCount, int option) {
+    public Wheezy_Object(List<ShaderModuleData> shaderModuleDataList, List<Vector3f> vertices, List<Vector3f> point,Vector4f color, double r, ArrayList<Float> centerPoint, float rX, float rY, float rZ, int stackCount, int sectorCount, int option) {
         super(shaderModuleDataList, vertices, color, centerPoint, rX, rY);
         this.rZ = rZ;
         this.stackCount = stackCount;
         this.sectorCount = sectorCount;
 
        if(option == 1){
-           createBody();//ovaloid
+           createOvaloid();//Badan
        }
        else if (option == 2){
-           createBelly();//ovaloid modif
+           createOvaloidv2();//ovaloid modif, jdi perut
        }
        else if (option == 3){
-           createHand();//eleptic paraboloid
+           createEllipticParaboloid();//eleptic paraboloid, jadi tangan
        }
        else if (option == 4){
-           createMata();//sphere
+           createElipsoid();//sphere, jadi mata dan kaki
        }
        else if (option == 5){
-            createParuh();//half eliptic cone
+            createHalfElipticCone();//half eliptic cone jadi paruh
        }else if (option == 6){
-           createDasi();//trapesium
+           createTrapesiumFromBox();//Dasi
        }
        else if (option == 7){
-           createDasi();//trapesium
+           createTabung();//tabung bwt buletan dasi
        }
        else if (option == 8){
-           createBuletanDasi();//tabung
+           generateBezierPoints(point.get(0),point.get(1),point.get(2));
        }
 
 
         setupVAOVBO();
     }
 
+
+    public ArrayList<Vector3f> generateBezierPoints(Vector3f first,Vector3f second, Vector3f third)
+    {
+        float firstX = first.x;
+        float firstY = first.y;
+        float firstZ = first.z;
+
+        float secondX = second.x;
+        float secondY = second.y;
+        float secondZ = second.z;
+
+        float thirdX = third.x;
+        float thirdY = third.y ;
+        float thirdZ = third.z;
+
+        ArrayList<Vector3f> result = new ArrayList<>();
+        float newX, newY, newZ;
+        for(double i = 0; i <=1; i+= 0.01)
+        {
+            newX = (float) ((Math.pow((1-i), 2) * firstX) + (2 * (1-i) * i * secondX) + (Math.pow(i, 2) * thirdX));
+            newY = (float) ((Math.pow((1-i), 2) * firstY) + (2 * (1-i) * i * secondY) + (Math.pow(i, 2) * thirdY));
+            newZ = (float) ((Math.pow((1-i), 2) * firstZ) + (2 * (1-i) * i * secondZ) + (Math.pow(i, 2) * thirdZ));
+            result.add(new Vector3f(newX, newY, newZ));
+        }
+        return result;
+    }
 
 //    public void createPotatoBody(){
 //        vertices.clear();
@@ -64,7 +90,7 @@ public class Wheezy_Object extends Circle3D{
 //        vertices = temp;
 //    }
 
-    public void createParuh(){//
+    public void createHalfElipticCone(){//
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
 
@@ -79,7 +105,7 @@ public class Wheezy_Object extends Circle3D{
         vertices = temp;
     }
 
-    public void createHand() {//
+    public void createEllipticParaboloid() {// EllipticParaboloid
         vertices.clear();
         float pi = (float)Math.PI;
 
@@ -106,7 +132,7 @@ public class Wheezy_Object extends Circle3D{
         }
     }
 
-    public void createDasi() {// trapesium
+    public void createTrapesiumFromBox() {// trapesium
             Vector3f temp = new Vector3f();
             float cpx = centerPoint.get(0);
             float cpy = centerPoint.get(1);
@@ -203,7 +229,7 @@ public class Wheezy_Object extends Circle3D{
             }
         }
 
-    public void createMata(){
+    public void createElipsoid(){
 
         vertices.clear();
         float radiusX = rX;
@@ -235,7 +261,7 @@ public class Wheezy_Object extends Circle3D{
         }
     }
 
-    public void createBuletanDasi(){
+    public void createTabung(){// tabung
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
         for(double i = 0 ; i <= 360 ; i += 0.05f){
@@ -248,7 +274,7 @@ public class Wheezy_Object extends Circle3D{
         vertices = temp;
     }
 
-    public void createBelly(){
+    public void createOvaloidv2(){
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
         for (int i = 0; i < 360; i++) {
@@ -263,7 +289,7 @@ public class Wheezy_Object extends Circle3D{
     }
 
     //mungkin jd hidung
-    public void createBody() {
+    public void createOvaloid() {
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
         for (int i = 0; i < 360; i++) {
@@ -276,34 +302,6 @@ public class Wheezy_Object extends Circle3D{
         }
         vertices = temp;
     }
-
-    public void createTabung(){
-        vertices.clear();
-        ArrayList<Vector3f> temp = new ArrayList<>();
-        for(double i = 0 ; i <= 360 ; i += 0.05f){
-            float x = centerPoint.get(0) + rX * (float)Math.cos(Math.toRadians(i));
-            float y = centerPoint.get(1) + rY * (float)Math.sin(Math.toRadians(i));
-
-            temp.add(new Vector3f(x,y,0f));
-            temp.add(new Vector3f(x,y,-rZ));
-        }
-        vertices = temp;
-    }
-
-    public void createSphere(){
-        ArrayList<Vector3f> temp = new ArrayList<>();
-
-        for(double v = -Math.PI/2; v<= Math.PI/2; v+=Math.PI/240){
-            for(double u = -Math.PI; u<= Math.PI; u+=Math.PI/240){
-                float x = this.rX * (float)(Math.cos(v) * Math.cos(u));
-                float y = this.rY * (float)(Math.cos(v) * Math.sin(u));
-                float z = this.rZ * (float)(Math.sin(v));
-                temp.add(new Vector3f(x,y,z));
-            }
-        }
-        vertices = temp;
-    }
-
 
     /*
     public void createHyperboloidParaboloid() {
