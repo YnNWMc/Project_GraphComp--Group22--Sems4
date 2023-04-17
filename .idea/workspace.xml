@@ -7,7 +7,6 @@
     <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="Update LGM">
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Circle3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/Circle3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" afterDir="false" />
