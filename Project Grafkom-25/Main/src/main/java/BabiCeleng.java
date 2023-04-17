@@ -720,13 +720,34 @@ public class BabiCeleng {
                 0.24f,
                 0.24f,
                 Arrays.asList(
-                        new Vector3f(-0.335f,0.3f,0.3f),//Kiri
-                        new Vector3f(-0.235f,0.65f,0.0f), //tengah
-                        new Vector3f(0.235f,0.65f,0.0f),
-                        new Vector3f(0.335f,0.3f,0.3f))//kanan
+                        new Vector3f(-0.14f,0.19f,0.60f),//TITIK1
+                        new Vector3f(-0.09f,0.22f,0.60f), //TITIK2
+                        new Vector3f(-0.04f,0.19f,0.60f) //TITIK3
+                       )//kanan
+
+        ));
+        Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 0.0f),
+                0.24f,
+                0.24f,
+                Arrays.asList(
+                        new Vector3f(0.14f,0.19f,0.60f),//TITIK1
+                        new Vector3f(0.09f,0.22f,0.60f), //TITIK2
+                        new Vector3f(0.04f,0.19f,0.60f) //TITIK3
+                )
 
         ));
 
+        //BG
         //Rak background
         Babi.add(new Sphere(
                 Arrays.asList(
@@ -1131,6 +1152,7 @@ public class BabiCeleng {
         }
     }
 
+
     public void loop() {
 
         while (window.isOpen()) {
@@ -1138,11 +1160,12 @@ public class BabiCeleng {
             glClearColor(0.5f, 0.3f, 1.0f, 0.0f); // RapidTables.com (RGB color code chart)
             GL.createCapabilities();
             input();
+
+//            Babi.get(0).getChildObject().get(0).getChildObject().get(5).drawLine(camera,projection);
             for (Object obj3D : Babi) {
-
                 obj3D.draw(camera, projection);
-
             }
+
 
             //Restore State
             glDisableVertexAttribArray(0);
