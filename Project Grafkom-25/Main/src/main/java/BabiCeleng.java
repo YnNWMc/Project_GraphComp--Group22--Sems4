@@ -684,7 +684,7 @@ public class BabiCeleng {
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(0).scaleObject(0.5f, 0.5f, 0.05f);
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(0).translateObject(-0.105f, 0.19f, 0.395f);
 
-        Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().add(new SphereBabi(
+        Babi.get(0).getChildObject().get(0).getChildObject().get(4).getChildObject().add(new SphereBabi(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
                                 "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
@@ -701,12 +701,31 @@ public class BabiCeleng {
                 15, // Stack -->
                 30, // Sector --> Titik
                 0));
-        Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(1).scaleObject(0.5f, 0.5f, 0.05f);
-        Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(1).rotateObject((float)Math.toRadians(-90.0f),0.0f, 0.0f, 1.0f);
-        Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(1).translateObject(0.105f, 0.19f, 0.395f);
-        //kurva alis
+        Babi.get(0).getChildObject().get(0).getChildObject().get(4).getChildObject().get(0).scaleObject(0.5f, 0.5f, 0.05f);
+        Babi.get(0).getChildObject().get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float)Math.toRadians(-90.0f),0.0f, 0.0f, 1.0f);
+        Babi.get(0).getChildObject().get(0).getChildObject().get(4).getChildObject().get(0).translateObject(0.105f, 0.19f, 0.395f);
 
-//        Babi.get(0).getChildObject().get(0).getChildObject().get(4).add(new Object())
+        //kurva alis
+        Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 0.0f),
+                0.24f,
+                0.24f,
+                Arrays.asList(
+                        new Vector3f(-0.335f,0.3f,0.3f),//Kiri
+                        new Vector3f(-0.235f,0.65f,0.0f), //tengah
+                        new Vector3f(0.235f,0.65f,0.0f),
+                        new Vector3f(0.335f,0.3f,0.3f))//kanan
+
+        ));
 
         //Rak background
         Babi.add(new Sphere(
@@ -889,9 +908,121 @@ public class BabiCeleng {
                 }
             }
         }
+        //JALAN KANAN
+        if(window.isKeyPressed(GLFW_KEY_3)){
+            Babi.get(0).translateObject(0.005f,0.0f,0.0f);
+            if(kaki) {
+                countjalan++;
+                Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(7).updateCenterPoint();
+                Babi.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                Babi.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = Babi.get(0).getChildObject().get(6).updateCenterPoint();
+                Babi.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                Babi.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+                Vector3f tempCenterPoint3 = Babi.get(0).getChildObject().get(5).updateCenterPoint();
+                Babi.get(0).getChildObject().get(5).translateObject(tempCenterPoint3.x*-1,tempCenterPoint3.y*-1,tempCenterPoint3.z*-1);
+                Babi.get(0).getChildObject().get(5).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(5).translateObject(tempCenterPoint3.x*1,tempCenterPoint3.y*1,tempCenterPoint3.z*1);
+
+                Vector3f tempCenterPoint4 = Babi.get(0).getChildObject().get(4).updateCenterPoint();
+                Babi.get(0).getChildObject().get(4).translateObject(tempCenterPoint4.x*-1,tempCenterPoint4.y*-1,tempCenterPoint4.z*-1);
+                Babi.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(4).translateObject(tempCenterPoint4.x*1,tempCenterPoint4.y*1,tempCenterPoint4.z*1);
+
+
+                if (countjalan == 15.0f) {
+                    kaki = false;
+                }
+            } else{
+                countjalan--;
+                Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(7).updateCenterPoint();
+                Babi.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                Babi.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = Babi.get(0).getChildObject().get(6).updateCenterPoint();
+                Babi.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                Babi.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+                Vector3f tempCenterPoint3 = Babi.get(0).getChildObject().get(5).updateCenterPoint();
+                Babi.get(0).getChildObject().get(5).translateObject(tempCenterPoint3.x*-1,tempCenterPoint3.y*-1,tempCenterPoint3.z*-1);
+                Babi.get(0).getChildObject().get(5).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(5).translateObject(tempCenterPoint3.x*1,tempCenterPoint3.y*1,tempCenterPoint3.z*1);
+
+                Vector3f tempCenterPoint4 = Babi.get(0).getChildObject().get(4).updateCenterPoint();
+                Babi.get(0).getChildObject().get(4).translateObject(tempCenterPoint4.x*-1,tempCenterPoint4.y*-1,tempCenterPoint4.z*-1);
+                Babi.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(4).translateObject(tempCenterPoint4.x*1,tempCenterPoint4.y*1,tempCenterPoint4.z*1);
+
+                if(countjalan ==-15.0f){
+                    kaki = true;
+                }
+            }
+        }
+        //JALAN KIRI
+        if(window.isKeyPressed(GLFW_KEY_4)){
+            Babi.get(0).translateObject(-0.005f,0.0f,0.0f);
+            if(kaki) {
+                countjalan++;
+                Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(7).updateCenterPoint();
+                Babi.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                Babi.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = Babi.get(0).getChildObject().get(6).updateCenterPoint();
+                Babi.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                Babi.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+                Vector3f tempCenterPoint3 = Babi.get(0).getChildObject().get(5).updateCenterPoint();
+                Babi.get(0).getChildObject().get(5).translateObject(tempCenterPoint3.x*-1,tempCenterPoint3.y*-1,tempCenterPoint3.z*-1);
+                Babi.get(0).getChildObject().get(5).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(5).translateObject(tempCenterPoint3.x*1,tempCenterPoint3.y*1,tempCenterPoint3.z*1);
+
+                Vector3f tempCenterPoint4 = Babi.get(0).getChildObject().get(4).updateCenterPoint();
+                Babi.get(0).getChildObject().get(4).translateObject(tempCenterPoint4.x*-1,tempCenterPoint4.y*-1,tempCenterPoint4.z*-1);
+                Babi.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(4).translateObject(tempCenterPoint4.x*1,tempCenterPoint4.y*1,tempCenterPoint4.z*1);
+
+
+                if (countjalan == 15.0f) {
+                    kaki = false;
+                }
+            } else{
+                countjalan--;
+                Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(7).updateCenterPoint();
+                Babi.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                Babi.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(7).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = Babi.get(0).getChildObject().get(6).updateCenterPoint();
+                Babi.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                Babi.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(6).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+                Vector3f tempCenterPoint3 = Babi.get(0).getChildObject().get(5).updateCenterPoint();
+                Babi.get(0).getChildObject().get(5).translateObject(tempCenterPoint3.x*-1,tempCenterPoint3.y*-1,tempCenterPoint3.z*-1);
+                Babi.get(0).getChildObject().get(5).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(5).translateObject(tempCenterPoint3.x*1,tempCenterPoint3.y*1,tempCenterPoint3.z*1);
+
+                Vector3f tempCenterPoint4 = Babi.get(0).getChildObject().get(4).updateCenterPoint();
+                Babi.get(0).getChildObject().get(4).translateObject(tempCenterPoint4.x*-1,tempCenterPoint4.y*-1,tempCenterPoint4.z*-1);
+                Babi.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Babi.get(0).getChildObject().get(4).translateObject(tempCenterPoint4.x*1,tempCenterPoint4.y*1,tempCenterPoint4.z*1);
+
+                if(countjalan ==-15.0f){
+                    kaki = true;
+                }
+            }
+        }
 
         // menoleh kanan
-        if (window.isKeyPressed(GLFW_KEY_3)) {
+        if (window.isKeyPressed(GLFW_KEY_E)) {
 
             if (countnoleh < 30.0f) {
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(0).updateCenterPoint();
@@ -902,7 +1033,7 @@ public class BabiCeleng {
             }
         }
         // menoleh kiri
-        if (window.isKeyPressed(GLFW_KEY_4)) {
+        if (window.isKeyPressed(GLFW_KEY_Q)) {
             if (countnoleh > -30.0f) {
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(0).updateCenterPoint();
                 Babi.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
@@ -912,7 +1043,7 @@ public class BabiCeleng {
             }
         }
         // hadap atas
-        if (window.isKeyPressed(GLFW_KEY_5)) {
+        if (window.isKeyPressed(GLFW_KEY_C)) {
 
             if (countngangguk < 20.0f) {
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(0).updateCenterPoint();
@@ -923,7 +1054,7 @@ public class BabiCeleng {
             }
         }
         // hadap bawah
-        if (window.isKeyPressed(GLFW_KEY_6)) {
+        if (window.isKeyPressed(GLFW_KEY_Z)) {
             if (countngangguk > -20.0f) {
                 Vector3f tempCenterPoint = Babi.get(0).getChildObject().get(0).updateCenterPoint();
                 Babi.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
@@ -937,23 +1068,42 @@ public class BabiCeleng {
         //wasd
         // rotate ke atas dan kebawah bikin erorr
         if (window.isKeyPressed(GLFW_KEY_W)) {
+            Vector3f tempCenterPointw = Babi.get(0).updateCenterPoint();
+            Babi.get(0).translateObject(tempCenterPointw.x*-1,tempCenterPointw.y*-1,tempCenterPointw.z*-1);
+
             Babi.get(0).rotateObject(0.05f, 1f, 0f, 0f);
+            Babi.get(0).translateObject(tempCenterPointw.x*1,tempCenterPointw.y*1,tempCenterPointw.z*1);
+
 //            Babi.get(1).rotateObject(0.05f, 1f, 0f, 0f);
 
         }
 
         if (window.isKeyPressed(GLFW_KEY_S)) {
+            Vector3f tempCenterPoints = Babi.get(0).updateCenterPoint();
+            Babi.get(0).translateObject(tempCenterPoints.x*-1,tempCenterPoints.y*-1,tempCenterPoints.z*-1);
             Babi.get(0).rotateObject(-0.05f, 1f, 0f, 0f);
+            Babi.get(0).translateObject(tempCenterPoints.x*1,tempCenterPoints.y*1,tempCenterPoints.z*1);
+
 //            Babi.get(1).rotateObject(-0.05f, 1f, 0f, 0f);
         }
 
         if (window.isKeyPressed(GLFW_KEY_A)) {
+            Vector3f tempCenterPointsa = Babi.get(0).updateCenterPoint();
+            Babi.get(0).translateObject(tempCenterPointsa.x*-1,tempCenterPointsa.y*-1,tempCenterPointsa.z*-1);
             Babi.get(0).rotateObject(-0.05f, 0f, 1f, 0f);
+            Babi.get(0).translateObject(tempCenterPointsa.x*1,tempCenterPointsa.y*1,tempCenterPointsa.z*1);
+
+
 //            Babi.get(1).rotateObject(-0.05f, 0f, 1f, 0f);
         }
 
         if (window.isKeyPressed(GLFW_KEY_D)) {
+            Vector3f tempCenterPointsd = Babi.get(0).updateCenterPoint();
+            Babi.get(0).translateObject(tempCenterPointsd.x*-1,tempCenterPointsd.y*-1,tempCenterPointsd.z*-1);
             Babi.get(0).rotateObject(0.05f, 0f, 1f, 0f);
+            Babi.get(0).translateObject(tempCenterPointsd.x*1,tempCenterPointsd.y*1,tempCenterPointsd.z*1);
+
+
 //            Babi.get(1).rotateObject(0.05f, 0f, 1f, 0f);
         }
 
@@ -993,6 +1143,7 @@ public class BabiCeleng {
                 obj3D.draw(camera, projection);
 
             }
+
             //Restore State
             glDisableVertexAttribArray(0);
             // Pull for window events
