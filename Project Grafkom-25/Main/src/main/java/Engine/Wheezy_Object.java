@@ -30,18 +30,12 @@ public class Wheezy_Object extends Circle3D{
            createEllipticParaboloid();//eleptic paraboloid, jadi tangan
        }
        else if (option == 4){
-           createElipsoid();//sphere, jadi mata dan kaki
+           createElipsoid();//sphere, jadi mata, kaki, buletan dasi
        }
        else if (option == 5){
             createHalfElipticCone();//half eliptic cone jadi paruh
        }else if (option == 6){
            createTrapesiumFromBox();//Dasi
-       }
-       else if (option == 7){
-           createTabung();//tabung bwt buletan dasi
-       }
-       else if (option == 8){
-           generateBezierPoints(point.get(0),point.get(1),point.get(2));
        }
 
 
@@ -90,7 +84,7 @@ public class Wheezy_Object extends Circle3D{
 //        vertices = temp;
 //    }
 
-    public void createHalfElipticCone(){//
+    public void createHalfElipticCone(){// paruh
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
 
@@ -105,7 +99,7 @@ public class Wheezy_Object extends Circle3D{
         vertices = temp;
     }
 
-    public void createEllipticParaboloid() {// EllipticParaboloid
+    public void createEllipticParaboloid() {// EllipticParaboloid jadi tangan
         vertices.clear();
         float pi = (float)Math.PI;
 
@@ -229,7 +223,7 @@ public class Wheezy_Object extends Circle3D{
             }
         }
 
-    public void createElipsoid(){
+    public void createElipsoid(){// buat buletan untuk dasi, mata, kaki, dan pantat
 
         vertices.clear();
         float radiusX = rX;
@@ -261,20 +255,7 @@ public class Wheezy_Object extends Circle3D{
         }
     }
 
-    public void createTabung(){// tabung
-        vertices.clear();
-        ArrayList<Vector3f> temp = new ArrayList<>();
-        for(double i = 0 ; i <= 360 ; i += 0.05f){
-            float x = centerPoint.get(0) + rX * (float)Math.cos(Math.toRadians(i));
-            float y = centerPoint.get(1) + rY * (float)Math.sin(Math.toRadians(i));
-
-            temp.add(new Vector3f(x,y,0f));
-            temp.add(new Vector3f(x,y,-rZ));
-        }
-        vertices = temp;
-    }
-
-    public void createOvaloidv2(){
+    public void createOvaloidv2(){// jadi bagian yg putih
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
         for (int i = 0; i < 360; i++) {
@@ -288,8 +269,7 @@ public class Wheezy_Object extends Circle3D{
         vertices = temp;
     }
 
-    //mungkin jd hidung
-    public void createOvaloid() {
+    public void createOvaloid() {// jadi badan
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
         for (int i = 0; i < 360; i++) {
@@ -302,6 +282,60 @@ public class Wheezy_Object extends Circle3D{
         }
         vertices = temp;
     }
+
+    public void createCurve (List<Vector3f> point){
+        vertices.clear();
+        List<Vector3f> titik = new ArrayList<>();
+
+        // looping t nya
+        for (float t = 0; t <= 1; t = t + 0.01f){
+            float x = 0.0f;
+            float y = 0.0f;
+            float z = 0.0f;
+
+            int n = point.size()-1;
+
+            for (int i = 0; i <= n; i++) {
+                // rumus kurva
+                float rumus = comb(n, i) * (float) (Math.pow(1-t, n-i) * Math.pow(t, i) );
+                x += rumus * point.get(i).x;
+                y += rumus * point.get(i).y;
+                z += rumus * point.get(i).z;
+            }
+            // masukin dalam list
+            titik.add(new Vector3f(x, y, z));
+        }
+        vertices = titik;
+    }
+
+    //faktorial
+    public int factorial(int a){
+        if (a == 0) {
+            return 1;
+        }
+        int hasil = 1;
+        for (int i = 2; i <= a; i++){
+            hasil = hasil * i;
+        }
+        return hasil;
+    }
+
+    //polinomial
+    public int comb(int n, int r){
+        int hasil;
+        hasil = factorial(n)/(factorial(n - r)* factorial(r));
+        return hasil;
+    }
+//    public void draw(Camera camera, Projection projection){
+//        drawSetup(camera,projection);
+//        // Draw vertices
+//        glLineWidth(1);
+//        glPointSize(1);
+//        glDrawArrays(GL_POLYGON, 0, vertices.size());
+//        for(Object child : getChildObject()){
+//            child.draw(camera,projection);
+//        }
+//    }
 
     /*
     public void createHyperboloidParaboloid() {
@@ -328,7 +362,21 @@ public class Wheezy_Object extends Circle3D{
         }
     }
 
+
+
+    //    public void draw(Camera camera, Projection projection){
+//        drawSetup(camera,projection);
+//        // Draw vertices
+//        glLineWidth(1);
+//        glPointSize(1);
+//        glDrawArrays(GL_POLYGON, 0, vertices.size());
+//        for(Object child : getChildObject()){
+//            child.draw(camera,projection);
+//        }
+//    }
+
     public float getrZ() {
+
         return rZ;
     }
 

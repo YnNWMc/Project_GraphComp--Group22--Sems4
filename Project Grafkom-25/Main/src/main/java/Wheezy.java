@@ -338,13 +338,13 @@ public class Wheezy {
                 new ArrayList<>(List.of(0f, 0f, 0f)),// center point
                 0.03f,// titik x
                 0.02f,// titik y
-                0.02f,// titik z
+                0.04f,// titik z
                 15, // Stack -->
                 30, // Sector --> Titik
-                7));// option
+                4));// option
 
         bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
-        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-0.44f, -0.009f, 0.4f);// POSISI
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-0.35f, -0.009f, 0.2f);// POSISI
 
 
         //dasi kanan
@@ -463,13 +463,41 @@ public class Wheezy {
         bodyPart.get(0).getChildObject().get(7).rotateObject(-60f, 0f, 1f, 0f);// putar biar bgs kliatannya
         bodyPart.get(0).getChildObject().get(7).translateObject(-0.2f, -0.41f, 0.3f);
 
+        //pantat penguin
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
 
-        //alis kanan
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.2f,// titik x
+                0.3f,// titik y
+                0.15f,// titik z
+                150, // Stack -->
+                150, // Sector --> Titik
+                4));// option
+
+        bodyPart.get(0).getChildObject().get(8).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(8).translateObject(-0.23f, -0.21f, -0.14f);
+
+
 
 
 
     }
 
+    // sebagai variable control
     float counterParuh = 0f;
     boolean cekParuh = true;
 
@@ -690,51 +718,39 @@ public class Wheezy {
             }
         }
 
-        if (window.isKeyPressed(GLFW_KEY_W)) {
+        if (window.isKeyPressed(GLFW_KEY_W)) {// muter ke atas
             Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
             bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-            bodyPart.get(0).rotateObject(0.01f, 0f, 0f, 1f);
+            bodyPart.get(0).rotateObject(0.01f, 1f, 0f, 0f);
             bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
         }
 
-        if (window.isKeyPressed(GLFW_KEY_S)) {
+        if (window.isKeyPressed(GLFW_KEY_S)) {// muter ke bawah
             Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
             bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
             bodyPart.get(0).rotateObject(-0.01f, 1f, 0f, 0f);
             bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
         }
 
-        if (window.isKeyPressed(GLFW_KEY_A)) {
-            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
-            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-            bodyPart.get(0).rotateObject(0.01f, 0f, 1f, 0f);
-            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_D)) {
+        if (window.isKeyPressed(GLFW_KEY_A)) {// muter ke kiri
             Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
             bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
             bodyPart.get(0).rotateObject(-0.01f, 0f, 1f, 0f);
             bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
         }
 
-        if (window.isKeyPressed(GLFW_KEY_Q)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.rotateObject(0.01f, 0f, 0f, 1f);
-            }
+        if (window.isKeyPressed(GLFW_KEY_D)) {// muter ke kanan
+            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
+            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+            bodyPart.get(0).rotateObject(0.01f, 0f, 1f, 0f);
+            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
         }
 
-        if (window.isKeyPressed(GLFW_KEY_E)) {
-            for (Wheezy_Object i : bodyPart) {
-                i.rotateObject(-0.01f, 0f, 0f, 1f);
-            }
-        }
-
-        if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
+        if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {// zoom in
             camera.moveForward(0.02f);
         }
 
-        if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
+        if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {// zoom out
             camera.moveBackwards(0.01f);
         }
     }
