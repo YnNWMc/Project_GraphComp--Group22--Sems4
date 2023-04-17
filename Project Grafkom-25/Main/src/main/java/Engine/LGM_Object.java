@@ -296,33 +296,22 @@ public class LGM_Object extends Circle3D {
             vertices.clear();
             vertices.add(tempVertices.get(0));
             vertices.add(tempVertices.get(1));
-//        vertices.add(tempVertices.get(2));
             vertices.add(tempVertices.get(3));
 
             vertices.add(tempVertices.get(4));
             vertices.add(tempVertices.get(5));
-//        vertices.add(tempVertices.get(6));
             vertices.add(tempVertices.get(7));
 
             vertices.add(tempVertices.get(0));
             vertices.add(tempVertices.get(4));
             vertices.add(tempVertices.get(7));
             vertices.add(tempVertices.get(3));
-
-//        vertices.add(tempVertices.get(1));
-//        vertices.add(tempVertices.get(5));
-//        vertices.add(tempVertices.get(6));
-//        vertices.add(tempVertices.get(2));
 
             vertices.add(tempVertices.get(0));
             vertices.add(tempVertices.get(1));
             vertices.add(tempVertices.get(5));
             vertices.add(tempVertices.get(4));
 
-//        vertices.add(tempVertices.get(3));
-//        vertices.add(tempVertices.get(2));
-//        vertices.add(tempVertices.get(7));
-//        vertices.add(tempVertices.get(6));
         }
     }
     public void LGM_ELParbol(){
