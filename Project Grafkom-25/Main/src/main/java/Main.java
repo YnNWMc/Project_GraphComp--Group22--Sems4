@@ -43,7 +43,7 @@ public class Main {
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
 
-        camera.setPosition(-5.244624f, -0.070000425f, 8.383931f);
+        camera.setPosition(-9.948158f, 0.22999954f, 13.118198f);
         camera.setRotation((float) Math.toRadians(0.0f), (float) Math.toRadians(30.0f));
 
 
@@ -2279,12 +2279,14 @@ public class Main {
 
 
         // Translate Lokasi objek
-        Babi.get(0).translateObject(0.0f,0.0f,-2.0f);
+        Babi.get(0).scaleObject(2.0f,2.0f,2.0f);
+        Babi.get(0).translateObject(0.0f,0.2f,0.0f);
 
-        Penguin.get(0).translateObject(0.0f,0.0f,-2.0f);
+        Penguin.get(0).translateObject(0.0f,0.5f,-2.0f);
+        //Penguin.get(0).scaleObject(0.0f,0.0f,-2.0f);
 
-        LGMO.get(0).translateObject(0.0f,1.2f,5.0f);
-        LGMO.get(0).scaleObject(0.5f,0.5f,0.5f);
+        LGMO.get(0).scaleObject(0.5f,0.7f,0.5f);
+        LGMO.get(0).translateObject(0.3f,1.0f,2.0f);
 
 
     }
@@ -2300,9 +2302,7 @@ public class Main {
 
     float counterMataArron = 0f;
     boolean cekMataArron = true;
-
-    float counterJalanArron = 0f;
-    boolean cekJalanArron = true;
+    
 
     float counterJalanDepanArron = 0f;
     boolean cekJalanDepanArron = true;
@@ -2626,7 +2626,8 @@ public class Main {
 
         // Arron
 
-        if (window.isKeyPressed(GLFW_KEY_U)) {
+        // jalan samping kiri
+        if (window.isKeyPressed(GLFW_KEY_9)) {
             if (cekParuhArron == true) {
                 Vector3f tempCenterPoint = Penguin.get(0).getChildObject().get(5).getChildObject().get(0).updateCenterPoint();
                 Penguin.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint.x * -1,tempCenterPoint.y * -1,tempCenterPoint.z *-1);
@@ -2650,7 +2651,7 @@ public class Main {
         }
 
         //gerakkin mata
-        if (window.isKeyPressed(GLFW_KEY_O)) {
+        if (window.isKeyPressed(GLFW_KEY_0)) {
             if (cekMataArron == true) {
                 counterMataArron++;
                 Vector3f tempCenterPoint = Penguin.get(0).getChildObject().get(3).getChildObject().get(0).updateCenterPoint();
@@ -2682,82 +2683,81 @@ public class Main {
                 cekMataArron = true;
             }
         }
-
-        // jalan samping kiri
-        if (window.isKeyPressed(GLFW_KEY_9)) {
+        // JALAN SAMPING KIRI
+        if (window.isKeyPressed(GLFW_KEY_P)) {
             Penguin.get(0).translateObject(-0.002f,0.0f,0.0f);
-            if(cekJalanArron == true) {
-                counterJalanArron++;
+            if(cekJalanDepanArron == true) {
+                counterJalanDepanArron++;
                 Vector3f tempCenterPoint = Penguin.get(0).getChildObject().get(6).updateCenterPoint();
                 Penguin.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-                Penguin.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Penguin.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
                 Penguin.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
                 Vector3f tempCenterPoint2 = Penguin.get(0).getChildObject().get(7).updateCenterPoint();
                 Penguin.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
-                Penguin.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Penguin.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
                 Penguin.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
 
             } else{
+                counterJalanDepanArron--;
                 Vector3f tempCenterPoint = Penguin.get(0).getChildObject().get(6).updateCenterPoint();
                 Penguin.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-                Penguin.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Penguin.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
                 Penguin.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
                 Vector3f tempCenterPoint2 = Penguin.get(0).getChildObject().get(7).updateCenterPoint();
                 Penguin.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
-                Penguin.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Penguin.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
                 Penguin.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
             }
 
-            if (counterJalanArron == 800.0f){
-                cekJalanArron = false;
+            if (counterJalanDepanArron == 130.0f){
+                cekJalanDepanArron = false;
             }
-            if(counterJalanArron == 0.0f){
-                cekJalanArron = true;
+            if(counterJalanDepanArron == -100.0f){
+                cekJalanDepanArron = true;
             }
 
         }
 
         // jalan samping kanan
-        if (window.isKeyPressed(GLFW_KEY_0)) {
+        if (window.isKeyPressed(GLFW_KEY_M)) {
             Penguin.get(0).translateObject(0.002f,0.0f,0.0f);
-            if(cekJalanArron == true) {
-                counterJalanArron++;
+            if(cekJalanDepanArron == true) {
+                counterJalanDepanArron++;
                 Vector3f tempCenterPoint = Penguin.get(0).getChildObject().get(6).updateCenterPoint();
                 Penguin.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-                Penguin.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Penguin.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
                 Penguin.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
                 Vector3f tempCenterPoint2 = Penguin.get(0).getChildObject().get(7).updateCenterPoint();
                 Penguin.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
-                Penguin.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                Penguin.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
                 Penguin.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
 
             } else{
-                counterJalanArron--;
+                counterJalanDepanArron--;
                 Vector3f tempCenterPoint = Penguin.get(0).getChildObject().get(6).updateCenterPoint();
                 Penguin.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-                Penguin.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Penguin.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
                 Penguin.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
                 Vector3f tempCenterPoint2 = Penguin.get(0).getChildObject().get(7).updateCenterPoint();
                 Penguin.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
-                Penguin.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                Penguin.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
                 Penguin.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
             }
 
-            if (counterJalanArron == 800.0f){
-                cekJalanArron = false;
+            if (counterJalanDepanArron == 130.0f){
+                cekJalanDepanArron = false;
             }
-            if(counterJalanArron == 0.0f){
-                cekJalanArron = true;
+            if(counterJalanDepanArron == -100.0f){
+                cekJalanDepanArron = true;
             }
-
         }
 
         // jalan depan
-        if (window.isKeyPressed(GLFW_KEY_N)) {
+        if (window.isKeyPressed(GLFW_KEY_U)) {
             Penguin.get(0).translateObject(0.0f,0.0f,0.002f);
             if(cekJalanDepanArron == true) {
                 counterJalanDepanArron++;
@@ -2793,7 +2793,7 @@ public class Main {
 
         }
 
-        if (window.isKeyPressed(GLFW_KEY_M)) {
+        if (window.isKeyPressed(GLFW_KEY_O)) {
             Penguin.get(0).translateObject(0.0f,0.0f,-0.002f);
             if(cekJalanDepanArron == true) {
                 counterJalanDepanArron++;
@@ -2827,6 +2827,7 @@ public class Main {
                 cekJalanDepanArron = true;
             }
         }
+
 
         if (window.isKeyPressed(GLFW_KEY_I)) {// muter ke atas
             Vector3f tempCenterPoint = Penguin.get(0).updateCenterPoint();
@@ -3111,6 +3112,23 @@ public class Main {
 
 
 
+        if(window.isKeyPressed(GLFW_KEY_COMMA))
+        {
+            camera.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(-1f));
+        }
+        if(window.isKeyPressed(GLFW_KEY_SLASH))
+        {
+            camera.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(1f));
+        }
+        if(window.isKeyPressed(GLFW_KEY_CAPS_LOCK))
+        {
+            camera.addRotation((float) Math.toRadians(1f), (float) Math.toRadians(0f));
+        }
+        if(window.isKeyPressed(GLFW_KEY_TAB))
+        {
+            camera.addRotation((float) Math.toRadians(-1f), (float) Math.toRadians(0f));
+        }
+
         if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
             camera.moveForward(0.02f);
         }
@@ -3119,18 +3137,18 @@ public class Main {
             camera.moveBackwards(0.05f);
         }
         if (window.isKeyPressed(GLFW_KEY_DOWN)) {
-            camera.moveDown(0.05f);
+            camera.moveDown(0.09f);
         }
 
         if (window.isKeyPressed(GLFW_KEY_UP)) {
-            camera.moveUp(0.02f);
+            camera.moveUp(0.09f);
         }
         if (window.isKeyPressed(GLFW_KEY_LEFT)) {
-            camera.moveLeft(0.02f);
+            camera.moveLeft(0.09f);
         }
 
         if (window.isKeyPressed(GLFW_KEY_RIGHT)) {
-            camera.moveRight(0.02f);
+            camera.moveRight(0.09f);
         }
     }
 

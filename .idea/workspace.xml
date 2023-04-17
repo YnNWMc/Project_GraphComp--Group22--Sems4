@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="Update LGM">
+    <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="Update LGM + Mix Main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle3D.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" afterDir="false" />
@@ -135,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681713549865</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update LGM + Mix Main">
+      <created>1681716320893</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681716320893</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
