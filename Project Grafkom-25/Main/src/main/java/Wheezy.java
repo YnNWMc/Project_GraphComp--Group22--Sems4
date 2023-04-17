@@ -36,7 +36,7 @@ public class Wheezy {
         camera.setPosition(-0.7f, 0.0f, 0.7f);
         camera.setRotation((float) Math.toRadians(0.0f), (float) Math.toRadians(30.0f));
 
-        // Objek
+        //Arron Kurniawan C14210060
 
         // badan utama
         bodyPart.add(new Wheezy_Object(
@@ -562,9 +562,6 @@ public class Wheezy {
     float counterJalanDepan = 0f;
     boolean cekJalanDepan = true;
 
-    float counterJalanBelakang = 0f;
-    boolean cekJalanBelakang = true;
-
 
     public void input() {
         // gerakkin Paruh
@@ -737,8 +734,8 @@ public class Wheezy {
 
         if (window.isKeyPressed(GLFW_KEY_6)) {
             bodyPart.get(0).translateObject(0.0f,0.0f,-0.002f);
-            if(cekJalanBelakang == true) {
-                counterJalanBelakang++;
+            if(cekJalanDepan == true) {
+                counterJalanDepan++;
                 Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
                 bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
                 bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
@@ -750,7 +747,7 @@ public class Wheezy {
                 bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
 
             } else{
-                counterJalanBelakang--;
+                counterJalanDepan--;
                 Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
                 bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
                 bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
@@ -762,11 +759,11 @@ public class Wheezy {
                 bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
             }
 
-            if (counterJalanBelakang == 130.0f){
-                cekJalanBelakang = false;
+            if (counterJalanDepan == 130.0f){
+                cekJalanDepan = false;
             }
-            if(counterJalanBelakang == -100.0f){
-                cekJalanBelakang = true;
+            if(counterJalanDepan == -100.0f){
+                cekJalanDepan = true;
             }
         }
 

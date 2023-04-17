@@ -21,7 +21,7 @@ public class Main {
 //     TOY STORY (HAMM, WHEEZY, LITTLE GREEN MAN)
     private Window window =
             new Window(800, 800, "Main Gabungan");
-    ArrayList<ArrayList<Object>> AOB = new ArrayList<ArrayList<Object>>();
+
     ArrayList<Object> BG = new ArrayList<>();
     ArrayList<Object> Babi = new ArrayList<>();
     ArrayList<LGM_Object> LGMO = new ArrayList<>();
@@ -898,935 +898,541 @@ public class Main {
 
         Babi.get(0).translateObject(0.0f,0.0f,-2.0f);
 
-        /* Yan Nathanael C14210061 */
-        //Head
-        LGMO.add(new LGM_Object(
+
+        //Arron Kurniawan C14210060
+
+        // badan utama
+        bodyPart.add(new Wheezy_Object(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
 
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                1.0f,
-                0.5f,
-                0.6f,
-                90, // Stack -->
-                45, // Sector --> Titik
-                0));
-        LGMO.get(0).translateObject(0.0f, 0.0f, -0.2f);
-
-
-        // Badan Antena
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
                 new ArrayList<>(
                 ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.1f,
-                0.1f,
-                0.4f,
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.32f,// titik x
+                0.48f,// titik y
+                0.40f,// titik z
                 15, // Stack -->
                 30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(0).translateObject(0.0f, 0.0f, 0.9f);
-        LGMO.get(0).getChildObject().get(0).rotateObject(4.75f, 1f, 0f, 0f);
+                1));// option
+        bodyPart.get(0).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).translateObject(-0.3f, 0f, 0f); // POSISI
 
-        // Fondasi Antena
-        LGMO.get(0).getChildObject().get(0).getChildObject().add(new LGM_Object(
+        //bagian perut yg putih
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
 
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.04f,
-                0.04f,
-                0.05f,
+                new ArrayList<>(
+                ),
+                new Vector4f(0.89f, 0.87f, 0.74f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.16f,// titik x
+                0.22f,// titik y
+                0.05f,// titik z
                 15, // Stack -->
                 30, // Sector --> Titik
-                2));
-        LGMO.get(0).getChildObject().get(0).getChildObject().get(0).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(0.0f, 0.7f, 0.0f);
+                2));// option
+        bodyPart.get(0).getChildObject().get(0).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(0).translateObject(-0.41f, -0.18f, 0.33f); // POSISI
 
-        // Top of Antena
-        LGMO.get(0).getChildObject().get(0).getChildObject().add(new LGM_Object(
+        //tangan kanan
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
 
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.2f,
-                0.2f,
-                0.2f,
-                90, // Stack -->
-                45, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(0).getChildObject().get(1).translateObject(0.00f, 1.4f, -0.15f);
+                new ArrayList<>(
+                ),
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.16f,// titik x
+                0.26f,// titik y
+                0.2f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                3));// option
+        bodyPart.get(0).getChildObject().get(1).rotateObject(2.2f, 1.3f, 0f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(1).rotateObject(1.2f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(1).translateObject(-0.138f, 0.16f, 0.28f); // POSISI
 
-        //White Eye Middle
-        LGMO.get(0).getChildObject().add(new LGM_Object(
+        //tangan Kiri
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
 
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(255/255f, 255/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.25f,
-                0.15f,
-                0.15f,
-                90, // Stack -->
-                45, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(1).translateObject(0.00f, 0.25f, 0.35f);
+                new ArrayList<>(
+                ),
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.16f,// titik x
+                0.26f,// titik y
+                0.2f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                3));// option
 
-        //Black Eye Middle
-        LGMO.get(0).getChildObject().get(1).getChildObject().add(new LGM_Object(
+        bodyPart.get(0).getChildObject().get(2).rotateObject(2.2f, 1.3f, 0f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(2).rotateObject(4.4f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(2).translateObject(-0.57f, 0.16f, 0.08f); // POSISI
+
+
+        //kelopak mata kanan
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
 
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.05f,
-                0.05f,
-                0.05f,
-                90, // Stack -->
-                45, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(1).getChildObject().get(0).translateObject(0.00f, 0.2f, 0.50f);
+                new ArrayList<>(
+                ),
+                new Vector4f(0.95f, 1f, 1f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.05f,// titik x
+                0.038f,// titik y
+                0.02f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                4));// option
 
-        //Kelopak Eye Middle Bawah
-        LGMO.get(0).getChildObject().get(1).getChildObject().add(new LGM_Object(
+        bodyPart.get(0).getChildObject().get(3).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(3).translateObject(-0.3f, 0.46f, 0.2f); // POSISI
+
+        //kelopak mata kiri
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
-                List.of(0.0f, 0.0f, 2.0f),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.95f, 1f, 1f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.05f,// titik x
+                0.038f,// titik y
+                0.02f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                4));// option
+
+        bodyPart.get(0).getChildObject().get(4).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(4).translateObject(-0.42f, 0.465f, 0.12f); // POSISI
+
+        //mata kanan
+        bodyPart.get(0).getChildObject().get(3).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.03f,// titik x
+                0.02f,// titik y
+                0.01f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                4));// option
+
+        bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(-0.31f, 0.45f, 0.21f); // POSISI
+
+        //mata kiri
+        bodyPart.get(0).getChildObject().get(4).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.03f,// titik x
+                0.02f,// titik y
+                0.01f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                4));// option
+
+        bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(-0.43f, 0.455f, 0.13f);// POSISI
+
+        // paruh atas
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.95f, 0.75f, 0.09f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.01f,// titik x
+                0.017f,// titik y
+                0.023f,// titik z
+                15, // Stack -->
+                30, // Sector --> TitikW
+                5));// option
+
+        bodyPart.get(0).getChildObject().get(5).rotateObject(3.13f, 1f, 0f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(5).translateObject(-0.44f, 0.3f, 0.51f); // POSISI
+
+        // paruh bwh
+        bodyPart.get(0).getChildObject().get(5).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.95f, 0.75f, 0.09f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.008f,// titik x
+                0.007f,// titik y
+                0.02f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                5));// option
+
+        bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).rotateObject(3.13f, 1f, 0f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(-0.44f, 0.26f, 0.5f); // POSISI
+
+        //buletan dasi
+        bodyPart.get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(1f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.03f,// titik x
+                0.02f,// titik y
+                0.04f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                4));// option
+
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-0.35f, -0.009f, 0.2f);// POSISI
+
+
+        //dasi kanan
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(1f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.07f,// titik x
+                0.068f,// titik y
+                0.07f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                6));// option
+
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(0).rotateObject(29.81f, 1f, 0f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(0).rotateObject(-30.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-0.4f, -0.009f, 0.40f);// POSISI
+
+        //dasi kiri
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(1f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.07f,// titik x
+                0.068f,// titik y
+                0.07f,// titik z
+                15, // Stack -->
+                30, // Sector --> Titik
+                6));// option
+
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(1).rotateObject(29.81f, 1f, 0f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(1).rotateObject(29.3f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(1).translateObject(-0.465f, -0.007f, 0.40f);// POSISI
+
+        //kaki kiri
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.89f, 0.87f, 0.74f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.2f,// titik x
+                0.3f,// titik y
+                0.11f,// titik z
+                150, // Stack -->
+                150, // Sector --> Titik
+                4));// option
+
+        bodyPart.get(0).getChildObject().get(6).rotateObject(1.57f, 1f, 0f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(6).rotateObject(90f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(6).translateObject(-0.5f, -0.41f, 0.1f);
+
+        //kaki kanan
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0.89f, 0.87f, 0.74f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.2f,// titik x
+                0.3f,// titik y
+                0.11f,// titik z
+                150, // Stack -->
+                150, // Sector --> Titik
+                4));// option
+
+        bodyPart.get(0).getChildObject().get(7).rotateObject(1.57f, 1f, 0f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(7).rotateObject(-60f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(7).translateObject(-0.2f, -0.41f, 0.3f);
+
+        //pantat penguin
+        bodyPart.get(0).getChildObject().add(new Wheezy_Object(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(0f, 0f, 0f, 1.0f),// color
+                0.00,// radius
+                new ArrayList<>(List.of(0f, 0f, 0f)),// center point
+                0.2f,// titik x
+                0.3f,// titik y
+                0.15f,// titik z
+                150, // Stack -->
+                150, // Sector --> Titik
+                4));// option
+
+        bodyPart.get(0).getChildObject().get(8).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
+        bodyPart.get(0).getChildObject().get(8).translateObject(-0.23f, -0.21f, -0.14f);
+
+        //alis penguin kanan
+        bodyPart.get(0).getChildObject().add(new SphereBabi(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(1.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 0.0f),
                 0.24f,
                 0.24f,
                 Arrays.asList(
-                        new Vector3f(-0.225f, 0.225f, .7f),//TITIK1
-                        new Vector3f(0.00f, 0.1f, .7f), //TITIK2
-                        new Vector3f(0.225f, 0.225f, .7f) //TITIK3
+                        new Vector3f(-0.095f,0.19f,0.60f),//TITIK1
+                        new Vector3f(-0.05f,0.22f,0.60f), //TITIK2
+                        new Vector3f(-0.01f,0.19f,0.60f) //TITIK3
                 )
         ));
-        LGMO.get(0).getChildObject().get(1).getChildObject().get(1).translateObject(0.00f, -0.14f, -0.1f);
+        bodyPart.get(0).getChildObject().get(9).rotateObject(0.6f,1f, 0.0f, 0.0f);
+        bodyPart.get(0).getChildObject().get(9).rotateObject(-0.28f,0f, 1.0f, 0.0f);
+        bodyPart.get(0).getChildObject().get(9).translateObject(-0.16f, 0.7f, -0.18f);
 
-        //White Eye Left
-        LGMO.get(0).getChildObject().add(new LGM_Object(
+
+        //alis penguin Kiri
+        bodyPart.get(0).getChildObject().add(new SphereBabi(
                 Arrays.asList(
                         new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
 
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
                 ),
                 new ArrayList<>(
                 ),
-                new Vector4f(255/255f, 255/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.25f,
-                0.15f,
-                0.15f,
-                90, // Stack -->
-                45, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(2).rotateObject(0.4f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(2).translateObject(-0.495f, 0.19f, 0.35f);
-
-        //Black Eye Left
-        LGMO.get(0).getChildObject().get(2).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.05f,
-                0.05f,
-                0.05f,
-                90, // Stack -->
-                45, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(2).getChildObject().get(0).translateObject(-0.465f, 0.15f, 0.50f);
-
-        //Kelopak Eye Left Bawah
-        LGMO.get(0).getChildObject().get(2).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
-                List.of(0.0f, 0.0f, 2.0f),
+                new Vector4f(1.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 0.0f),
                 0.24f,
                 0.24f,
                 Arrays.asList(
-                        new Vector3f(-0.225f, 0.225f, .7f),//TITIK1
-                        new Vector3f(0.00f, 0.1f, .7f), //TITIK2
-                        new Vector3f(0.225f, 0.225f, .7f) //TITIK3
+                        new Vector3f(-0.095f,0.19f,0.60f),//TITIK1
+                        new Vector3f(-0.05f,0.22f,0.60f), //TITIK2
+                        new Vector3f(-0.01f,0.19f,0.60f) //TITIK3
                 )
         ));
-        LGMO.get(0).getChildObject().get(2).getChildObject().get(1).rotateObject(0.35f, 0f, 0f, 1f);
+        bodyPart.get(0).getChildObject().get(10).rotateObject(0.6f,1f, 0.0f, -0.0f);
+        bodyPart.get(0).getChildObject().get(10).rotateObject(-0.28f,0f, 1.0f, -0.0f);
+        bodyPart.get(0).getChildObject().get(10).translateObject(-0.285f, 0.7f, -0.25f);
 
-        LGMO.get(0).getChildObject().get(2).getChildObject().get(1).translateObject(-0.35f, -0.15f, -0.1f);
-
-        //White Eye Right
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(255/255f, 255/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.25f,
-                0.15f,
-                0.15f,
-                90, // Stack -->
-                45, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(3).rotateObject(-0.4f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(3).translateObject(0.495f, 0.19f, 0.35f);
-
-        //Black Eye Right
-        LGMO.get(0).getChildObject().get(3).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.05f,
-                0.05f,
-                0.05f,
-                90, // Stack -->
-                45, // Sector --> Titik
-                0));
-        //.rotateObject(-0.4f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(0.465f, 0.15f, 0.50f);
-
-        //Kelopak Eye Right Bawah
-        LGMO.get(0).getChildObject().get(3).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
-                List.of(0.0f, 0.0f, 2.0f),
-                0.24f,
-                0.24f,
-                Arrays.asList(
-                        new Vector3f(-0.225f, 0.225f, .7f),//TITIK1
-                        new Vector3f(0.00f, 0.1f, .7f), //TITIK2
-                        new Vector3f(0.225f, 0.225f, .7f) //TITIK3
-                )
-        ));
-        LGMO.get(0).getChildObject().get(3).getChildObject().get(1).rotateObject(-0.35f, 0f, 0f, 1f);
-
-        LGMO.get(0).getChildObject().get(3).getChildObject().get(1).translateObject(0.35f, -0.15f, -0.1f);
-        //Ear Right
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.6f,
-                0.6f,
-                0.6f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                6));
-        LGMO.get(0).getChildObject().get(4).rotateObject(-1.2f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(4).translateObject(0.6f, 0.275f, 0f);
-        //Ear Lobe Right
-        LGMO.get(0).getChildObject().get(4).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(150/255f, 160/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.3f,
-                0.3f,
-                0.1f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                6));
-        LGMO.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject(-1.2f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(0.65f, 0.35f, 0.35f);
-        //Ear Left
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.6f,
-                0.6f,
-                0.6f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                6));
-        LGMO.get(0).getChildObject().get(5).rotateObject(-0.4f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(5).translateObject(-0.6f, 0.275f, 0f);
-        //Ear Lobe Left
-        LGMO.get(0).getChildObject().get(5).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(150/255f, 160/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.3f,
-                0.3f,
-                0.1f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                6));
-        LGMO.get(0).getChildObject().get(5).getChildObject().get(0).rotateObject(-0.4f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(-0.65f, 0.35f, 0.35f);
-        // Mulut
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.07f,
-                0.01f,
-                0.002f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                7));
-        LGMO.get(0).getChildObject().get(6).translateObject(0f, -0.25f, 0.52f);
-
-        //Purple Neck
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(116/255f, 71/255f, 158/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.45f,
-                0.225f,
-                0.10f,
-                90, // Stack -->
-                45, // Sector --> Titik
-                4));
-        LGMO.get(0).getChildObject().get(7).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(7).translateObject(0.00f, -0.32f, 0.0f);
-
-        // Badan Atas Alien
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.8f,
-                0.5f,
-                0.25f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(8).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(8).translateObject(0f, -0.67f, 0f);
-        // Sabuk
-        LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(51/255f, 56/255f, 120/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.85f,
-                0.60f,
-                0.15f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(8).getChildObject().get(0).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(8).getChildObject().get(0).translateObject(0.0f, -0.95f, 0.0f);
-        // Kepala Sabuk
-        LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(5/255f, 33/255f, 90/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.55f,
-                0.10f,
-                0.3f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                3));
-        LGMO.get(0).getChildObject().get(8).getChildObject().get(1).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(8).getChildObject().get(1).translateObject(0.0f, -0.925f, 0.65f);
-
-        // Gambar Planet Kuning
-        LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 157/255f, 126/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.15f,
-                0.15f,
-                0.025f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(8).getChildObject().get(2).translateObject(0.3f, -0.6f, 0.294f);
-
-        // Badan Biru
-        LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.137f,
-                0.137f,
-                0.025f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(8).getChildObject().get(3).translateObject(0.3f, -0.6f, 0.298f);
-        // Gambar Ring Planet
-        LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 157/255f, 126/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.1f,
-                0.025f,
-                0.025f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                5));
-        LGMO.get(0).getChildObject().get(8).getChildObject().get(4).rotateObject(1.6f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(8).getChildObject().get(4).rotateObject(0.2f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(8).getChildObject().get(4).translateObject(0.3f, -0.6f, 0.45f);
-
-
-        // Badan Bawah Alien
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.80f,
-                0.55f,
-                0.125f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(9).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(9).translateObject(0f, -1.135f, 0f);
-
-        // Paha Kiri Besar
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.475f,
-                0.4f,
-                0.2f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(10).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(10).translateObject(-0.3f, -1.335f, 0f);
-        // Kaki Kiri
-        LGMO.get(0).getChildObject().get(10).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(9/255f, 42/255f, 103/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.525f,
-                0.5f,
-                0.125f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(10).getChildObject().get(0).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(10).getChildObject().get(0).translateObject(-0.3f, -1.635f, 0f);
-        // Paha Kiri Kecil
-        LGMO.get(0).getChildObject().get(10).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.425f,
-                0.4f,
-                0.125f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(10).getChildObject().get(1).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(10).getChildObject().get(1).translateObject(-0.3f, -1.635f, 0f);
-
-        // Paha Kanan Besar
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.475f,
-                0.4f,
-                0.2f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(11).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(11).translateObject(0.3f, -1.335f, 0f);
-        // Kaki Kanan
-        LGMO.get(0).getChildObject().get(11).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(9/255f, 42/255f, 103/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.525f,
-                0.5f,
-                0.125f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(11).getChildObject().get(0).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(11).getChildObject().get(0).translateObject(0.3f, -1.635f, 0f);
-        // Paha Kanan Kecil
-        LGMO.get(0).getChildObject().get(11).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.425f,
-                0.4f,
-                0.125f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(11).getChildObject().get(1).rotateObject(1.55f, 1f, 0f, 0f);
-        LGMO.get(0).getChildObject().get(11).getChildObject().get(1).translateObject(0.3f, -1.635f, 0f);
-
-        // Lengan Kiri
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.2f,
-                0.2f,
-                0.8f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(12).rotateObject(1.6f, 0f, 1f, 0f);
-        LGMO.get(0).getChildObject().get(12).rotateObject(1f, 0f, 0f, -1f);
-        LGMO.get(0).getChildObject().get(12).rotateObject(0.3f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(12).translateObject(-1.0f, -0.4f, 0f);
-        // Telapak Kiri
-        LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.3f,
-                0.3f,
-                0.3f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(12).getChildObject().get(0).rotateObject(1.6f, 0f, 1f, 0f);
-        LGMO.get(0).getChildObject().get(12).getChildObject().get(0).translateObject(-1.9f, 0.22f, 0f);
-
-        // Jari Kiri1
-        LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.01f,
-                0.01f,
-                0.005f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                7));
-        LGMO.get(0).getChildObject().get(12).getChildObject().get(1).rotateObject(-1.5f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(12).getChildObject().get(1).translateObject(-2.3f, 0.22f, 0f);
-
-        // Jari Kiri2
-        LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.01f,
-                0.01f,
-                0.005f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                7));
-        LGMO.get(0).getChildObject().get(12).getChildObject().get(2).rotateObject(-2.1f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(12).getChildObject().get(2).translateObject(-2.3f, 0.675f, 0f);
-
-        // Jari Kiri3
-        LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.0175f,
-                0.0175f,
-                0.00425f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                7));
-        LGMO.get(0).getChildObject().get(12).getChildObject().get(3).rotateObject(-3.3f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(12).getChildObject().get(3).translateObject(-1.6f, 0.7f, 0f);
-
-        // Lengan Kanan
-        LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.2f,
-                0.2f,
-                0.8f,
-                15, // Stack -->
-                30, // Sector --> Titik
-                1));
-        LGMO.get(0).getChildObject().get(13).rotateObject(1.6f, 0f, 1f, 0f);
-        LGMO.get(0).getChildObject().get(13).rotateObject(1f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(13).rotateObject(0.3f, 0f, 0f, -1f);
-        LGMO.get(0).getChildObject().get(13).translateObject(1.0f, -0.4f, 0f);
-
-        // Telapak Kanan
-        LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.3f,
-                0.3f,
-                0.3f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                0));
-        LGMO.get(0).getChildObject().get(13).getChildObject().get(0).translateObject(1.75f, 0.28f, -0.25f);
-
-
-        // Jari Kanan1
-        LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.01f,
-                0.01f,
-                0.005f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                7));
-        LGMO.get(0).getChildObject().get(13).getChildObject().get(1).rotateObject(1.9f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(13).getChildObject().get(1).translateObject(2.3f, 0.475f, 0f);
-
-        // Jari Kanan2
-        LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.01f,
-                0.01f,
-                0.005f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                7));
-        LGMO.get(0).getChildObject().get(13).getChildObject().get(2).rotateObject(2.4f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(13).getChildObject().get(2).translateObject(2.1f, 0.8f, 0f);
-
-
-        // Jari Kanan3
-        LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
-                new ArrayList<>(
-                ),
-                new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
-                new ArrayList<>(List.of(0.0f, 0.0f, 0.0f)),
-                0.0175f,
-                0.0175f,
-                0.00425f,
-                100, // Stack -->
-                50, // Sector --> Titik
-                7));
-        LGMO.get(0).getChildObject().get(13).getChildObject().get(3).rotateObject(3.4f, 0f, 0f, 1f);
-        LGMO.get(0).getChildObject().get(13).getChildObject().get(3).translateObject(1.55f, 0.75f, 0f);
 
     }
-    //Param Ian
+    //parameter gerak
     private float countjalan=0;
     private float countnoleh=0;
     private float countngangguk =0;
     private boolean kaki = true;
 
 
-    //Param Yan
-    private boolean limitKaki = true, limitTanganKanan = true, limitTanganKiri = true, limitAntena = true;
-    private int counterKaki = 0, counterTgnKanan = 0, counterTgnKiri = 0, counterAntenna = 0;
+    float counterParuhArron = 0f;
+    boolean cekParuhArron = true;
+
+    float counterMataArron = 0f;
+    boolean cekMataArron = true;
+
+    float counterJalanArron = 0f;
+    boolean cekJalanArron = true;
+
+    float counterJalanDepanArron = 0f;
+    boolean cekJalanDepanArron = true;
+
+
     public void input() {
-        //animasi Hamm c14210057 - Christian Philip Tjahyadi
+        //animasi Hann c14210057 - Christian Philip Tjahyadi
         // maju
         if(window.isKeyPressed(GLFW_KEY_1)){
             Babi.get(0).translateObject(0.0f,0.0f,0.005f);
@@ -2094,6 +1700,8 @@ public class Main {
                 Babi.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
             }
         }
+
+
         //wasd
         // rotate ke atas dan kebawah bikin erorr
         if (window.isKeyPressed(GLFW_KEY_W)) {
@@ -2102,6 +1710,7 @@ public class Main {
 
             Babi.get(0).rotateObject(0.05f, 1f, 0f, 0f);
             Babi.get(0).translateObject(tempCenterPointw.x*1,tempCenterPointw.y*1,tempCenterPointw.z*1);
+
 //            BG.get(0).rotateObject(0.05f, 1f, 0f, 0f);
 
         }
@@ -2111,6 +1720,7 @@ public class Main {
             Babi.get(0).translateObject(tempCenterPoints.x*-1,tempCenterPoints.y*-1,tempCenterPoints.z*-1);
             Babi.get(0).rotateObject(-0.05f, 1f, 0f, 0f);
             Babi.get(0).translateObject(tempCenterPoints.x*1,tempCenterPoints.y*1,tempCenterPoints.z*1);
+
 //            BG.get(0).rotateObject(-0.05f, 1f, 0f, 0f);
         }
 
@@ -2119,6 +1729,8 @@ public class Main {
             Babi.get(0).translateObject(tempCenterPointsa.x*-1,tempCenterPointsa.y*-1,tempCenterPointsa.z*-1);
             Babi.get(0).rotateObject(-0.05f, 0f, 1f, 0f);
             Babi.get(0).translateObject(tempCenterPointsa.x*1,tempCenterPointsa.y*1,tempCenterPointsa.z*1);
+
+
 //            BG.get(0).rotateObject(-0.05f, 0f, 1f, 0f);
         }
 
@@ -2127,257 +1739,242 @@ public class Main {
             Babi.get(0).translateObject(tempCenterPointsd.x*-1,tempCenterPointsd.y*-1,tempCenterPointsd.z*-1);
             Babi.get(0).rotateObject(0.05f, 0f, 1f, 0f);
             Babi.get(0).translateObject(tempCenterPointsd.x*1,tempCenterPointsd.y*1,tempCenterPointsd.z*1);
+
+
 //            BG.get(0).rotateObject(0.05f, 0f, 1f, 0f);
         }
 
 
+        // Arron
 
-        /*Yan Nathanael C14210061*/
-        // 5678VBN ==> Animasi
-        if (window.isKeyPressed(GLFW_KEY_5)) {
-            LGMO.get(0).translateObject(0.002f, 0.0f, 0.0f);
-            if (limitKaki) {
-                counterKaki++;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(1.0f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-
-                Vector3f tempCenterPoint2 = LGMO.get(0).getChildObject().get(11).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
-                LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(-1.0f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-
-
-                if (counterKaki == 15.0f) {
-                    limitKaki = false;
-                }
-            } else {
-                counterKaki--;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(-1.0f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-
-                Vector3f tempCenterPoint2 = LGMO.get(0).getChildObject().get(11).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
-                LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(1.0f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-
-                if (counterKaki == -15.0f) {
-                    limitKaki = true;
-                }
-            }
-        }
-        if (window.isKeyPressed(GLFW_KEY_6)) {
-            LGMO.get(0).translateObject(-0.002f, 0.0f, 0.0f);
-            if (limitKaki) {
-                counterKaki++;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(1.0f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-
-                Vector3f tempCenterPoint2 = LGMO.get(0).getChildObject().get(11).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
-                LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(-1.0f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-                if (counterKaki == 15.0f) {
-                    limitKaki = false;
-                }
-            } else {
-                counterKaki--;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(-1.0f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-
-                Vector3f tempCenterPoint2 = LGMO.get(0).getChildObject().get(11).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
-                LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(1.0f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-
-                if (counterKaki == -15.0f) {
-                    limitKaki = true;
-                }
-            }
-        }
-        if (window.isKeyPressed(GLFW_KEY_7)) {
-            LGMO.get(0).translateObject(0.0f, 0.0f, 0.02f);
-            if (limitKaki) {
-                counterKaki++;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-
-                Vector3f tempCenterPoint2 = LGMO.get(0).getChildObject().get(11).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
-                LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-                if (counterKaki == 15.0f) {
-                    limitKaki = false;
-                }
-            } else {
-                counterKaki--;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-
-                Vector3f tempCenterPoint2 = LGMO.get(0).getChildObject().get(11).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
-                LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-
-                if (counterKaki == -15.0f) {
-                    limitKaki = true;
-                }
-            }
-        }
-        if (window.isKeyPressed(GLFW_KEY_8)) {
-            LGMO.get(0).translateObject(0.0f, 0.0f, -0.02f);
-            if (limitKaki) {
-                counterKaki++;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-
-                Vector3f tempCenterPoint2 = LGMO.get(0).getChildObject().get(11).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
-                LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-                if (counterKaki == 15.0f) {
-                    limitKaki = false;
-                }
-            } else {
-                counterKaki--;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(10).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(10).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-
-                Vector3f tempCenterPoint2 = LGMO.get(0).getChildObject().get(11).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * -1, tempCenterPoint2.y * -1, tempCenterPoint2.z * -1);
-                LGMO.get(0).getChildObject().get(11).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(11).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y * 1, tempCenterPoint2.z * 1);
-
-                if (counterKaki == -15.0f) {
-                    limitKaki = true;
-                }
-            }
-        }
-        if (window.isKeyPressed(GLFW_KEY_V)) {
-            if (limitTanganKiri) {
-                counterTgnKanan++;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(12).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(1f), 1.0f, 0.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(1f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counterTgnKanan == 10f) {
-                    limitTanganKiri = false;
-                }
-            } else {
-                counterTgnKanan--;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(12).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(-1f), 1.0f, 0.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(12).rotateObject((float) Math.toRadians(-1f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(12).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counterTgnKanan == -10f) {
-                    limitTanganKiri = true;
-                }
-            }
-        }
-        if (window.isKeyPressed(GLFW_KEY_N)) {
-            if (limitTanganKanan) {
-                counterTgnKiri++;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(13).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(1f), 1.0f, 0.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(1f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counterTgnKiri == 10f) {
-                    limitTanganKanan = false;
-                }
-            } else {
-                counterTgnKiri--;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(13).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(-1f), 1.0f, 0.0f, 0.0f);
-                LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(13).rotateObject((float) Math.toRadians(-1f), 0.0f, 0.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(13).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counterTgnKiri == -10f) {
-                    limitTanganKanan = true;
-                }
-            }
-        }
-        if (window.isKeyPressed(GLFW_KEY_B)) {
-            if (limitAntena) {
-                counterAntenna++;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(0).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counterAntenna == 8f) {
-                    limitAntena = false;
-                }
+        if (window.isKeyPressed(GLFW_KEY_U)) {
+            if (cekParuhArron == true) {
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint.x * -1,tempCenterPoint.y * -1,tempCenterPoint.z *-1);
+                counterParuhArron ++;
+                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).rotateObjectOnPoint((float) Math.toRadians(-0.1/1.5f), 1.0f, 0.0f, 0.0f,-0.44f, 0.3f, 0.51f);
+                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint.x * 1,tempCenterPoint.y * 1,tempCenterPoint.z * 1);
             }
             else {
-                counterAntenna--;
-                Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(0).updateCenterPoint();
-                LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
-                LGMO.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f), 1.0f, 1.0f, 1.0f);
-                LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                if (counterAntenna == -8f) {
-                    limitAntena = true;
-                }
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint2.x * -1,tempCenterPoint2.y * -1,tempCenterPoint2.z * -1);
+                counterParuhArron --;
+                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).rotateObjectOnPoint((float) Math.toRadians(0.1/1.5f), 1.0f, 0.0f, 0.0f,-0.44f, 0.3f, 0.51f);
+                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y* 1,tempCenterPoint2.z* 1);
+            }
+            if (counterParuhArron == 40.0f){
+                cekParuhArron = false;
+            }
+            if(counterParuhArron == 0.0f){
+                cekParuhArron = true;
             }
         }
-        // RTYFGH ==> Rotate
-        if (window.isKeyPressed(GLFW_KEY_R)) {
-            for (LGM_Object i : LGMO) {
-                i.rotateObject(0.01f, 0f, 0f, 1f);
+
+        //gerakkin mata
+        if (window.isKeyPressed(GLFW_KEY_O)) {
+            if (cekMataArron == true) {
+                counterMataArron++;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f/3),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f/3),1.0f, -.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+            else {
+                counterMataArron--;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f/3),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f/3),1.0f, -.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+            if (counterMataArron== 12.0f){
+                cekMataArron = false;
+            }
+            if(counterMataArron == 0){
+                cekMataArron = true;
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_Y)) {
-            for (LGM_Object i : LGMO) {
-                i.rotateObject(-0.01f, 0f, 0f, 1f);
+
+        // jalan samping kiri
+        if (window.isKeyPressed(GLFW_KEY_9)) {
+            bodyPart.get(0).translateObject(-0.002f,0.0f,0.0f);
+            if(cekJalanArron == true) {
+                counterJalanArron++;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+            } else{
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+
+            if (counterJalanArron == 800.0f){
+                cekJalanArron = false;
+            }
+            if(counterJalanArron == 0.0f){
+                cekJalanArron = true;
+            }
+
+        }
+
+        // jalan samping kanan
+        if (window.isKeyPressed(GLFW_KEY_0)) {
+            bodyPart.get(0).translateObject(0.002f,0.0f,0.0f);
+            if(cekJalanArron == true) {
+                counterJalanArron++;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+            } else{
+                counterJalanArron--;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),0.0f, 1.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+
+            if (counterJalanArron == 800.0f){
+                cekJalanArron = false;
+            }
+            if(counterJalanArron == 0.0f){
+                cekJalanArron = true;
+            }
+
+        }
+
+        // jalan depan
+        if (window.isKeyPressed(GLFW_KEY_N)) {
+            bodyPart.get(0).translateObject(0.0f,0.0f,0.002f);
+            if(cekJalanDepanArron == true) {
+                counterJalanDepanArron++;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+            } else{
+                counterJalanDepanArron--;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+
+            if (counterJalanDepanArron == 130.0f){
+                cekJalanDepanArron = false;
+            }
+            if(counterJalanDepanArron == -100.0f){
+                cekJalanDepanArron = true;
+            }
+
+        }
+
+        if (window.isKeyPressed(GLFW_KEY_M)) {
+            bodyPart.get(0).translateObject(0.0f,0.0f,-0.002f);
+            if(cekJalanDepanArron == true) {
+                counterJalanDepanArron++;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+
+            } else{
+                counterJalanDepanArron--;
+                Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(6).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+                bodyPart.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(6).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
+
+                Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(7).updateCenterPoint();
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
+                bodyPart.get(0).getChildObject().get(7).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(7).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
+            }
+
+            if (counterJalanDepanArron == 130.0f){
+                cekJalanDepanArron = false;
+            }
+            if(counterJalanDepanArron == -100.0f){
+                cekJalanDepanArron = true;
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_T)) {
-            Vector3f tempCenterPointw = LGMO.get(0).updateCenterPoint();
-            LGMO.get(0).translateObject(tempCenterPointw.x * -1, tempCenterPointw.y * -1, tempCenterPointw.z * -1);
-            LGMO.get(0).rotateObject(0.05f, 1f, 0f, 0f);
-            LGMO.get(0).translateObject(tempCenterPointw.x * 1, tempCenterPointw.y * 1, tempCenterPointw.z * 1);
+
+        if (window.isKeyPressed(GLFW_KEY_I)) {// muter ke atas
+            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
+            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+            bodyPart.get(0).rotateObject(0.01f, 1f, 0f, 0f);
+            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
         }
-        if (window.isKeyPressed(GLFW_KEY_G)) {
-            Vector3f tempCenterPoints = LGMO.get(0).updateCenterPoint();
-            LGMO.get(0).translateObject(tempCenterPoints.x * -1, tempCenterPoints.y * -1, tempCenterPoints.z * -1);
-            LGMO.get(0).rotateObject(-0.05f, 1f, 0f, 0f);
-            LGMO.get(0).translateObject(tempCenterPoints.x * 1, tempCenterPoints.y * 1, tempCenterPoints.z * 1);
+
+        if (window.isKeyPressed(GLFW_KEY_K)) {// muter ke bawah
+            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
+            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+            bodyPart.get(0).rotateObject(-0.01f, 1f, 0f, 0f);
+            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
         }
-        if (window.isKeyPressed(GLFW_KEY_F)) {
-            Vector3f tempCenterPointsa = LGMO.get(0).updateCenterPoint();
-            LGMO.get(0).translateObject(tempCenterPointsa.x * -1, tempCenterPointsa.y * -1, tempCenterPointsa.z * -1);
-            LGMO.get(0).rotateObject(-0.05f, 0f, 1f, 0f);
-            LGMO.get(0).translateObject(tempCenterPointsa.x * 1, tempCenterPointsa.y * 1, tempCenterPointsa.z * 1);
+
+        if (window.isKeyPressed(GLFW_KEY_J)) {// muter ke kiri
+            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
+            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+            bodyPart.get(0).rotateObject(-0.01f, 0f, 1f, 0f);
+            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
         }
-        if (window.isKeyPressed(GLFW_KEY_H)) {
-            Vector3f tempCenterPointsd = LGMO.get(0).updateCenterPoint();
-            LGMO.get(0).translateObject(tempCenterPointsd.x * -1, tempCenterPointsd.y * -1, tempCenterPointsd.z * -1);
-            LGMO.get(0).rotateObject(0.05f, 0f, 1f, 0f);
-            LGMO.get(0).translateObject(tempCenterPointsd.x * 1, tempCenterPointsd.y * 1, tempCenterPointsd.z * 1);
+
+        if (window.isKeyPressed(GLFW_KEY_L)) {// muter ke kanan
+            Vector3f tempCenterPoint = bodyPart.get(0).updateCenterPoint();
+            bodyPart.get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
+            bodyPart.get(0).rotateObject(0.01f, 0f, 1f, 0f);
+            bodyPart.get(0).translateObject(tempCenterPoint.x,tempCenterPoint.y,tempCenterPoint.z);
         }
 
 
@@ -2416,11 +2013,11 @@ public class Main {
             for (Object objBabi : Babi) {
                 objBabi.draw(camera, projection);
             }
-            for (Object objLGM : LGMO) {
-                objLGM.draw(camera, projection);
-            }
             for (Object objBG : BG) {
                 objBG.draw(camera, projection);
+            }
+            for (Object wheezy : bodyPart) {
+                wheezy.draw(camera, projection);
             }
 
             //Restore State
