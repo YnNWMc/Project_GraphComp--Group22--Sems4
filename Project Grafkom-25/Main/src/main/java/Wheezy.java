@@ -176,7 +176,7 @@ public class Wheezy {
                 4));// option
 
         bodyPart.get(0).getChildObject().get(3).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
-        bodyPart.get(0).getChildObject().get(3).translateObject(-0.28f, 0.46f, 0.2f); // POSISI
+        bodyPart.get(0).getChildObject().get(3).translateObject(-0.3f, 0.46f, 0.2f); // POSISI
 
         //kelopak mata kiri
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
@@ -232,7 +232,7 @@ public class Wheezy {
                 4));// option
 
         bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
-        bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(-0.29f, 0.45f, 0.21f); // POSISI
+        bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(-0.31f, 0.45f, 0.21f); // POSISI
 
         //mata kiri
         bodyPart.get(0).getChildObject().get(4).getChildObject().add(new Wheezy_Object(
@@ -491,8 +491,60 @@ public class Wheezy {
         bodyPart.get(0).getChildObject().get(8).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
         bodyPart.get(0).getChildObject().get(8).translateObject(-0.23f, -0.21f, -0.14f);
 
+        //alis penguin kanan
+        bodyPart.get(0).getChildObject().add(new SphereBabi(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(1.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 0.0f),
+                0.24f,
+                0.24f,
+                Arrays.asList(
+                        new Vector3f(-0.095f,0.19f,0.60f),//TITIK1
+                        new Vector3f(-0.05f,0.22f,0.60f), //TITIK2
+                        new Vector3f(-0.01f,0.19f,0.60f) //TITIK3
+                )
+        ));
+        bodyPart.get(0).getChildObject().get(9).rotateObject(0.6f,1f, 0.0f, 0.0f);
+        bodyPart.get(0).getChildObject().get(9).rotateObject(-0.28f,0f, 1.0f, 0.0f);
+        bodyPart.get(0).getChildObject().get(9).translateObject(-0.16f, 0.7f, -0.18f);
 
 
+        //alis penguin Kiri
+        bodyPart.get(0).getChildObject().add(new SphereBabi(
+                Arrays.asList(
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
+                                , GL_VERTEX_SHADER),
+
+                        new ShaderProgram.ShaderModuleData(
+                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
+                                , GL_FRAGMENT_SHADER)
+                ),
+                new ArrayList<>(
+                ),
+                new Vector4f(1.0f, 0.0f, 0.0f, 1.0f),
+                List.of(0.0f, 0.0f, 0.0f),
+                0.24f,
+                0.24f,
+                Arrays.asList(
+                        new Vector3f(-0.095f,0.19f,0.60f),//TITIK1
+                        new Vector3f(-0.05f,0.22f,0.60f), //TITIK2
+                        new Vector3f(-0.01f,0.19f,0.60f) //TITIK3
+                )
+        ));
+        bodyPart.get(0).getChildObject().get(10).rotateObject(0.6f,1f, 0.0f, -0.0f);
+        bodyPart.get(0).getChildObject().get(10).rotateObject(-0.28f,0f, 1.0f, -0.0f);
+        bodyPart.get(0).getChildObject().get(10).translateObject(-0.285f, 0.7f, -0.25f);
 
 
     }
@@ -521,14 +573,14 @@ public class Wheezy {
                 Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).updateCenterPoint();
                 bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint.x * -1,tempCenterPoint.y * -1,tempCenterPoint.z *-1);
                 counterParuh ++;
-                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).rotateObjectOnPoint((float) Math.toRadians(-0.1f), 1.0f, 0.0f, 0.0f,-0.44f, 0.3f, 0.51f);
+                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).rotateObjectOnPoint((float) Math.toRadians(-0.1/1.5f), 1.0f, 0.0f, 0.0f,-0.44f, 0.3f, 0.51f);
                 bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint.x * 1,tempCenterPoint.y * 1,tempCenterPoint.z * 1);
             }
             else {
                 Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).updateCenterPoint();
                 bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint2.x * -1,tempCenterPoint2.y * -1,tempCenterPoint2.z * -1);
                 counterParuh --;
-                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).rotateObjectOnPoint((float) Math.toRadians(0.1f), 1.0f, 0.0f, 0.0f,-0.44f, 0.3f, 0.51f);
+                bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).rotateObjectOnPoint((float) Math.toRadians(0.1/1.5f), 1.0f, 0.0f, 0.0f,-0.44f, 0.3f, 0.51f);
                 bodyPart.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(tempCenterPoint2.x * 1, tempCenterPoint2.y* 1,tempCenterPoint2.z* 1);
             }
             if (counterParuh == 40.0f){
@@ -545,27 +597,27 @@ public class Wheezy {
                 counterMata++;
                 Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).updateCenterPoint();
                 bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f/3),1.0f, 0.0f, 0.0f);
                 bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
                 Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).updateCenterPoint();
                 bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
-                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f),1.0f, -.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f/3),1.0f, -.0f, 0.0f);
                 bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
             }
             else {
                 counterMata--;
                 Vector3f tempCenterPoint = bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).updateCenterPoint();
                 bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*-1,tempCenterPoint.y*-1,tempCenterPoint.z*-1);
-                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f),1.0f, 0.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f/3),1.0f, 0.0f, 0.0f);
                 bodyPart.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(tempCenterPoint.x*1,tempCenterPoint.y*1,tempCenterPoint.z*1);
 
                 Vector3f tempCenterPoint2 = bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).updateCenterPoint();
                 bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*-1,tempCenterPoint2.y*-1,tempCenterPoint2.z*-1);
-                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f),1.0f, -.0f, 0.0f);
+                bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float) Math.toRadians(1.0f/3),1.0f, -.0f, 0.0f);
                 bodyPart.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(tempCenterPoint2.x*1,tempCenterPoint2.y*1,tempCenterPoint2.z*1);
             }
-            if (counterMata== 10.0f){
+            if (counterMata== 12.0f){
                 cekMata = false;
             }
             if(counterMata == 0){
