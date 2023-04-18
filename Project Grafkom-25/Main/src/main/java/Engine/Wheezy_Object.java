@@ -191,33 +191,34 @@ public class Wheezy_Object extends Circle3D{
 
             vertices.clear();
             {
+                // bagian atas trapesium
                 vertices.add(tempVertices.get(0));
                 vertices.add(tempVertices.get(3));
                 vertices.add(tempVertices.get(7));
                 vertices.add(tempVertices.get(4));
                 vertices.add(tempVertices.get(0));
 
-                //TITIK MIRING KANAN DEPAN DAN TITIK MIRING KIRI DEPAN SERTA SAMBUNGKAN DEPAN
+                //bagian kiri trapesium
                 vertices.add(tempVertices.get(1));
                 vertices.add(tempVertices.get(0));
                 vertices.add(tempVertices.get(4));
                 vertices.add(tempVertices.get(5));
                 vertices.add(tempVertices.get(1));
 
-                //TITIK MIRING KANAN BELAKANG DAN SAMBUNGKAN KANAN
+                // bagian belakang trapesium
                 vertices.add(tempVertices.get(0));
                 vertices.add(tempVertices.get(3));
                 vertices.add(tempVertices.get(2));
                 vertices.add(tempVertices.get(1));
-
-                //TITIK MIRING KIRI BELAKANG DAN SAMBUNGKAN BELAKANG
                 vertices.add(tempVertices.get(0));
+
+                //bagian kanan trapesium
                 vertices.add(tempVertices.get(3));
                 vertices.add(tempVertices.get(7));
                 vertices.add(tempVertices.get(6));
                 vertices.add(tempVertices.get(2));
 
-                //SAMBUNGKAN KIRI
+                //bagian depan trapesium
                 vertices.add(tempVertices.get(6));
                 vertices.add(tempVertices.get(5));
             }
@@ -234,7 +235,6 @@ public class Wheezy_Object extends Circle3D{
         float pi = (float)Math.PI;
         float sectorStep = 2 * (float)Math.PI / sectorCount;
         float stackStep = (float)Math.PI / stackCount;
-        // Sector/Stackstep bisa bagi 2 buat half object/sphere
         float sectorAngle, StackAngle, stackAngle,xy ,x, y, z;
         for (int i = 0; i <= stackCount; ++i)
         {
@@ -258,7 +258,7 @@ public class Wheezy_Object extends Circle3D{
     public void createOvaloidv2(){// jadi bagian yg putih
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
-        for (int i = 0; i < 360; i++) {
+        for (int i = 0; i < 360; i+= 1f) {
             float rad = (float) (i * Math.PI / 180);
             float x = (float) (rX * Math.cos(rad) * (1.6 + 0.2 * Math.sin(3 * rad)));
             float y = (float) -(rY * Math.sin(rad) * (1.35 + 0.1 * Math.sin(3 * rad))); // di reverse pake -
@@ -272,13 +272,13 @@ public class Wheezy_Object extends Circle3D{
     public void createOvaloid() {// jadi badan
         vertices.clear();
         ArrayList<Vector3f> temp = new ArrayList<>();
-        for (int i = 0; i < 360; i++) {
+        for (float i = 0; i < 360; i += 0.6f) {
             float rad = (float) (i * Math.PI / 180);
             float x = (float) (rX * Math.cos(rad) * (1.0 + 0.2 * Math.sin(3 * rad)));
             float y = (float) -(rY * Math.sin(rad) * (1.2 + 0.1 * Math.sin(3 * rad))); // di reverse
 
-            temp.add(new Vector3f(x,y,0f));
-            temp.add(new Vector3f(x,y,rZ));
+            temp.add(new Vector3f(x, y, 0f));
+            temp.add(new Vector3f(x, y, rZ));
         }
         vertices = temp;
     }
