@@ -28,6 +28,13 @@ public class Main {
     ArrayList<Wheezy_Object> Penguin = new ArrayList<>();
     Camera camera = new Camera();
     Projection projection = new Projection(window.getWidth(), window.getHeight());
+    List<ShaderProgram.ShaderModuleData> shaderModuleDataList = Arrays.asList(
+            new ShaderProgram.ShaderModuleData(
+                    "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+            new ShaderProgram.ShaderModuleData(
+                    "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+
+    );
 
     public void run() {
         init();
@@ -50,13 +57,7 @@ public class Main {
 //BG
 //Meja background
         BG.add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.8f, 0.4f, 0.0f, 1.0f),0.0,
@@ -71,12 +72,7 @@ public class Main {
         BG.get(0).translateObject(0.0f, -0.33f, 0.0f);
 //vas bunga
         BG.get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-        new ShaderProgram.ShaderModuleData(
-                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-        ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.4f, 0.2f, 0.0f, 1.0f),0.0,
@@ -90,12 +86,7 @@ public class Main {
         BG.get(0).getChildObject().get(0).translateObject(-1.0f, -0.03f, -3.0f);
         //Daun
         BG.get(0).getChildObject().get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-        new ShaderProgram.ShaderModuleData(
-                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-        ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.8f, 0.0f, 1.0f),0.0,
@@ -110,12 +101,7 @@ public class Main {
         BG.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-1.0f, 0.45f, -3.0f);
 //Kaki Meja
         BG.get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.4f, 0.2f, 0.0f, 1.0f),0.0,
@@ -130,12 +116,7 @@ public class Main {
         BG.get(0).getChildObject().get(1).translateObject(-1.4f, -0.38f, -3.5f);
 
         BG.get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.4f, 0.2f, 0.0f, 1.0f),0.0,
@@ -150,12 +131,7 @@ public class Main {
         BG.get(0).getChildObject().get(2).translateObject(1.4f, -0.38f, -3.5f);
 
         BG.get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.4f, 0.2f, 0.0f, 1.0f),0.0,
@@ -170,12 +146,7 @@ public class Main {
         BG.get(0).getChildObject().get(3).translateObject(-1.4f, -0.38f, 3.5f);
 
         BG.get(0).getChildObject().add(new Sphere(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.4f, 0.2f, 0.0f, 1.0f),0.0,
@@ -192,12 +163,7 @@ public class Main {
 // HAMM (CELENGAN BABI C14210057 -CHRISTIAN PHILIP T)
 // Badan Babi
         Babi.add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -213,12 +179,7 @@ public class Main {
 
 //Kepala Babi
         Babi.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -234,12 +195,7 @@ public class Main {
 
 // Hidung babi
         Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -255,12 +211,7 @@ public class Main {
 
 // lubang hidung
         Babi.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.4f, 0.69f, 1.0f),
@@ -276,12 +227,7 @@ public class Main {
         Babi.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(8.0f), 1.0f, 0.0f, 0.0f);
 
         Babi.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.4f, 0.69f, 1.0f),
@@ -298,12 +244,7 @@ public class Main {
 
 //Mata
         Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -318,12 +259,7 @@ public class Main {
         Babi.get(0).getChildObject().get(0).getChildObject().get(1).translateObject(0.09f, 0.15f, 0.605f);
 
         Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -339,12 +275,7 @@ public class Main {
 
 //udel
         Babi.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -361,12 +292,7 @@ public class Main {
 
 //EKOR
         Babi.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -383,12 +309,7 @@ public class Main {
 
 // LUBANG CELENGAN
         Babi.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -405,12 +326,7 @@ public class Main {
 
 //KAKI KIRI DEPAN
         Babi.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -427,12 +343,7 @@ public class Main {
         Babi.get(0).getChildObject().get(4).rotateObject((float) Math.toRadians(30.0f), 0.0f, 0.0f, 1.0f);
 //KAKI KIRI BELAKANG
         Babi.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -449,12 +360,7 @@ public class Main {
         Babi.get(0).getChildObject().get(5).rotateObject((float) Math.toRadians(30.0f), 0.0f, 0.0f, 1.0f);
 // kaki kanan depan
         Babi.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -471,12 +377,7 @@ public class Main {
         Babi.get(0).getChildObject().get(6).rotateObject((float) Math.toRadians(-30.0f), 0.0f, 0.0f, 1.0f);
 //kaki kanan belakang
         Babi.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -494,12 +395,7 @@ public class Main {
 
 // KUKU Kaki kanan belakang
         Babi.get(0).getChildObject().get(7).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -517,12 +413,7 @@ public class Main {
         Babi.get(0).getChildObject().get(7).getChildObject().get(0).rotateObject((float) Math.toRadians(-30.0f), 0.0f, 0.0f, 1.0f);
 
         Babi.get(0).getChildObject().get(7).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -540,12 +431,7 @@ public class Main {
         Babi.get(0).getChildObject().get(7).getChildObject().get(1).rotateObject((float) Math.toRadians(-30.0f), 0.0f, 0.0f, 1.0f);
 
         Babi.get(0).getChildObject().get(7).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -564,12 +450,7 @@ public class Main {
 
 // KUKU Kaki kanan depan
         Babi.get(0).getChildObject().get(6).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -587,12 +468,7 @@ public class Main {
         Babi.get(0).getChildObject().get(6).getChildObject().get(0).rotateObject((float) Math.toRadians(-30.0f), 0.0f, 0.0f, 1.0f);
 
         Babi.get(0).getChildObject().get(6).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -610,12 +486,7 @@ public class Main {
         Babi.get(0).getChildObject().get(6).getChildObject().get(1).rotateObject((float) Math.toRadians(-30.0f), 0.0f, 0.0f, 1.0f);
 
         Babi.get(0).getChildObject().get(6).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -634,12 +505,7 @@ public class Main {
 
 // KUKU Kaki kiri belakang
         Babi.get(0).getChildObject().get(5).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -657,12 +523,7 @@ public class Main {
         Babi.get(0).getChildObject().get(5).getChildObject().get(0).rotateObject((float) Math.toRadians(30.0f), 0.0f, 0.0f, 1.0f);
 
         Babi.get(0).getChildObject().get(5).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -680,12 +541,7 @@ public class Main {
         Babi.get(0).getChildObject().get(5).getChildObject().get(1).rotateObject((float) Math.toRadians(30.0f), 0.0f, 0.0f, 1.0f);
 
         Babi.get(0).getChildObject().get(5).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -704,12 +560,7 @@ public class Main {
 
 // KUKU Kaki kiri depan
         Babi.get(0).getChildObject().get(4).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -727,12 +578,7 @@ public class Main {
         Babi.get(0).getChildObject().get(4).getChildObject().get(0).rotateObject((float) Math.toRadians(30.0f), 0.0f, 0.0f, 1.0f);
 
         Babi.get(0).getChildObject().get(4).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -750,12 +596,7 @@ public class Main {
         Babi.get(0).getChildObject().get(4).getChildObject().get(1).rotateObject((float) Math.toRadians(30.0f), 0.0f, 0.0f, 1.0f);
 
         Babi.get(0).getChildObject().get(4).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -774,12 +615,7 @@ public class Main {
 
 //kuping
         Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -794,12 +630,7 @@ public class Main {
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).translateObject(-0.105f, 0.195f, 0.39f);
 
         Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.6f, 0.89f, 1.0f),
@@ -816,12 +647,7 @@ public class Main {
 
 //dalam kuping
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.4f, 0.69f, 1.0f),
@@ -836,12 +662,7 @@ public class Main {
         Babi.get(0).getChildObject().get(0).getChildObject().get(3).getChildObject().get(0).translateObject(-0.105f, 0.19f, 0.395f);
 
         Babi.get(0).getChildObject().get(0).getChildObject().get(4).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.4f, 0.69f, 1.0f),
@@ -858,12 +679,7 @@ public class Main {
 
 //kurva alis
         Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -878,12 +694,7 @@ public class Main {
 
         ));
         Babi.get(0).getChildObject().get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -904,12 +715,7 @@ public class Main {
 
 // badan utama
         Penguin.add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -928,12 +734,7 @@ public class Main {
 
 //bagian perut yg putih
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -952,12 +753,7 @@ public class Main {
 
 //tangan kanan
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -977,12 +773,7 @@ public class Main {
 
 //tangan Kiri
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1004,12 +795,7 @@ public class Main {
 
 //kelopak mata kanan
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1029,12 +815,7 @@ public class Main {
 
 //kelopak mata kiri
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1054,12 +835,7 @@ public class Main {
 
 //mata kanan
         Penguin.get(0).getChildObject().get(3).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1079,12 +855,7 @@ public class Main {
 
 //mata kiri
         Penguin.get(0).getChildObject().get(4).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1104,12 +875,7 @@ public class Main {
 
 // paruh atas
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1129,12 +895,7 @@ public class Main {
 
 // paruh bwh
         Penguin.get(0).getChildObject().get(5).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1154,12 +915,7 @@ public class Main {
 
 //buletan dasi
         Penguin.get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1180,12 +936,7 @@ public class Main {
 
 //dasi kanan
         Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1206,12 +957,7 @@ public class Main {
 
 //dasi kiri
         Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1232,12 +978,7 @@ public class Main {
 
 //kaki kiri
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1258,12 +999,7 @@ public class Main {
 
 //kaki kanan
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1284,12 +1020,7 @@ public class Main {
 
 //pantat penguin
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -1309,12 +1040,7 @@ public class Main {
 
 //alis penguin kanan
         Penguin.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.0f, 0.0f, 1.0f),
@@ -1334,12 +1060,7 @@ public class Main {
 
 //alis penguin Kiri
         Penguin.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4/Project Grafkom-25/Main/resources/shaders/scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.0f, 0.0f, 1.0f),
@@ -1363,13 +1084,7 @@ public class Main {
         /* Yan Nathanael C14210061 */
         //Head
         LGMO.add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -1385,13 +1100,7 @@ public class Main {
 
         // Badan Antena
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -1407,13 +1116,7 @@ public class Main {
 
         // Fondasi Antena
         LGMO.get(0).getChildObject().get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -1429,13 +1132,7 @@ public class Main {
 
         // Top of Antena
         LGMO.get(0).getChildObject().get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -1450,13 +1147,7 @@ public class Main {
 
         //White Eye Middle
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(255/255f, 255/255f, 255/255f, 1.0f),
@@ -1471,13 +1162,7 @@ public class Main {
 
         //Black Eye Middle
         LGMO.get(0).getChildObject().get(1).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
@@ -1492,12 +1177,7 @@ public class Main {
 
         //Kelopak Eye Middle Bawah
         LGMO.get(0).getChildObject().get(1).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -1514,13 +1194,7 @@ public class Main {
 
         //White Eye Left
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(255/255f, 255/255f, 255/255f, 1.0f),
@@ -1536,13 +1210,7 @@ public class Main {
 
         //Black Eye Left
         LGMO.get(0).getChildObject().get(2).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
@@ -1557,12 +1225,7 @@ public class Main {
 
         //Kelopak Eye Left Bawah
         LGMO.get(0).getChildObject().get(2).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -1581,13 +1244,7 @@ public class Main {
 
         //White Eye Right
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(255/255f, 255/255f, 255/255f, 1.0f),
@@ -1603,13 +1260,7 @@ public class Main {
 
         //Black Eye Right
         LGMO.get(0).getChildObject().get(3).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
@@ -1625,12 +1276,7 @@ public class Main {
 
         //Kelopak Eye Right Bawah
         LGMO.get(0).getChildObject().get(3).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0.0f, 0.0f, 0.0f, 1.0f),
@@ -1648,13 +1294,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(3).getChildObject().get(1).translateObject(0.35f, -0.15f, -0.1f);
         //Ear Right
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+               shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -1669,13 +1309,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(4).translateObject(0.6f, 0.275f, 0f);
         //Ear Lobe Right
         LGMO.get(0).getChildObject().get(4).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(150/255f, 160/255f, 75/255f, 1.0f),
@@ -1690,13 +1324,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(0.65f, 0.35f, 0.35f);
         //Ear Left
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -1711,13 +1339,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(5).translateObject(-0.6f, 0.275f, 0f);
         //Ear Lobe Left
         LGMO.get(0).getChildObject().get(5).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(150/255f, 160/255f, 75/255f, 1.0f),
@@ -1732,13 +1354,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(-0.65f, 0.35f, 0.35f);
         // Mulut
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
@@ -1753,13 +1369,7 @@ public class Main {
 
         //Purple Neck
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(116/255f, 71/255f, 158/255f, 1.0f),
@@ -1775,13 +1385,7 @@ public class Main {
 
         // Badan Atas Alien
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -1796,13 +1400,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(8).translateObject(0f, -0.67f, 0f);
         // Sabuk
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(51/255f, 56/255f, 120/255f, 1.0f),
@@ -1817,13 +1415,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(8).getChildObject().get(0).translateObject(0.0f, -0.95f, 0.0f);
         // Kepala Sabuk
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                        shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(5/255f, 33/255f, 90/255f, 1.0f),
@@ -1839,13 +1431,7 @@ public class Main {
 
         // Gambar Planet Kuning
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 157/255f, 126/255f, 1.0f),
@@ -1860,13 +1446,7 @@ public class Main {
 
         // Badan Biru
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -1880,13 +1460,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(8).getChildObject().get(3).translateObject(0.3f, -0.6f, 0.298f);
         // Gambar Ring Planet
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 157/255f, 126/255f, 1.0f),
@@ -1904,13 +1478,7 @@ public class Main {
 
         // Badan Bawah Alien
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -1926,13 +1494,7 @@ public class Main {
 
         // Paha Kiri Besar
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -1947,13 +1509,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(10).translateObject(-0.3f, -1.335f, 0f);
         // Kaki Kiri
         LGMO.get(0).getChildObject().get(10).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(9/255f, 42/255f, 103/255f, 1.0f),
@@ -1968,13 +1524,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(10).getChildObject().get(0).translateObject(-0.3f, -1.635f, 0f);
         // Paha Kiri Kecil
         LGMO.get(0).getChildObject().get(10).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -1990,13 +1540,7 @@ public class Main {
 
         // Paha Kanan Besar
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -2011,13 +1555,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(11).translateObject(0.3f, -1.335f, 0f);
         // Kaki Kanan
         LGMO.get(0).getChildObject().get(11).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(9/255f, 42/255f, 103/255f, 1.0f),
@@ -2032,13 +1570,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(11).getChildObject().get(0).translateObject(0.3f, -1.635f, 0f);
         // Paha Kanan Kecil
         LGMO.get(0).getChildObject().get(11).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -2054,13 +1586,7 @@ public class Main {
 
         // Lengan Kiri
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -2077,13 +1603,7 @@ public class Main {
         LGMO.get(0).getChildObject().get(12).translateObject(-1.0f, -0.4f, 0f);
         // Telapak Kiri
         LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -2099,13 +1619,7 @@ public class Main {
 
         // Jari Kiri1
         LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -2121,13 +1635,7 @@ public class Main {
 
         // Jari Kiri2
         LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -2143,13 +1651,7 @@ public class Main {
 
         // Jari Kiri3
         LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -2165,13 +1667,7 @@ public class Main {
 
         // Lengan Kanan
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -2189,13 +1685,7 @@ public class Main {
 
         // Telapak Kanan
         LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -2211,13 +1701,7 @@ public class Main {
 
         // Jari Kanan1
         LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -2233,13 +1717,7 @@ public class Main {
 
         // Jari Kanan2
         LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -2256,13 +1734,7 @@ public class Main {
 
         // Jari Kanan3
         LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
