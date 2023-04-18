@@ -1752,7 +1752,7 @@ public class Main {
 
         // Translate Lokasi objek
         Babi.get(0).scaleObject(2.0f,2.0f,2.0f);
-        Babi.get(0).translateObject(0.0f,0.2f,0.0f);
+        Babi.get(0).translateObject(0.0f,0.22f,0.0f);
 
         Penguin.get(0).translateObject(0.0f,0.5f,-2.0f);
         //Penguin.get(0).scaleObject(0.0f,0.0f,-2.0f);
