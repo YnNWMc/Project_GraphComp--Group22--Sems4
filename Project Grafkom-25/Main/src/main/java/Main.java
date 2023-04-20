@@ -30,9 +30,9 @@ public class Main {
     Projection projection = new Projection(window.getWidth(), window.getHeight());
     List<ShaderProgram.ShaderModuleData> shaderModuleDataList = Arrays.asList(
             new ShaderProgram.ShaderModuleData(
-                    "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                    "Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
             new ShaderProgram.ShaderModuleData(
-                    "C:\\Users\\chris\\PROJEK GRAFKOM\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+                    "Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
 
     );
 
@@ -1754,6 +1754,8 @@ public class Main {
 
 
         // Translate Lokasi objek
+        Babi.get(0).scaleObject(2.0f,2.0f,2.0f);
+        Babi.get(0).translateObject(0.0f,0.22f,0.0f);
 
         BG.get(0).getChildObject().get(0).translateObject(0.0f,0.0f,0.5f);
 
