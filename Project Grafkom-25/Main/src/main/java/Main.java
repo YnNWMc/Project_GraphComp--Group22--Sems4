@@ -20,7 +20,7 @@ public class Main {
 //    Yan Nathanael		    - C14210061
 //     TOY STORY (HAMM, WHEEZY, LITTLE GREEN MAN)
     private Window window =
-            new Window(800, 800, "Main Gabungan");
+            new Window(1080, 720, "Main Gabungan");
 
     ArrayList<Object> BG = new ArrayList<>();
     ArrayList<Object> Babi = new ArrayList<>();
@@ -50,6 +50,9 @@ public class Main {
         GL.createCapabilities();
         glEnable(GL_DEPTH_TEST);
 
+        //-9.948158f, 0.22999954f, 13.118198f
+        //-5.0f, 0.6f, 4.0f
+        //-5.0f, 0.6f, 10.0f
         camera.setPosition(-9.948158f, 0.22999954f, 13.118198f);
         camera.setRotation((float) Math.toRadians(0.0f), (float) Math.toRadians(30.0f));
 
@@ -98,7 +101,7 @@ public class Main {
                 30, // Sector --> Titik
                 3));
         BG.get(0).getChildObject().get(0).getChildObject().get(0).rotateObject((float)Math.toRadians(90.0f),1.0f, 0.0f, 0.0f);
-        BG.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-1.0f, 0.45f, -3.0f);
+        BG.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-1.0f, 0.48f, -3.0f);
 //Kaki Meja
         BG.get(0).getChildObject().add(new Sphere(
                 shaderModuleDataList,
@@ -1751,14 +1754,17 @@ public class Main {
 
 
         // Translate Lokasi objek
-        Babi.get(0).scaleObject(2.0f,2.0f,2.0f);
-        Babi.get(0).translateObject(0.0f,0.2f,0.0f);
 
-        Penguin.get(0).translateObject(0.0f,0.5f,-2.0f);
-        //Penguin.get(0).scaleObject(0.0f,0.0f,-2.0f);
+        BG.get(0).getChildObject().get(0).translateObject(0.0f,0.0f,0.5f);
 
-        LGMO.get(0).scaleObject(0.5f,0.7f,0.5f);
-        LGMO.get(0).translateObject(0.3f,1.0f,2.0f);
+        Babi.get(0).scaleObject(1.5f,1.5f,1.5f);
+        Babi.get(0).translateObject(0.2f,0.1f,1.8f);
+
+        Penguin.get(0).translateObject(0.9f,0.3f,5.1f);
+        Penguin.get(0).scaleObject(0.7f,0.7f,0.7f);
+
+        LGMO.get(0).scaleObject(0.3f,0.3f,0.3f);
+        LGMO.get(0).translateObject(-0.8f,0.3f,-3.0f);
 
 
     }
@@ -2334,7 +2340,7 @@ public class Main {
         /*Yan Nathanael C14210061*/
         // 5678VBN ==> Animasi
         if (window.isKeyPressed(GLFW_KEY_5)) {
-            LGMO.get(0).translateObject(0.002f, 0.0f, 0.0f);
+            LGMO.get(0).translateObject(0.0f, 0.0f, 0.002f);
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -2369,7 +2375,7 @@ public class Main {
             }
         }
         if (window.isKeyPressed(GLFW_KEY_6)) {
-            LGMO.get(0).translateObject(-0.002f, 0.0f, 0.0f);
+            LGMO.get(0).translateObject(0.0f, 0.0f, -0.002f);
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -2578,6 +2584,14 @@ public class Main {
             LGMO.get(0).rotateObject(0.05f, 0f, 1f, 0f);
             LGMO.get(0).translateObject(tempCenterPointsd.x * 1, tempCenterPointsd.y * 1, tempCenterPointsd.z * 1);
         }
+        //spawn hehe
+        if (window.isKeyPressed(GLFW_KEY_EQUAL)) {
+            LGMO.get(0).translateObject(0.00f, -0.004f, 0.0f);
+            Vector3f tempCenterPointsd = LGMO.get(0).updateCenterPoint();
+            LGMO.get(0).translateObject(tempCenterPointsd.x * -1, tempCenterPointsd.y * -1, tempCenterPointsd.z * -1);
+            LGMO.get(0).rotateObject(0.05f, 0f, 1f, 0f);
+            LGMO.get(0).translateObject(tempCenterPointsd.x * 1, tempCenterPointsd.y * 1, tempCenterPointsd.z * 1);
+        }
 
 
 
@@ -2635,7 +2649,8 @@ public class Main {
             System.out.println("X"+camera.getPosition().get(0));
             System.out.println("Y"+camera.getPosition().get(1));
             System.out.println("Z"+camera.getPosition().get(2));
-//            Babi.get(0).getChildObject().get(0).getChildObject().get(5).drawLine(camera,projection);
+            //Babi.get(0).getChildObject().get(0).getChildObject().get(5).drawLine(camera,projection);
+
             for (Object objBabi : Babi) {
                 objBabi.draw(camera, projection);
             }
