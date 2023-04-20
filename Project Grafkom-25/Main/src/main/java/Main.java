@@ -931,7 +931,7 @@ public class Main {
                 4));// option
 
         Penguin.get(0).getChildObject().get(0).getChildObject().get(0).rotateObject(-0.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
-        Penguin.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-0.35f, -0.009f, 0.2f);// POSISI
+        Penguin.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-0.355f, -0.009f, 0.19f);// POSISI
 
 
 //dasi kanan
@@ -953,7 +953,7 @@ public class Main {
 
         Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(0).rotateObject(29.81f, 1f, 0f, 0f);// putar biar bgs kliatannya
         Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(0).rotateObject(-30.40f, 0f, 1f, 0f);// putar biar bgs kliatannya
-        Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-0.4f, -0.009f, 0.40f);// POSISI
+        Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(0).translateObject(-0.426f, -0.009f, 0.41f);// POSISI
 
 //dasi kiri
         Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
@@ -974,7 +974,7 @@ public class Main {
 
         Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(1).rotateObject(29.81f, 1f, 0f, 0f);// putar biar bgs kliatannya
         Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(1).rotateObject(29.3f, 0f, 1f, 0f);// putar biar bgs kliatannya
-        Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(1).translateObject(-0.465f, -0.007f, 0.40f);// POSISI
+        Penguin.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().get(1).translateObject(-0.477f, -0.007f, 0.39f);// POSISI
 
 //kaki kiri
         Penguin.get(0).getChildObject().add(new Wheezy_Object(
