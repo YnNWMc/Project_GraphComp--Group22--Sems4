@@ -955,7 +955,11 @@ public class LGM {
     }
     boolean limitKaki = true, limitTanganKanan = true, limitTanganKiri = true, limitAntena = true;
     int counterKaki = 0, counterTgnKanan = 0, counterTgnKiri = 0, counterAntenna = 0;
-
+    float besarMata = 1.0f;
+    boolean perbesarMata = true;
+    float mulutRotate = 0.0f;
+    boolean rotateMulut = true;
+    float transMulut = 0.0f;
     //5678rtyfghvbn
     public void input() {
         if (window.isKeyPressed(GLFW_KEY_5)) {
@@ -1170,6 +1174,54 @@ public class LGM {
                 }
             }
         }
+
+        //Marah
+        if (window.isKeyPressed(GLFW_KEY_SPACE))
+        {
+            if(perbesarMata)
+            {
+                besarMata += 0.1f;
+                Vector3f mataTengah = LGMO.get(0).getChildObject().get(1).getChildObject().get(0).getModel().transformPosition(new Vector3f(0, 0, 0));
+                LGMO.get(0).getChildObject().get(1).getChildObject().get(0).translateObject(mataTengah.x * -1, mataTengah.y * -1, 0.0f);
+                LGMO.get(0).getChildObject().get(1).getChildObject().get(0).scaleObject(1.15f, 1.1f, 1.00f);
+                LGMO.get(0).getChildObject().get(1).getChildObject().get(0).translateObject(mataTengah.x, mataTengah.y, -0.0f);
+
+                Vector3f mataKanan = LGMO.get(0).getChildObject().get(2).getChildObject().get(0).getModel().transformPosition(new Vector3f(0, 0, 0));
+                LGMO.get(0).getChildObject().get(2).getChildObject().get(0).translateObject(mataKanan.x * -1, mataKanan.y * -1, 0.0f);
+                LGMO.get(0).getChildObject().get(2).getChildObject().get(0).scaleObject(1.15f, 1.1f, 1.00f);
+                LGMO.get(0).getChildObject().get(2).getChildObject().get(0).translateObject(mataKanan.x, mataKanan.y, -0.0f);
+
+                Vector3f mataKiri = LGMO.get(0).getChildObject().get(3).getChildObject().get(0).getModel().transformPosition(new Vector3f(0, 0, 0));
+                LGMO.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(mataKiri.x * -1, mataKiri.y * -1, 0.0f);
+                LGMO.get(0).getChildObject().get(3).getChildObject().get(0).scaleObject(1.15f, 1.1f, 1.00f);
+                LGMO.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(mataKiri.x, mataKiri.y, -0.0f);
+                if(besarMata > 2.0f)
+                    perbesarMata = false;
+            }
+            if(rotateMulut){
+                mulutRotate+=0.1f;
+                Vector3f mulut = LGMO.get(0).getChildObject().get(6).updateCenterPoint();
+                LGMO.get(0).getChildObject().get(6).translateObject(mulut.x * -1, mulut.y * -1, mulut.z * -1);
+                LGMO.get(0).getChildObject().get(6).rotateObject(0.35f, 1f,0f,0f);
+                LGMO.get(0).getChildObject().get(6).translateObject(mulut.x * 1, mulut.y * 1, mulut.z * 1);
+
+                if(mulutRotate >= 1.0f)
+                    rotateMulut = false;
+            }
+            else{
+//                if(transMulut < 6){
+//                    transMulut += 0.2f;
+//                    LGMO.get(0).getChildObjectLGM().get(6).translateObject(0f, 0.0085f, 0.0025f);
+//                }
+                // transMulut buat bantu hitung berapa offsetY (0.255 == 0.0085 * 6/0.2f)
+                if(transMulut < 6){
+                    transMulut += 6f;
+                    LGMO.get(0).getChildObject().get(6).translateObject(0f, 0.255f, 0.075f);
+                }
+            }
+
+        }
+
             // RTYFGH ==> Rotate
             if (window.isKeyPressed(GLFW_KEY_R)) {
                 for (LGM_Object i : LGMO) {
@@ -1263,6 +1315,7 @@ public class LGM {
             if (window.isKeyPressed(GLFW_KEY_RIGHT)) {
                 camera.moveRight(0.12f);
             }
+
         }
 
 

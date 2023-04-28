@@ -1754,8 +1754,6 @@ public class Main {
 
 
         // Translate Lokasi objek
-        Babi.get(0).scaleObject(2.0f,2.0f,2.0f);
-        Babi.get(0).translateObject(0.0f,0.22f,0.0f);
 
         BG.get(0).getChildObject().get(0).translateObject(0.0f,0.0f,0.5f);
 
@@ -1769,27 +1767,30 @@ public class Main {
         LGMO.get(0).translateObject(-0.8f,0.3f,-3.0f);
 
 
+
     }
-    //parameter gerak
+    // Parameter Animasi Babi
     private float countjalan=0;
     private float countnoleh=0;
     private float countngangguk =0;
     private boolean kaki = true;
 
-
+    // Parameter Animasi Penguin
     float counterParuhArron = 0f;
     boolean cekParuhArron = true;
-
     float counterMataArron = 0f;
     boolean cekMataArron = true;
-    
-
     float counterJalanDepanArron = 0f;
     boolean cekJalanDepanArron = true;
 
-
+    // Parameter Animasi ALien
     boolean limitKaki = true, limitTanganKanan = true, limitTanganKiri = true, limitAntena = true;
     int counterKaki = 0, counterTgnKanan = 0, counterTgnKiri = 0, counterAntenna = 0;
+    float besarMata = 1.0f;
+    boolean perbesarMata = true;
+    float mulutRotate = 0.0f;
+    boolean rotateMulut = true;
+    float transMulut = 0.0f;
     public void input() {
         //animasi Hamm c14210057 - Christian Philip Tjahyadi
         // maju
@@ -2340,9 +2341,9 @@ public class Main {
 
 
         /*Yan Nathanael C14210061*/
-        // 5678VBN ==> Animasi
+        // 5678VBN,Spasi ==> Animasi
         if (window.isKeyPressed(GLFW_KEY_5)) {
-            LGMO.get(0).translateObject(0.0f, 0.0f, 0.002f);
+            LGMO.get(0).translateObject(0.02f, 0.0f, 0f);
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -2377,7 +2378,7 @@ public class Main {
             }
         }
         if (window.isKeyPressed(GLFW_KEY_6)) {
-            LGMO.get(0).translateObject(0.0f, 0.0f, -0.002f);
+            LGMO.get(0).translateObject(-0.02f, 0.0f, 0f);
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -2410,7 +2411,7 @@ public class Main {
             }
         }
         if (window.isKeyPressed(GLFW_KEY_7)) {
-            LGMO.get(0).translateObject(0.0f, 0.0f, 0.02f);
+            LGMO.get(0).translateObject(0.0f, 0.0f, 0.002f);
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -2443,7 +2444,7 @@ public class Main {
             }
         }
         if (window.isKeyPressed(GLFW_KEY_8)) {
-            LGMO.get(0).translateObject(0.0f, 0.0f, -0.02f);
+            LGMO.get(0).translateObject(0.0f, 0.0f, -0.002f);
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -2551,6 +2552,53 @@ public class Main {
                 }
             }
         }
+
+        //Sedih
+        if (window.isKeyPressed(GLFW_KEY_SPACE))
+        {
+            if(perbesarMata)
+            {
+                besarMata += 0.1f;
+                Vector3f mataTengah = LGMO.get(0).getChildObject().get(1).getChildObject().get(0).getModel().transformPosition(new Vector3f(0, 0, 0));
+                LGMO.get(0).getChildObject().get(1).getChildObject().get(0).translateObject(-mataTengah.x, -mataTengah.y, 0.0f);
+                LGMO.get(0).getChildObject().get(1).getChildObject().get(0).scaleObject(1.15f, 1.1f, 1.00f);
+                LGMO.get(0).getChildObject().get(1).getChildObject().get(0).translateObject(mataTengah.x, mataTengah.y, -0.0f);
+
+                Vector3f mataKanan = LGMO.get(0).getChildObject().get(2).getChildObject().get(0).getModel().transformPosition(new Vector3f(0, 0, 0));
+                LGMO.get(0).getChildObject().get(2).getChildObject().get(0).translateObject(-mataKanan.x, -mataKanan.y, 0.0f);
+                LGMO.get(0).getChildObject().get(2).getChildObject().get(0).scaleObject(1.15f, 1.1f, 1.00f);
+                LGMO.get(0).getChildObject().get(2).getChildObject().get(0).translateObject(mataKanan.x, mataKanan.y, -0.0f);
+
+                Vector3f mataKiri = LGMO.get(0).getChildObject().get(3).getChildObject().get(0).getModel().transformPosition(new Vector3f(0, 0, 0));
+                LGMO.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(-mataKiri.x, -mataKiri.y, 0.0f);
+                LGMO.get(0).getChildObject().get(3).getChildObject().get(0).scaleObject(1.15f, 1.1f, 1.00f);
+                LGMO.get(0).getChildObject().get(3).getChildObject().get(0).translateObject(mataKiri.x, mataKiri.y, -0.0f);
+                if(besarMata > 2.0f)
+                    perbesarMata = false;
+            }
+            if(rotateMulut){
+                mulutRotate+=0.1f;
+                Vector3f mulut = LGMO.get(0).getChildObject().get(6).updateCenterPoint();
+                LGMO.get(0).getChildObject().get(6).translateObject(mulut.x * -1, mulut.y * -1, mulut.z * -1);
+                LGMO.get(0).getChildObject().get(6).rotateObject(0.35f, 1f,0f,0f);
+                LGMO.get(0).getChildObject().get(6).translateObject(mulut.x * 1, mulut.y * 1, mulut.z * 1);
+
+                if(mulutRotate >= 1.0f)
+                    rotateMulut = false;
+            }
+            else{
+//                if(transMulut < 6){
+//                    transMulut += 0.2f;
+//                    LGMO.get(0).getChildObjectLGM().get(6).translateObject(0f, 0.0085f, 0.0025f);
+//                }
+                // transMulut buat bantu hitung berapa offsetY (0.255 == 0.0085 * 6/0.2f)
+                if(transMulut < 6){
+                    transMulut += 6f;
+                    LGMO.get(0).getChildObject().get(6).translateObject(0f, 0.075f, 0.055f);
+                }
+            }
+
+        }
         // RTYFGH ==> Rotate
         if (window.isKeyPressed(GLFW_KEY_R)) {
             for (LGM_Object i : LGMO) {
@@ -2618,11 +2666,11 @@ public class Main {
         }
 
         if (window.isKeyPressed(GLFW_KEY_LEFT_SHIFT)) {
-            camera.moveForward(0.02f);
+            camera.moveForward(0.2f);
         }
 
         if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
-            camera.moveBackwards(0.05f);
+            camera.moveBackwards(0.2f);
         }
         if (window.isKeyPressed(GLFW_KEY_DOWN)) {
             camera.moveDown(0.09f);

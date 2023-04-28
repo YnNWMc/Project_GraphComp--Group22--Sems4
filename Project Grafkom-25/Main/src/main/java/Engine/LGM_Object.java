@@ -211,8 +211,8 @@ public class LGM_Object extends Circle3D {
         ArrayList<Vector3f> temp = new ArrayList<>();
         for(double v = 0; v<= Math.PI*2; v+=Math.PI/60){
             for(double u = 0; u<= Math.PI*2; u+=Math.PI/60){
-                float x = (rX*2f + rZ * (float)(Math.cos(v))) * (float)Math.cos(u);
-                float y = (rY*2f + rZ * (float)(Math.cos(v))) * (float)Math.sin(u);
+                float x = (rX * 2f + rZ * (float)(Math.cos(v))) * (float)Math.cos(u);
+                float y = (rY * 2f + rZ * (float)(Math.cos(v))) * (float)Math.sin(u);
                 float z = rZ * (float)(Math.sin(v));
                 temp.add(new Vector3f(x,y,z));
             }
