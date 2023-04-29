@@ -12,4 +12,4 @@
             * Menggerakkan Lengan ke Atas dan Bawah (Lengan kanan dan kiri)
             * Merubah Ekspresi Dari Senang ke Sedih
             * Menggerakkan Antenna
-            * Rotate ke Kanan, Kiri
+            * Rotate Center Point Sendiri
