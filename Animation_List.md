@@ -14,6 +14,7 @@
             * Menggerakkan Antenna = b
             * Rotate Center Point Sendiri = r, t , y, f, g, h
             
+            Spawn LGM  = Equal (=)
             
             Kamera : 
             
