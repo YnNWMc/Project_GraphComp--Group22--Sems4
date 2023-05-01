@@ -1,5 +1,5 @@
-# Project_GraphComp--Group25--Sems4
-## Graphical Computer Project based on Toy Story Characters -- Group 25
+# Project_GraphComp--Group22--Sems4
+## Graphical Computer Project based on Toy Story Characters -- Group 22
 
           Nama Anggota :
           Christian Phillip T	          -         C14210057
