@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e5a77fd-5616-4211-ae7f-e4633b626c23" name="Changes" comment="Update workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/Project_GraphComp--Group25--Sems4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project_GraphComp--Group22--Sems4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Engine/LGM_Object.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/LGM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/WheezyClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/src/main/java/WheezyClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Engine/Circle3D.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-25/Main/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/Main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/Main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/resources/shaders/scene.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/resources/shaders/scene.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/resources/shaders/scene.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/resources/shaders/scene.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/resources/shaders/sceneWithVerticesColor.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/resources/shaders/sceneWithVerticesColor.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/resources/shaders/sceneWithVerticesColor.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/resources/shaders/sceneWithVerticesColor.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Curve.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Curve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Object.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Projection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Projection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Engine/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project Grafkom-22/Main/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +54,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/File Coding InteliJ JAVA/Project_GraphComp--Group25--Sems4",
+    "last_opened_file_path": "C:/File Coding InteliJ JAVA/PROJECT YAN/Project_GraphComp--Group22--Sems4/Project Grafkom-22/Main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.BabiCeleng">
     <configuration name="BabiCeleng" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BabiCeleng" />
       <module name="Main" />
@@ -65,6 +77,8 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Main" />
       <method v="2">
@@ -78,12 +92,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.BabiCeleng" />
+      <item itemvalue="Application.LGM" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MrPotato" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BabiCeleng" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.LGM" />
         <item itemvalue="Application.MrPotato" />
-        <item itemvalue="Application.BabiCeleng" />
       </list>
     </recent_temporary>
   </component>
