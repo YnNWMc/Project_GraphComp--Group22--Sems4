@@ -41,9 +41,6 @@ public class MouseInput {
     public Vector2f getCurrentPos() {
         return currentPos;
     }
-    public void setScroll(Vector2f scroll){
-        this.scroll = scroll;
-    }
     public Vector2f getScroll() {
         return scroll;
     }
@@ -69,6 +66,10 @@ public class MouseInput {
         }
         previousPos.x = currentPos.x;
         previousPos.y = currentPos.y;
+    }
+
+    public void setScroll(Vector2f scroll){
+        this.scroll = scroll;
     }
 
     public boolean isLeftButtonPressed() {

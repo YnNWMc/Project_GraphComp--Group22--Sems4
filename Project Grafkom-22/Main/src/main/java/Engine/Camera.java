@@ -85,4 +85,8 @@ public class Camera {
         rotation.set(x, y);
         recalculate();
     }
+
+    public void rotateObjectCamera(float x, float y){
+        viewMatrix.rotateX(x).rotateY(y);
+    }
 }

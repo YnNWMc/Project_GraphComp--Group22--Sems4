@@ -1,4 +1,6 @@
 import Engine.*;
+import Engine.Object;
+import org.joml.Vector2f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 import org.lwjgl.opengl.GL;
@@ -14,9 +16,17 @@ import static org.lwjgl.opengl.GL30.*;
 public class LGM {
     private Window window = new Window(800, 800, "LGM Main");
     ArrayList<LGM_Object> LGMO = new ArrayList<>();
+    ArrayList<Object> Babi = new ArrayList<>();
+
     Camera camera = new Camera();
     Projection projection = new Projection(window.getWidth(), window.getHeight());
+    List<ShaderProgram.ShaderModuleData> shaderModuleDataList = Arrays.asList(
+            new ShaderProgram.ShaderModuleData(
+                    "Project Grafkom-22\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+            new ShaderProgram.ShaderModuleData(
+                    "Project Grafkom-22\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
 
+    );
     public void run() {
         init();
         loop();
@@ -35,18 +45,12 @@ public class LGM {
         glDepthFunc(GL_LEQUAL);
         glDepthRange(0.0f, 1.0f);
         // code dst jangan ditaruh diatas code diatas
-        camera.setPosition(-0.12f, -0.7f, 8.54f);
+        camera.setPosition(-0.12f, -0.33999997f, 8.54f);
         camera.setRotation((float) Math.toRadians(0.0f), (float) Math.toRadians(0.0f));
 
         //Head
         LGMO.add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -62,13 +66,7 @@ public class LGM {
 
         // Badan Antena
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -84,13 +82,7 @@ public class LGM {
 
         // Fondasi Antena
         LGMO.get(0).getChildObject().get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -106,13 +98,7 @@ public class LGM {
 
         // Top of Antena
         LGMO.get(0).getChildObject().get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -127,13 +113,7 @@ public class LGM {
 
         //White Eye Middle
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(255/255f, 255/255f, 255/255f, 1.0f),
@@ -148,13 +128,7 @@ public class LGM {
 
         //Black Eye Middle
         LGMO.get(0).getChildObject().get(1).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
@@ -191,13 +165,7 @@ public class LGM {
 
         //White Eye Left
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(255/255f, 255/255f, 255/255f, 1.0f),
@@ -213,13 +181,7 @@ public class LGM {
 
         //Black Eye Left
         LGMO.get(0).getChildObject().get(2).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
@@ -258,13 +220,7 @@ public class LGM {
 
         //White Eye Right
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(255/255f, 255/255f, 255/255f, 1.0f),
@@ -280,13 +236,7 @@ public class LGM {
 
         //Black Eye Right
         LGMO.get(0).getChildObject().get(3).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
@@ -325,13 +275,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(3).getChildObject().get(1).translateObject(0.35f, -0.15f, -0.1f);
         //Ear Right
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -346,13 +290,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(4).translateObject(0.6f, 0.275f, 0f);
         //Ear Lobe Right
         LGMO.get(0).getChildObject().get(4).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(150/255f, 160/255f, 75/255f, 1.0f),
@@ -367,13 +305,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(4).getChildObject().get(0).translateObject(0.65f, 0.35f, 0.35f);
         //Ear Left
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -388,13 +320,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(5).translateObject(-0.6f, 0.275f, 0f);
         //Ear Lobe Left
         LGMO.get(0).getChildObject().get(5).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(150/255f, 160/255f, 75/255f, 1.0f),
@@ -409,13 +335,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(5).getChildObject().get(0).translateObject(-0.65f, 0.35f, 0.35f);
         // Mulut
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(0/255f, 0/255f, 0/255f, 1.0f),
@@ -430,13 +350,7 @@ public class LGM {
 
         //Purple Neck
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(116/255f, 71/255f, 158/255f, 1.0f),
@@ -452,13 +366,7 @@ public class LGM {
 
         // Badan Atas Alien
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -473,13 +381,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(8).translateObject(0f, -0.67f, 0f);
         // Sabuk
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(51/255f, 56/255f, 120/255f, 1.0f),
@@ -494,13 +396,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(8).getChildObject().get(0).translateObject(0.0f, -0.95f, 0.0f);
         // Kepala Sabuk
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(5/255f, 33/255f, 90/255f, 1.0f),
@@ -516,13 +412,7 @@ public class LGM {
 
         // Gambar Planet Kuning
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 157/255f, 126/255f, 1.0f),
@@ -537,13 +427,7 @@ public class LGM {
 
         // Badan Biru
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -557,13 +441,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(8).getChildObject().get(3).translateObject(0.3f, -0.6f, 0.298f);
         // Gambar Ring Planet
         LGMO.get(0).getChildObject().get(8).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 157/255f, 126/255f, 1.0f),
@@ -581,13 +459,7 @@ public class LGM {
 
         // Badan Bawah Alien
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -603,13 +475,7 @@ public class LGM {
 
         // Paha Kiri Besar
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -624,13 +490,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(10).translateObject(-0.3f, -1.335f, 0f);
         // Kaki Kiri
         LGMO.get(0).getChildObject().get(10).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(9/255f, 42/255f, 103/255f, 1.0f),
@@ -645,13 +505,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(10).getChildObject().get(0).translateObject(-0.3f, -1.635f, 0f);
         // Paha Kiri Kecil
         LGMO.get(0).getChildObject().get(10).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -667,13 +521,7 @@ public class LGM {
 
         // Paha Kanan Besar
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -688,13 +536,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(11).translateObject(0.3f, -1.335f, 0f);
         // Kaki Kanan
         LGMO.get(0).getChildObject().get(11).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(9/255f, 42/255f, 103/255f, 1.0f),
@@ -709,13 +551,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(11).getChildObject().get(0).translateObject(0.3f, -1.635f, 0f);
         // Paha Kanan Kecil
         LGMO.get(0).getChildObject().get(11).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -731,13 +567,7 @@ public class LGM {
 
         // Lengan Kiri
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -754,13 +584,7 @@ public class LGM {
         LGMO.get(0).getChildObject().get(12).translateObject(-1.0f, -0.4f, 0f);
         // Telapak Kiri
         LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -776,13 +600,7 @@ public class LGM {
 
         // Jari Kiri1
         LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -798,13 +616,7 @@ public class LGM {
 
         // Jari Kiri2
         LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -820,13 +632,7 @@ public class LGM {
 
         // Jari Kiri3
         LGMO.get(0).getChildObject().get(12).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -842,13 +648,7 @@ public class LGM {
 
         // Lengan Kanan
         LGMO.get(0).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(23/255f, 114/255f, 255/255f, 1.0f),
@@ -866,13 +666,7 @@ public class LGM {
 
         // Telapak Kanan
         LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -888,13 +682,7 @@ public class LGM {
 
         // Jari Kanan1
         LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -910,13 +698,7 @@ public class LGM {
 
         // Jari Kanan2
         LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -933,13 +715,7 @@ public class LGM {
 
         // Jari Kanan3
         LGMO.get(0).getChildObject().get(13).getChildObject().add(new LGM_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\File Coding InteliJ JAVA\\Grafika Komputer\\GrafKom-Yan\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(188/255f, 209/255f, 75/255f, 1.0f),
@@ -952,7 +728,56 @@ public class LGM {
                 7));
         LGMO.get(0).getChildObject().get(13).getChildObject().get(3).rotateObject(3.4f, 0f, 0f, 1f);
         LGMO.get(0).getChildObject().get(13).getChildObject().get(3).translateObject(1.55f, 0.75f, 0f);
+
+        //BG
+        //Rak background
+        Babi.add(new Sphere(
+                shaderModuleDataList,
+                new ArrayList<>(
+                ),
+                new Vector4f(0.8f, 0.4f, 0.0f, 1.0f),0.0,
+                new ArrayList<>(List.of(0f, 0f, 0f)),
+                0.1f,
+                0.1f,
+                1.0f,
+                15, // Stack -->
+                30, // Sector --> Titik
+                0));
+        Babi.get(0).scaleObject(8.0f, 1.0f, 8.0f);
+        Babi.get(0).translateObject(0.0f, -0.33f, 0.0f);
+        //vas bunga
+        Babi.get(0).getChildObject().add(new Sphere(
+                shaderModuleDataList,
+                new ArrayList<>(
+                ),
+                new Vector4f(0.4f, 0.2f, 0.0f, 1.0f),0.0,
+                new ArrayList<>(List.of(0f, 0f, 0f)),
+                0.5f,
+                0.5f,
+                0.5f,
+                15, // Stack -->
+                30, // Sector --> Titik
+                0));
+        Babi.get(0).getChildObject().get(0).translateObject(0.0f, -0.03f, -3.0f);
+        //Daun
+        Babi.get(0).getChildObject().get(0).getChildObject().add(new Sphere(
+                shaderModuleDataList,
+                new ArrayList<>(
+                ),
+                new Vector4f(0.0f, 0.8f, 0.0f, 1.0f),0.0,
+                new ArrayList<>(List.of(0f, 0f, 0f)),
+                0.3f,
+                0.3f,
+                0.3f,
+                15, // Stack -->
+                30, // Sector --> Titik
+                3));
+        Babi.get(0).getChildObject().get(0).getChildObject().get(0).translateObject(0.0f, 0.45f, -3.0f);
     }
+    int countRotate = 360;
+    int countRotate2 = 360;
+    int moveCamera = 360;
+    boolean Xpress = false;
     boolean limitKaki = true, limitTanganKanan = true, limitTanganKiri = true, limitAntena = true;
     int counterKaki = 0, counterTgnKanan = 0, counterTgnKiri = 0, counterAntenna = 0;
     float besarMata = 1.0f;
@@ -962,9 +787,9 @@ public class LGM {
     float transMulut = 0.0f;
     //5678rtyfghvbn
     public void input() {
-        if (window.isKeyPressed(GLFW_KEY_5)) {
+        if (window.isKeyPressed(GLFW_KEY_D)) {
             LGMO.get(0).translateObject(0.002f, 0.0f, 0.0f);
-
+            camera.moveRight(0.002f);
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -998,8 +823,10 @@ public class LGM {
                 }
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_6)) {
+        if (window.isKeyPressed(GLFW_KEY_A)) {
             LGMO.get(0).translateObject(-0.002f, 0.0f, 0.0f);
+            camera.moveLeft(0.002f);
+
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -1031,8 +858,10 @@ public class LGM {
                 }
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_7)) {
+        if (window.isKeyPressed(GLFW_KEY_W)) {
             LGMO.get(0).translateObject(0.0f, 0.0f, 0.02f);
+            camera.moveBackwards(0.02f);
+
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -1064,8 +893,10 @@ public class LGM {
                 }
             }
         }
-        if (window.isKeyPressed(GLFW_KEY_8)) {
+        if (window.isKeyPressed(GLFW_KEY_S)) {
             LGMO.get(0).translateObject(0.0f, 0.0f, -0.02f);
+            camera.moveForward(0.02f);
+
             if (limitKaki) {
                 counterKaki++;
                 Vector3f tempCenterPoint = LGMO.get(0).getChildObject().get(10).updateCenterPoint();
@@ -1158,9 +989,9 @@ public class LGM {
                 LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * -1, tempCenterPoint.y * -1, tempCenterPoint.z * -1);
                 LGMO.get(0).getChildObject().get(0).rotateObject((float) Math.toRadians(-1.0f), 1.0f, 1.0f, 1.0f);
                 LGMO.get(0).getChildObject().get(0).translateObject(tempCenterPoint.x * 1, tempCenterPoint.y * 1, tempCenterPoint.z * 1);
-                    if (counterAntenna == 8f) {
-                        limitAntena = false;
-                    }
+                if (counterAntenna == 8f) {
+                    limitAntena = false;
+                }
 
             }
             else {
@@ -1222,101 +1053,190 @@ public class LGM {
 
         }
 
-            // RTYFGH ==> Rotate
-            if (window.isKeyPressed(GLFW_KEY_R)) {
-                for (LGM_Object i : LGMO) {
-                    i.rotateObject(0.01f, 0f, 0f, 1f);
-                }
+        // RTYFGH ==> Rotate
+        if (window.isKeyPressed(GLFW_KEY_R)) {
+            for (LGM_Object i : LGMO) {
+                i.rotateObject(0.01f, 0f, 0f, 1f);
             }
-            if (window.isKeyPressed(GLFW_KEY_Y)) {
-                for (LGM_Object i : LGMO) {
-                    i.rotateObject(-0.01f, 0f, 0f, 1f);
-                }
+        }
+        if (window.isKeyPressed(GLFW_KEY_Y)) {
+            for (LGM_Object i : LGMO) {
+                i.rotateObject(-0.01f, 0f, 0f, 1f);
             }
-            if (window.isKeyPressed(GLFW_KEY_T)) {
-                Vector3f tempCenterPointw = LGMO.get(0).updateCenterPoint();
-                LGMO.get(0).translateObject(tempCenterPointw.x * -1, tempCenterPointw.y * -1, tempCenterPointw.z * -1);
-                LGMO.get(0).rotateObject(0.05f, 1f, 0f, 0f);
-                LGMO.get(0).translateObject(tempCenterPointw.x * 1, tempCenterPointw.y * 1, tempCenterPointw.z * 1);
-            }
-            if (window.isKeyPressed(GLFW_KEY_G)) {
-                Vector3f tempCenterPoints = LGMO.get(0).updateCenterPoint();
-                LGMO.get(0).translateObject(tempCenterPoints.x * -1, tempCenterPoints.y * -1, tempCenterPoints.z * -1);
-                LGMO.get(0).rotateObject(-0.05f, 1f, 0f, 0f);
-                LGMO.get(0).translateObject(tempCenterPoints.x * 1, tempCenterPoints.y * 1, tempCenterPoints.z * 1);
-            }
-            if (window.isKeyPressed(GLFW_KEY_F)) {
-                Vector3f tempCenterPointsa = LGMO.get(0).updateCenterPoint();
-                LGMO.get(0).translateObject(tempCenterPointsa.x * -1, tempCenterPointsa.y * -1, tempCenterPointsa.z * -1);
-                LGMO.get(0).rotateObject(-0.05f, 0f, 1f, 0f);
-                LGMO.get(0).translateObject(tempCenterPointsa.x * 1, tempCenterPointsa.y * 1, tempCenterPointsa.z * 1);
-            }
-            if (window.isKeyPressed(GLFW_KEY_H)) {
-                Vector3f tempCenterPointsd = LGMO.get(0).updateCenterPoint();
-                LGMO.get(0).translateObject(tempCenterPointsd.x * -1, tempCenterPointsd.y * -1, tempCenterPointsd.z * -1);
-                LGMO.get(0).rotateObject(0.05f, 0f, 1f, 0f);
-                LGMO.get(0).translateObject(tempCenterPointsd.x * 1, tempCenterPointsd.y * 1, tempCenterPointsd.z * 1);
-            }
+        }
+        if (window.isKeyPressed(GLFW_KEY_T)) {
+            Vector3f tempCenterPointw = LGMO.get(0).updateCenterPoint();
+            LGMO.get(0).translateObject(tempCenterPointw.x * -1, tempCenterPointw.y * -1, tempCenterPointw.z * -1);
+            LGMO.get(0).rotateObject(0.05f, 1f, 0f, 0f);
+            LGMO.get(0).translateObject(tempCenterPointw.x * 1, tempCenterPointw.y * 1, tempCenterPointw.z * 1);
+        }
+        if (window.isKeyPressed(GLFW_KEY_G)) {
+            Vector3f tempCenterPoints = LGMO.get(0).updateCenterPoint();
+            LGMO.get(0).translateObject(tempCenterPoints.x * -1, tempCenterPoints.y * -1, tempCenterPoints.z * -1);
+            LGMO.get(0).rotateObject(-0.05f, 1f, 0f, 0f);
+            LGMO.get(0).translateObject(tempCenterPoints.x * 1, tempCenterPoints.y * 1, tempCenterPoints.z * 1);
+        }
+        if (window.isKeyPressed(GLFW_KEY_F)) {
+            Vector3f tempCenterPointsa = LGMO.get(0).updateCenterPoint();
+            LGMO.get(0).translateObject(tempCenterPointsa.x * -1, tempCenterPointsa.y * -1, tempCenterPointsa.z * -1);
+            LGMO.get(0).rotateObject(-0.05f, 0f, 1f, 0f);
+            LGMO.get(0).translateObject(tempCenterPointsa.x * 1, tempCenterPointsa.y * 1, tempCenterPointsa.z * 1);
+        }
+        if (window.isKeyPressed(GLFW_KEY_H)) {
+            Vector3f tempCenterPointsd = LGMO.get(0).updateCenterPoint();
+            LGMO.get(0).translateObject(tempCenterPointsd.x * -1, tempCenterPointsd.y * -1, tempCenterPointsd.z * -1);
+            LGMO.get(0).rotateObject(0.05f, 0f, 1f, 0f);
+            LGMO.get(0).translateObject(tempCenterPointsd.x * 1, tempCenterPointsd.y * 1, tempCenterPointsd.z * 1);
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_U)) {
-                for (LGM_Object i : LGMO) {
-                    i.translateObject(0f, 0f, 0.001f);
-                }
+        if (window.isKeyPressed(GLFW_KEY_U)) {
+            for (LGM_Object i : LGMO) {
+                i.translateObject(0f, 0f, 0.001f);
             }
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_O)) {
-                for (LGM_Object i : LGMO) {
-                    i.translateObject(0f, 0f, -0.001f);
-                }
+        if (window.isKeyPressed(GLFW_KEY_O)) {
+            for (LGM_Object i : LGMO) {
+                i.translateObject(0f, 0f, -0.001f);
             }
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_I)) {
-                for (LGM_Object i : LGMO) {
-                    i.translateObject(0f, 0.001f, 0f);
-                }
+        if (window.isKeyPressed(GLFW_KEY_I)) {
+            for (LGM_Object i : LGMO) {
+                i.translateObject(0f, 0.001f, 0f);
             }
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_K)) {
-                for (LGM_Object i : LGMO) {
-                    i.translateObject(0f, -0.001f, 0f);
-                }
+        if (window.isKeyPressed(GLFW_KEY_K)) {
+            for (LGM_Object i : LGMO) {
+                i.translateObject(0f, -0.001f, 0f);
             }
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_J)) {
-                for (LGM_Object i : LGMO) {
-                    i.translateObject(-0.001f, 0f, 0f);
-                }
+        if (window.isKeyPressed(GLFW_KEY_J)) {
+            for (LGM_Object i : LGMO) {
+                i.translateObject(-0.001f, 0f, 0f);
             }
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_L)) {
-                for (LGM_Object i : LGMO) {
-                    i.translateObject(0.001f, 0f, 0f);
-                }
+        if (window.isKeyPressed(GLFW_KEY_L)) {
+            for (LGM_Object i : LGMO) {
+                i.translateObject(0.001f, 0f, 0f);
             }
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_LEFT_ALT)) {
-                camera.moveForward(0.12f);
-            }
+        if (window.isKeyPressed(GLFW_KEY_LEFT_ALT)) {
+            camera.moveForward(0.12f);
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
-                camera.moveBackwards(0.12f);
-            }
-            if (window.isKeyPressed(GLFW_KEY_DOWN)) {
-                camera.moveDown(0.12f);
-            }
+        if (window.isKeyPressed(GLFW_KEY_LEFT_CONTROL)) {
+            camera.moveBackwards(0.12f);
+        }
+        if (window.isKeyPressed(GLFW_KEY_DOWN)) {
+            camera.moveDown(0.12f);
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_UP)) {
-                camera.moveUp(0.12f);
-            }
-            if (window.isKeyPressed(GLFW_KEY_LEFT)) {
-                camera.moveLeft(0.12f);
-            }
+        if (window.isKeyPressed(GLFW_KEY_UP)) {
+            camera.moveUp(0.12f);
+        }
+        if (window.isKeyPressed(GLFW_KEY_LEFT)) {
+            camera.moveLeft(0.12f);
+        }
 
-            if (window.isKeyPressed(GLFW_KEY_RIGHT)) {
-                camera.moveRight(0.12f);
-            }
+        if (window.isKeyPressed(GLFW_KEY_RIGHT)) {
+            camera.moveRight(0.12f);
+        }
+
+        if (window.getMouseInput().isLeftButtonPressed()){
+            Vector2f displayVec = window.getMouseInput().getDisplVec();
+            camera.addRotation((float)Math.toRadians(displayVec.x * 0.1f), (float) Math.toRadians(displayVec.y * 0.1f));
+        }
+
+        if (window.getMouseInput().getScroll().y != 0){
+            projection.setFOV(projection.getFOV()-(window.getMouseInput().getScroll().y*0.01f));
+            window.getMouseInput().setScroll(new Vector2f());
+        }
+        if (window.isKeyPressed(GLFW_KEY_X)){
+            if(countRotate == 360)
+                countRotate = 0;
 
         }
+        if(countRotate<360){
+            Vector3f simpan = camera.getPosition();
+            camera.setPosition(LGMO.get(0).getCenterPoint().get(0),LGMO.get(0).getCenterPoint().get(1),LGMO.get(0).getCenterPoint().get(2)+5.5f);
+            camera.addRotation(0f,-(float)(Math.toRadians(1)));
+            camera.setPosition(simpan.get(0),simpan.get(1),simpan.get(2));
+            countRotate+=1;
+        }
+
+        if(window.isKeyPressed(GLFW_KEY_Z)){
+            camera.rotateObjectCamera(0.0f,(float)(Math.toRadians(1)));
+        }
+//        if (window.isKeyPressed(GLFW_KEY_Z)){
+//            if(countRotate2 == 360)
+//            {
+//                countRotate2 = 0;
+//            }
+//            if(moveCamera == 360){
+//                moveCamera = 0;
+//            }
+//
+//        }
+//        if(countRotate2<360){
+//            if(moveCamera<360){
+//                Vector3f simpan = camera.getPosition();
+////                camera.setPosition(-0.12f, -0.33999997f, 8.54f);
+//                camera.moveLeft(0.2f);
+////                camera.setPosition(simpan.get(0),simpan.get(1),simpan.get(2));
+//                moveCamera+=1;
+//            }
+//            Vector3f simpan = camera.getPosition();
+//            camera.setPosition(-0.12f, -0.33999997f, 8.54f);
+//            camera.addRotation(0f,-(float)(Math.toRadians(1)));
+//            camera.setPosition(simpan.get(0),simpan.get(1),simpan.get(2));
+//            countRotate2+=1;
+//        }
+
+
+//        if (window.isKeyPressed(GLFW_KEY_Z)){
+//            Vector3f temp = LGMO.get(0).getModel().transformPosition(new Vector3f(0.0f,0.0f,0.0f));
+//            camera.rotate(0,-(float)(Math.toRadians(1)), temp);
+//        }
+//
+//        if (window.isKeyPressed(GLFW_KEY_A)) {
+//            LGMO.get(0).translateObject(-0.01f,0f,0f);
+//            camera.moveLeft((float)(Math.toRadians(1)));
+//        }
+//        if (window.isKeyPressed(GLFW_KEY_D)) {
+//            LGMO.get(0).translateObject(0.01f,0f,0f);
+//            camera.moveRight((float)(Math.toRadians(1)));
+//        }
+//        if (window.isKeyPressed(GLFW_KEY_W)) {
+//            LGMO.get(0).translateObject(0f,0f,0.01f);
+//            camera.moveBackwards((float)(Math.toRadians(1)));
+//        }
+//        if (window.isKeyPressed(GLFW_KEY_S)) {
+//            LGMO.get(0).translateObject(0f,0f,-0.01f);
+//            camera.moveForward((float)(Math.toRadians(1)));
+//        }
+
+        if(window.isKeyPressed(GLFW_KEY_COMMA))
+        {
+            camera.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(-1f));
+        }
+        if(window.isKeyPressed(GLFW_KEY_SLASH))
+        {
+            camera.addRotation((float) Math.toRadians(0f), (float) Math.toRadians(1f));
+        }
+        if(window.isKeyPressed(GLFW_KEY_CAPS_LOCK))
+        {
+            camera.addRotation((float) Math.toRadians(1f), (float) Math.toRadians(0f));
+        }
+        if(window.isKeyPressed(GLFW_KEY_TAB))
+        {
+            camera.addRotation((float) Math.toRadians(-1f), (float) Math.toRadians(0f));
+        }
+    }
 
 
 
@@ -1334,9 +1254,17 @@ public class LGM {
             for (LGM_Object obj3D : LGMO) {
                 obj3D.draw(camera,projection);
             }
+            for (Object obj3D : Babi) {
+                obj3D.draw(camera,projection);
+            }
             System.out.println("X"+camera.getPosition().get(0));
             System.out.println("Y"+camera.getPosition().get(1));
             System.out.println("Z"+camera.getPosition().get(2));
+
+
+
+            System.out.println((float)(Math.toRadians(1)));
+
 
 
 

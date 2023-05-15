@@ -30,10 +30,9 @@ public class Main {
     Projection projection = new Projection(window.getWidth(), window.getHeight());
     List<ShaderProgram.ShaderModuleData> shaderModuleDataList = Arrays.asList(
             new ShaderProgram.ShaderModuleData(
-                    "Project Grafkom-25\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+                    "Project Grafkom-22\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
             new ShaderProgram.ShaderModuleData(
-                    "Project Grafkom-25\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
-
+                    "Project Grafkom-22\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
     );
 
     public void run() {

@@ -18,7 +18,12 @@ public class Wheezy {
     ArrayList<Wheezy_Object> bodyPart = new ArrayList<>();
     Camera camera = new Camera();
     Projection projection = new Projection(window.getWidth(), window.getHeight());
-
+    List<ShaderProgram.ShaderModuleData> shaderModuleDataList = Arrays.asList(
+            new ShaderProgram.ShaderModuleData(
+                    "Project Grafkom-22\\Main\\resources\\shaders\\scene.vert", GL_VERTEX_SHADER),
+            new ShaderProgram.ShaderModuleData(
+                    "Project Grafkom-22\\Main\\resources\\shaders\\scene.frag", GL_FRAGMENT_SHADER)
+    );
     public void run() {
         init();
         loop();
@@ -40,15 +45,7 @@ public class Wheezy {
 
         // badan utama
         bodyPart.add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -67,15 +64,7 @@ public class Wheezy {
 
         //bagian perut yg putih
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -94,15 +83,7 @@ public class Wheezy {
 
         //tangan kanan
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -122,15 +103,7 @@ public class Wheezy {
 
         //tangan Kiri
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -152,15 +125,7 @@ public class Wheezy {
 
         //kelopak mata kanan
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -180,15 +145,7 @@ public class Wheezy {
 
         //kelopak mata kiri
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -208,15 +165,7 @@ public class Wheezy {
 
         //mata kanan
         bodyPart.get(0).getChildObject().get(3).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -236,15 +185,7 @@ public class Wheezy {
 
         //mata kiri
         bodyPart.get(0).getChildObject().get(4).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -264,15 +205,7 @@ public class Wheezy {
 
         // paruh atas
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -292,15 +225,7 @@ public class Wheezy {
 
         // paruh bwh
         bodyPart.get(0).getChildObject().get(5).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -320,15 +245,7 @@ public class Wheezy {
 
         //buletan dasi
         bodyPart.get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -349,15 +266,7 @@ public class Wheezy {
 
         //dasi kanan
         bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -378,15 +287,7 @@ public class Wheezy {
 
         //dasi kiri
         bodyPart.get(0).getChildObject().get(0).getChildObject().get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -407,15 +308,7 @@ public class Wheezy {
 
         //kaki kiri
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -436,15 +329,7 @@ public class Wheezy {
 
         //kaki kanan
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -465,15 +350,7 @@ public class Wheezy {
 
         //pantat penguin
         bodyPart.get(0).getChildObject().add(new Wheezy_Object(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new ArrayList<>(
@@ -493,15 +370,7 @@ public class Wheezy {
 
         //alis penguin kanan
         bodyPart.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.0f, 0.0f, 1.0f),
@@ -521,15 +390,7 @@ public class Wheezy {
 
         //alis penguin Kiri
         bodyPart.get(0).getChildObject().add(new SphereBabi(
-                Arrays.asList(
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.vert"
-                                , GL_VERTEX_SHADER),
-
-                        new ShaderProgram.ShaderModuleData(
-                                "C:\\Users\\LEGION\\IdeaProjects\\GrafkomBANG\\Project_GraphComp--Group25--Sems4\\Project Grafkom-25\\Main\\resources\\shaders\\scene.frag"
-                                , GL_FRAGMENT_SHADER)
-                ),
+                shaderModuleDataList,
                 new ArrayList<>(
                 ),
                 new Vector4f(1.0f, 0.0f, 0.0f, 1.0f),
